@@ -1,4 +1,4 @@
-#KSOAR kubernetes control plane monitoring
+# KSOAR kubernetes control plane monitoring
 
 ## Features
 * Dashboard to monitor the K8S control plane from KSOAR.ai
@@ -14,7 +14,9 @@
 * Download ksoar.json
 * Run logiqctl to import the dashboard json
 
-  $logiqctl create dashboard -f ksoar.json
+```
+logiqctl create dashboard -f ksoar.json
+```
 
 ## Screenshot
 ![image info](./ksoar-0.png)
