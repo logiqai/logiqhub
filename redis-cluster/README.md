@@ -14,7 +14,7 @@
 * Run logiqctl to import the dashboard json
 
 ```
-logiqctl` create dashboard -f redis-cluster-monitoring.json
+logiqctl create dashboard -f redis-cluster-monitoring.json
 ```
 
 ## Screenshot
