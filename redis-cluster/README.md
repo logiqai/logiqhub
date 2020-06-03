@@ -7,6 +7,7 @@
 ## Configuration
 
 * Edit redis-cluster-monitoring.json and edit the *"datasources"* section with your prometheus endpoint
+* Edit the namespaces you want to monitor - defaults to redis and redis-2
 
 ## Steps to import
 
@@ -18,4 +19,5 @@ logiqctl create dashboard -f redis-cluster-monitoring.json
 ```
 
 ## Screenshot
-![image info](./redis-cluster.png)
+![image info](./redis-dash-0.png)
+![image info](./redis-dash-1.png)
