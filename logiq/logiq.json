@@ -1,0 +1,770 @@
+{
+    "dashboard": {
+        "name": "Logiq",
+        "tags": []
+    },
+    "datasources": {
+        "1": {
+            "name": "Logiq",
+            "options": {
+                "url": "http://logiq-prometheus-prometheus:9090"
+            },
+            "type": "prometheus"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "endpoint": "unused",
+                        "instance": "unused",
+                        "job": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "logiq-flash-4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "Flash Heap objects",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "15m\n30m\n1h\n3h\n6h\n8h\n1d\n2d\n3d\n5d\n1w\n2w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            }
+                        ]
+                    },
+                    "query": "query=go_memstats_heap_objects{namespace='logiq',pod=~'logiq-flash.*'}\u0026duration={{duration}}\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "endpoint": "unused",
+                        "instance": "unused",
+                        "job": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "logiq-flash-4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "Flash heap usage",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "15m\n30m\n1h\n3h\n6h\n8h\n1d\n2d\n3d\n5d\n1w\n2w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            }
+                        ]
+                    },
+                    "query": "query=go_memstats_heap_inuse_bytes{namespace='logiq',pod=~'logiq-flash.*'}\u0026duration={{duration}}\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 5,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 1,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "column",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "90th percentile ack time - RELP",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "15m\n30m\n1h\n3h\n6h\n8h\n1d\n2d\n3d\n5d\n1w\n2w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "15m"
+                            }
+                        ]
+                    },
+                    "query": "query=round(histogram_quantile(0.9, rate(logiq_ack_duration_ms_bucket{messageType=\"RELP_SYSLOG\",namespace=\"logiq\"}[{{duration}}])),0.01)"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 1,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "column",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "90th percentile ack time - Syslog",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "15m\n30m\n1h\n3h\n6h\n8h\n1d\n2d\n3d\n5d\n1w\n2w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "15m"
+                            }
+                        ]
+                    },
+                    "query": "query=round(histogram_quantile(0.9, rate(logiq_ack_duration_ms_bucket{messageType=\"SYSLOG\",namespace=\"logiq\"}[{{duration}}])),0.01)"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 8,
+                    "sizeX": 2,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "endpoint": "unused",
+                        "instance": "unused",
+                        "job": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": "Time"
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Milliseconds"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "Ack duration",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "15m\n30m\n1h\n3h\n6h\n8h\n1d\n2d\n3d\n5d\n1w\n2w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "1h"
+                            }
+                        ]
+                    },
+                    "query": "query=(logiq_ack_duration_ms_sum{namespace=\"logiq\"}/logiq_ack_duration_ms_count{namespace=\"logiq\"})\u0026duration={{duration}}\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "poolName": {
+                        "mapTo": "poolName",
+                        "name": "poolName",
+                        "title": "",
+                        "type": "widget-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 5,
+                    "sizeX": 4,
+                    "sizeY": 11
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "action": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "get": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "new": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "put": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {
+                        "get": {},
+                        "new": {},
+                        "put": {}
+                    },
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": "Time"
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Operations count"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "Pool statistics",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "AttributeMap\nEvent\nLocalReceiverPartitionPG\nPTextMap\nPDataMap\nProtocolMessage",
+                                "global": false,
+                                "locals": [],
+                                "name": "poolName",
+                                "title": "poolName",
+                                "type": "enum",
+                                "value": "AttributeMap"
+                            },
+                            {
+                                "enumOptions": "15m\n30m\n1h\n3h\n6h\n8h\n1d\n2d\n3d\n5d\n1w\n2w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            }
+                        ]
+                    },
+                    "query": "sum by (action) (logiq_pool_usage_count{poolName=\"{{poolName}}\"})\u0026duration={{duration}}\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        }
+    ]
+}
