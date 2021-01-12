@@ -1,972 +1,819 @@
 {
     "dashboard": {
-        "name": "LOGIQ",
-        "tags": []
+        "name": "fluent-bit",
+        "tags": [
+            "fluent",
+            "logging",
+            "log"
+        ]
     },
     "datasources": {
         "1": {
-            "name": "LogiqMonitoring",
+            "name": "logiq",
             "options": {
-                "url": "http://prometheus-operated:9090"
+                "url": "http://localhost:9090"
             },
             "type": "logiq_prometheus"
         }
     },
-    "widgets":  [
+    "widgets": [
         {
-            "id": 1,
-            "width": 1,
             "options": {
+                "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "sizeX": 3,
-                    "sizeY": 5,
-                    "minSizeX": 1,
+                    "col": 0,
                     "maxSizeX": 6,
-                    "minSizeY": 5,
                     "maxSizeY": 1000,
-                    "row": 0,
-                    "col": 0
-                },
-                "parameterMappings": {}
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 4,
+                    "sizeX": 3,
+                    "sizeY": 5
+                }
             },
-            "dashboard_id": 1,
             "text": null,
-            "updated_at": "2021-01-12T13:55:52.487Z",
-            "created_at": "2021-01-12T12:24:41.284Z",
             "visualization": {
-                "id": 2,
-                "type": "CHART",
                 "name": "Input Bytes Processing Rate",
-                "description": "",
                 "options": {
-                    "globalSeriesType": "area",
-                    "sortX": true,
-                    "legend": {
-                        "enabled": true
+                    "columnMapping": {
+                        "instance": "unused",
+                        "name": "series",
+                        "timestamp": "x",
+                        "value": "y"
                     },
-                    "yAxis": [
-                        {
-                            "type": "linear",
-                            "title": {
-                                "text": "Bytes/sec"
-                            }
-                        },
-                        {
-                            "type": "linear",
-                            "opposite": true
-                        }
-                    ],
-                    "xAxis": {
-                        "type": "-",
-                        "labels": {
-                            "enabled": true
-                        }
-                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
                     "error_y": {
                         "type": "data",
                         "visible": true
                     },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
                     "series": {
-                        "stacking": "stack",
                         "error_y": {
                             "type": "data",
                             "visible": true
-                        }
+                        },
+                        "stacking": "stack"
                     },
                     "seriesOptions": {
                         "tail.0": {
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 0,
-                            "index": 0
+                            "zIndex": 0
                         },
                         "tail.1": {
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 1,
-                            "index": 0
+                            "zIndex": 1
                         },
                         "tail.2": {
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 2,
-                            "index": 0
+                            "zIndex": 2
                         },
                         "tail.3": {
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 3,
-                            "index": 0
+                            "zIndex": 3
                         }
                     },
-                    "valuesOptions": {},
-                    "columnMapping": {
-                        "timestamp": "x",
-                        "value": "y",
-                        "instance": "unused",
-                        "name": "series"
-                    },
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "textFormat": "",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
                     "showDataLabels": false,
-                    "dateTimeFormat": "DD/MM/YY HH:mm"
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Bytes/sec"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
                 },
-                "updated_at": "2021-01-12T16:23:31.099Z",
-                "created_at": "2021-01-12T12:23:54.682Z",
                 "query": {
-                    "id": 1,
-                    "latest_query_data_id": 262,
+                    "data_source_id": 1,
+                    "description": null,
                     "name": "Input Bytes Processing Rate",
-                    "description": null,
-                    "query": "query=sum(rate(fluentbit_input_bytes_total[5m])) by (instance, name)&duration=10m&step=15",
-                    "query_hash": "9b8c6d7df27a45145c9ab866befb0123",
-                    "schedule": {
-                        "interval": 600,
-                        "time": null,
-                        "day_of_week": null,
-                        "until": null
-                    },
-                    "api_key": "6QSlYt6XblEIDTSOfJiNsB1AFuvkNqP2iDnAA2BZ",
-                    "is_archived": false,
-                    "is_draft": false,
-                    "updated_at": "2021-01-12T16:23:32.377Z",
-                    "created_at": "2021-01-12T12:21:12.307Z",
-                    "data_source_id": 1,
                     "options": {
                         "parameters": []
                     },
-                    "version": 1,
-                    "tags": [],
-                    "is_safe": true,
-                    "user": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    },
-                    "last_modified_by": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    }
-                }
-            }
+                    "query": "query=sum(rate(fluentbit_input_bytes_total[5m])) by (instance, name)\u0026duration=10m\u0026step=15"
+                },
+                "type": "CHART"
+            },
+            "width": 1
         },
         {
-            "id": 2,
-            "width": 1,
             "options": {
+                "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "sizeX": 3,
-                    "sizeY": 5,
-                    "minSizeX": 1,
+                    "col": 3,
                     "maxSizeX": 6,
-                    "minSizeY": 5,
                     "maxSizeY": 1000,
-                    "row": 0,
-                    "col": 3
-                },
-                "parameterMappings": {}
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 4,
+                    "sizeX": 3,
+                    "sizeY": 5
+                }
             },
-            "dashboard_id": 1,
             "text": null,
-            "updated_at": "2021-01-12T13:55:52.585Z",
-            "created_at": "2021-01-12T12:26:34.481Z",
             "visualization": {
-                "id": 4,
-                "type": "CHART",
                 "name": "Chart",
-                "description": "",
                 "options": {
-                    "globalSeriesType": "area",
-                    "sortX": true,
-                    "legend": {
-                        "enabled": true
+                    "columnMapping": {
+                        "instance": "unused",
+                        "name": "series",
+                        "timestamp": "x",
+                        "value": "y"
                     },
-                    "yAxis": [
-                        {
-                            "type": "linear",
-                            "title": {
-                                "text": "Bytes/sec"
-                            }
-                        },
-                        {
-                            "type": "linear",
-                            "opposite": true
-                        }
-                    ],
-                    "xAxis": {
-                        "type": "-",
-                        "labels": {
-                            "enabled": true
-                        }
-                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
                     "error_y": {
                         "type": "data",
                         "visible": true
                     },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
                     "series": {
-                        "stacking": "stack",
                         "error_y": {
                             "type": "data",
                             "visible": true
-                        }
+                        },
+                        "stacking": "stack"
                     },
                     "seriesOptions": {
                         "forward.0": {
+                            "color": "#FB8D3D",
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 0,
-                            "index": 0,
-                            "color": "#FB8D3D"
+                            "zIndex": 0
                         }
                     },
-                    "valuesOptions": {},
-                    "columnMapping": {
-                        "timestamp": "x",
-                        "value": "y",
-                        "instance": "unused",
-                        "name": "series"
-                    },
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "textFormat": "",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
                     "showDataLabels": false,
-                    "dateTimeFormat": "DD/MM/YY HH:mm"
-                },
-                "updated_at": "2021-01-12T16:23:47.887Z",
-                "created_at": "2021-01-12T12:26:27.309Z",
-                "query": {
-                    "id": 2,
-                    "latest_query_data_id": 263,
-                    "name": "Output Bytes Processing Rate",
-                    "description": null,
-                    "query": "query=sum(rate(fluentbit_output_proc_bytes_total[5m])) by (instance, name)&duration=10m&step=10",
-                    "query_hash": "ddd823182e17f21fb34dd4fc3a66c39e",
-                    "schedule": {
-                        "interval": 600,
-                        "time": null,
-                        "day_of_week": null,
-                        "until": null
-                    },
-                    "api_key": "razcIA0EFkp8Iku6JKaJYhJDSQBbS2IJFA3zSXMJ",
-                    "is_archived": false,
-                    "is_draft": true,
-                    "updated_at": "2021-01-12T16:23:57.370Z",
-                    "created_at": "2021-01-12T12:26:04.177Z",
-                    "data_source_id": 1,
-                    "options": {
-                        "parameters": []
-                    },
-                    "version": 1,
-                    "tags": [],
-                    "is_safe": true,
-                    "user": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    },
-                    "last_modified_by": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    }
-                }
-            }
-        },
-        {
-            "id": 3,
-            "width": 1,
-            "options": {
-                "position": {
-                    "autoHeight": false,
-                    "sizeX": 3,
-                    "sizeY": 5,
-                    "minSizeX": 1,
-                    "maxSizeX": 6,
-                    "minSizeY": 5,
-                    "maxSizeY": 1000,
-                    "row": 5,
-                    "col": 0
-                },
-                "parameterMappings": {}
-            },
-            "dashboard_id": 1,
-            "text": null,
-            "updated_at": "2021-01-12T13:55:52.567Z",
-            "created_at": "2021-01-12T12:27:58.134Z",
-            "visualization": {
-                "id": 6,
-                "type": "CHART",
-                "name": "Chart",
-                "description": "",
-                "options": {
-                    "globalSeriesType": "area",
                     "sortX": true,
-                    "legend": {
-                        "enabled": true
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
                     },
                     "yAxis": [
                         {
-                            "type": "linear",
                             "title": {
-                                "text": "rps"
-                            }
+                                "text": "Bytes/sec"
+                            },
+                            "type": "linear"
                         },
                         {
-                            "type": "linear",
-                            "opposite": true
+                            "opposite": true,
+                            "type": "linear"
                         }
-                    ],
-                    "xAxis": {
-                        "type": "-",
-                        "labels": {
-                            "enabled": true
-                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "Output Bytes Processing Rate",
+                    "options": {
+                        "parameters": []
                     },
+                    "query": "query=sum(rate(fluentbit_output_proc_bytes_total[5m])) by (instance, name)\u0026duration=10m\u0026step=10"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 9,
+                    "sizeX": 3,
+                    "sizeY": 5
+                }
+            },
+            "text": null,
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "instance": "unused",
+                        "name": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
                     "error_y": {
                         "type": "data",
                         "visible": true
                     },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
                     "series": {
-                        "stacking": "stack",
                         "error_y": {
                             "type": "data",
                             "visible": true
-                        }
+                        },
+                        "stacking": "stack"
                     },
                     "seriesOptions": {
                         "tail.0": {
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 0,
-                            "index": 0
+                            "zIndex": 0
                         },
                         "tail.1": {
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 1,
-                            "index": 0
+                            "zIndex": 1
                         },
                         "tail.2": {
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 2,
-                            "index": 0
+                            "zIndex": 2
                         },
                         "tail.3": {
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 3,
-                            "index": 0
+                            "zIndex": 3
                         }
                     },
-                    "valuesOptions": {},
-                    "columnMapping": {
-                        "timestamp": "x",
-                        "value": "y",
-                        "instance": "unused",
-                        "name": "series"
-                    },
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "textFormat": "",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
                     "showDataLabels": false,
-                    "dateTimeFormat": "DD/MM/YY HH:mm"
-                },
-                "updated_at": "2021-01-12T16:22:56.840Z",
-                "created_at": "2021-01-12T12:27:42.334Z",
-                "query": {
-                    "id": 3,
-                    "latest_query_data_id": 264,
-                    "name": "Input Records Processing Rate",
-                    "description": null,
-                    "query": "query=sum(rate(fluentbit_input_records_total[5m])) by (instance, name)&duration=10m&step=10",
-                    "query_hash": "80c8302147750a84f60d210ecce6f525",
-                    "schedule": {
-                        "interval": 600,
-                        "time": null,
-                        "day_of_week": null,
-                        "until": null
-                    },
-                    "api_key": "ikHKrANgdow6LQoJZoSLu02B3P9M8qCx1DDOBRJ4",
-                    "is_archived": false,
-                    "is_draft": true,
-                    "updated_at": "2021-01-12T16:22:59.227Z",
-                    "created_at": "2021-01-12T12:27:34.828Z",
-                    "data_source_id": 1,
-                    "options": {
-                        "parameters": []
-                    },
-                    "version": 1,
-                    "tags": [],
-                    "is_safe": true,
-                    "user": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    },
-                    "last_modified_by": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    }
-                }
-            }
-        },
-        {
-            "id": 4,
-            "width": 1,
-            "options": {
-                "position": {
-                    "autoHeight": false,
-                    "sizeX": 3,
-                    "sizeY": 5,
-                    "minSizeX": 1,
-                    "maxSizeX": 6,
-                    "minSizeY": 5,
-                    "maxSizeY": 1000,
-                    "row": 5,
-                    "col": 3
-                },
-                "parameterMappings": {}
-            },
-            "dashboard_id": 1,
-            "text": null,
-            "updated_at": "2021-01-12T13:55:52.505Z",
-            "created_at": "2021-01-12T12:29:11.513Z",
-            "visualization": {
-                "id": 8,
-                "type": "CHART",
-                "name": "Chart",
-                "description": "",
-                "options": {
-                    "globalSeriesType": "area",
                     "sortX": true,
-                    "legend": {
-                        "enabled": true
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
                     },
                     "yAxis": [
                         {
-                            "type": "linear",
                             "title": {
                                 "text": "rps"
-                            }
+                            },
+                            "type": "linear"
                         },
                         {
-                            "type": "linear",
-                            "opposite": true
+                            "opposite": true,
+                            "type": "linear"
                         }
-                    ],
-                    "xAxis": {
-                        "type": "-",
-                        "labels": {
-                            "enabled": true
-                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "Input Records Processing Rate",
+                    "options": {
+                        "parameters": []
                     },
+                    "query": "query=sum(rate(fluentbit_input_records_total[5m])) by (instance, name)\u0026duration=10m\u0026step=10"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 9,
+                    "sizeX": 3,
+                    "sizeY": 5
+                }
+            },
+            "text": null,
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "instance": "unused",
+                        "name": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
                     "error_y": {
                         "type": "data",
                         "visible": true
                     },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
                     "series": {
-                        "stacking": "stack",
                         "error_y": {
                             "type": "data",
                             "visible": true
-                        }
+                        },
+                        "stacking": "stack"
                     },
                     "seriesOptions": {
                         "forward.0": {
+                            "color": "#00B6EB",
+                            "index": 0,
                             "type": "area",
                             "yAxis": 0,
-                            "zIndex": 0,
-                            "index": 0,
-                            "color": "#00B6EB"
+                            "zIndex": 0
                         }
                     },
-                    "valuesOptions": {},
-                    "columnMapping": {
-                        "timestamp": "x",
-                        "value": "y",
-                        "instance": "unused",
-                        "name": "series"
-                    },
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "textFormat": "",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
                     "showDataLabels": false,
-                    "dateTimeFormat": "DD/MM/YY HH:mm"
-                },
-                "updated_at": "2021-01-12T12:30:46.865Z",
-                "created_at": "2021-01-12T12:28:58.791Z",
-                "query": {
-                    "id": 4,
-                    "latest_query_data_id": 265,
-                    "name": "Output Record Processing Rate",
-                    "description": null,
-                    "query": "query=sum(rate(fluentbit_output_proc_records_total[5m])) by (instance, name)&duration=10m&step=15",
-                    "query_hash": "78ffea6c5b8e8e14a86b2ad9e276b95b",
-                    "schedule": {
-                        "interval": 600,
-                        "time": null,
-                        "day_of_week": null,
-                        "until": null
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
                     },
-                    "api_key": "jLUzjU8D0fxTxtG2qnCShRs8loWF9m9sq6vHjIPU",
-                    "is_archived": false,
-                    "is_draft": true,
-                    "updated_at": "2021-01-12T12:30:56.992Z",
-                    "created_at": "2021-01-12T12:28:45.751Z",
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "rps"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
                     "data_source_id": 1,
+                    "description": null,
+                    "name": "Output Record Processing Rate",
                     "options": {
                         "parameters": []
                     },
-                    "version": 1,
-                    "tags": [],
-                    "is_safe": true,
-                    "user": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    },
-                    "last_modified_by": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    }
-                }
-            }
+                    "query": "query=sum(rate(fluentbit_output_proc_records_total[5m])) by (instance, name)\u0026duration=10m\u0026step=15"
+                },
+                "type": "CHART"
+            },
+            "width": 1
         },
         {
-            "id": 5,
-            "width": 1,
             "options": {
+                "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "sizeX": 3,
-                    "sizeY": 5,
-                    "minSizeX": 1,
+                    "col": 3,
                     "maxSizeX": 6,
-                    "minSizeY": 5,
                     "maxSizeY": 1000,
-                    "row": 10,
-                    "col": 3
-                },
-                "parameterMappings": {}
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 14,
+                    "sizeX": 3,
+                    "sizeY": 5
+                }
             },
-            "dashboard_id": 1,
             "text": null,
-            "updated_at": "2021-01-12T13:55:52.548Z",
-            "created_at": "2021-01-12T12:32:39.974Z",
             "visualization": {
-                "id": 10,
-                "type": "CHART",
                 "name": "Chart",
-                "description": "",
                 "options": {
+                    "columnMapping": {
+                        "instance": "unused",
+                        "name": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
                     "globalSeriesType": "line",
-                    "sortX": true,
                     "legend": {
                         "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "forward.0": {
+                            "color": "#FB8D3D",
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
                     },
                     "yAxis": [
                         {
                             "type": "linear"
                         },
                         {
-                            "type": "linear",
-                            "opposite": true
+                            "opposite": true,
+                            "type": "linear"
                         }
-                    ],
-                    "xAxis": {
-                        "type": "-",
-                        "labels": {
-                            "enabled": true
-                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "Output Retry/Failed Rates",
+                    "options": {
+                        "parameters": []
                     },
+                    "query": "query=sum(rate(fluentbit_output_retries_total[1m])) by (instance, name)\u0026duration=10m\u0026step=15"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 14,
+                    "sizeX": 3,
+                    "sizeY": 5
+                }
+            },
+            "text": null,
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "instance": "unused",
+                        "name": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
                     "error_y": {
                         "type": "data",
                         "visible": true
                     },
-                    "series": {
-                        "stacking": "stack",
-                        "error_y": {
-                            "type": "data",
-                            "visible": true
-                        }
-                    },
-                    "seriesOptions": {
-                        "forward.0": {
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 0,
-                            "index": 0,
-                            "color": "#FB8D3D"
-                        }
-                    },
-                    "valuesOptions": {},
-                    "columnMapping": {
-                        "timestamp": "x",
-                        "value": "y",
-                        "instance": "unused",
-                        "name": "series"
-                    },
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "textFormat": "",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
-                    "showDataLabels": false,
-                    "dateTimeFormat": "DD/MM/YY HH:mm"
-                },
-                "updated_at": "2021-01-12T12:32:39.974Z",
-                "created_at": "2021-01-12T12:32:29.277Z",
-                "query": {
-                    "id": 5,
-                    "latest_query_data_id": 266,
-                    "name": "Output Retry/Failed Rates",
-                    "description": null,
-                    "query": "query=sum(rate(fluentbit_output_retries_total[1m])) by (instance, name)&duration=10m&step=15",
-                    "query_hash": "bc18c016cb0628b08c34f2875a6a7f4d",
-                    "schedule": {
-                        "interval": 600,
-                        "time": null,
-                        "day_of_week": null,
-                        "until": null
-                    },
-                    "api_key": "REh30JqTAeczirzkXUAmzbwEKpCsH0tmqxU5SYUU",
-                    "is_archived": false,
-                    "is_draft": true,
-                    "updated_at": "2021-01-12T13:48:57.440Z",
-                    "created_at": "2021-01-12T12:32:06.636Z",
-                    "data_source_id": 1,
-                    "options": {
-                        "parameters": []
-                    },
-                    "version": 1,
-                    "tags": [],
-                    "is_safe": true,
-                    "user": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    },
-                    "last_modified_by": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    }
-                }
-            }
-        },
-        {
-            "id": 6,
-            "width": 1,
-            "options": {
-                "position": {
-                    "autoHeight": false,
-                    "sizeX": 3,
-                    "sizeY": 5,
-                    "minSizeX": 1,
-                    "maxSizeX": 6,
-                    "minSizeY": 5,
-                    "maxSizeY": 1000,
-                    "row": 10,
-                    "col": 0
-                },
-                "parameterMappings": {}
-            },
-            "dashboard_id": 1,
-            "text": null,
-            "updated_at": "2021-01-12T13:55:52.526Z",
-            "created_at": "2021-01-12T13:50:21.094Z",
-            "visualization": {
-                "id": 12,
-                "type": "CHART",
-                "name": "Chart",
-                "description": "",
-                "options": {
                     "globalSeriesType": "line",
-                    "sortX": true,
                     "legend": {
                         "enabled": true
                     },
-                    "yAxis": [
-                        {
-                            "type": "linear",
-                            "title": {
-                                "text": "Errors/seconds"
-                            }
-                        },
-                        {
-                            "type": "linear",
-                            "opposite": true
-                        }
-                    ],
-                    "xAxis": {
-                        "type": "-",
-                        "labels": {
-                            "enabled": true
-                        }
-                    },
-                    "error_y": {
-                        "type": "data",
-                        "visible": true
-                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
                     "series": {
-                        "stacking": "stack",
                         "error_y": {
                             "type": "data",
                             "visible": true
-                        }
+                        },
+                        "stacking": "stack"
                     },
                     "seriesOptions": {
                         "forward.0": {
+                            "color": "#C63FA9",
+                            "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 0,
-                            "index": 0,
-                            "color": "#C63FA9"
+                            "zIndex": 0
                         }
                     },
-                    "valuesOptions": {},
-                    "columnMapping": {
-                        "timestamp": "x",
-                        "value": "y",
-                        "instance": "unused",
-                        "name": "series"
-                    },
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "textFormat": "",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
                     "showDataLabels": false,
-                    "dateTimeFormat": "DD/MM/YY HH:mm"
-                },
-                "updated_at": "2021-01-12T13:53:41.751Z",
-                "created_at": "2021-01-12T13:50:07.166Z",
-                "query": {
-                    "id": 6,
-                    "latest_query_data_id": 267,
-                    "name": "Output Error Rate",
-                    "description": null,
-                    "query": "query=sum(rate(fluentbit_output_errors_total[1m])) by (instance, name)&duration=10m&step=10",
-                    "query_hash": "e7c48b8ce7456afb09f5ccb3fc3bc946",
-                    "schedule": {
-                        "interval": 600,
-                        "time": null,
-                        "day_of_week": null,
-                        "until": null
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
                     },
-                    "api_key": "Kx23evOgyK5s0SMkSeXQeAtGIaUIwPEzIvS9M98J",
-                    "is_archived": false,
-                    "is_draft": true,
-                    "updated_at": "2021-01-12T13:51:05.549Z",
-                    "created_at": "2021-01-12T13:49:54.763Z",
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Errors/seconds"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
                     "data_source_id": 1,
+                    "description": null,
+                    "name": "Output Error Rate",
                     "options": {
                         "parameters": []
                     },
-                    "version": 1,
-                    "tags": [],
-                    "is_safe": true,
-                    "user": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    },
-                    "last_modified_by": {
-                        "id": 1,
-                        "name": "Sumit",
-                        "email": "sumit@example.com",
-                        "profile_image_url": "https://www.gravatar.com/avatar/b'5a702ecfc222db65a3e381d3e3373a97'?s=40&d=identicon",
-                        "groups": [
-                            1,
-                            2
-                        ],
-                        "updated_at": "2021-01-12T17:00:28.131Z",
-                        "created_at": "2021-01-09T14:37:09.243Z",
-                        "disabled_at": null,
-                        "is_disabled": false,
-                        "active_at": "2021-01-12T16:59:30Z",
-                        "is_invitation_pending": false,
-                        "is_email_verified": true,
-                        "auth_type": "password"
-                    }
+                    "query": "query=sum(rate(fluentbit_output_errors_total[1m])) by (instance, name)\u0026duration=10m\u0026step=10"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 6,
+                    "sizeY": 4
                 }
-            }
+            },
+            "text": null,
+            "visualization": {
+                "name": "Table",
+                "options": {
+                    "autoHeight": true,
+                    "columns": [
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "dateTimeFormat": "DD/MM/YY HH:mm",
+                            "displayAs": "datetime",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "timestamp",
+                            "order": 100000,
+                            "title": "timestamp",
+                            "type": "datetime",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "value",
+                            "order": 100001,
+                            "title": "value",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "__name__",
+                            "order": 100002,
+                            "title": "__name__",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "edition",
+                            "order": 100003,
+                            "title": "edition",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "instance",
+                            "order": 100004,
+                            "title": "instance",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "job",
+                            "order": 100005,
+                            "title": "job",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "version",
+                            "order": 100006,
+                            "title": "version",
+                            "type": "string",
+                            "visible": true
+                        }
+                    ],
+                    "defaultColumns": 3,
+                    "defaultRows": 14,
+                    "itemsPerPage": 25,
+                    "minColumns": 2
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": null,
+                    "name": "Fluent Bit Version",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "fluentbit_build_info"
+                },
+                "type": "TABLE"
+            },
+            "width": 1
         }
     ]
 }
