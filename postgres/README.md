@@ -15,7 +15,12 @@
 
 ```
 logiqctl create dashboard -f postgres.json
+logiqctl create dashboard -f postgress_general_stats.json
+logiqctl create dashboard -f postgress_database_stats.json
 ```
 
 ## Screenshot
 ![image info](./postgres.png)
+![image info](./pg_general_stats.png)
+![image info](./pg_database_stats-1.png)
+![image info](./pg_database_stats-2.png)

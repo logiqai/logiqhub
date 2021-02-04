@@ -1,0 +1,2197 @@
+{
+    "dashboard": {
+        "name": "PG Database Stats",
+        "tags": []
+    },
+    "datasources": {
+        "4": {
+            "name": "LogiqPrometheus",
+            "options": {
+                "url": "http://prometheus-operated:9090"
+            },
+            "type": "logiq_prometheus"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Avg Cpu process",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "query=avg(rate(process_cpu_seconds_total{pod=\"postgres-0\"}[5m]))\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "widget-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 8,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datname": "series",
+                        "endpoint": "unused",
+                        "null": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "percentValues": false,
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "coffee": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "flash": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "postgres": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "template0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "template1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Activity",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_activity_count[5m])\u0026duration={{ duration }}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datid": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "13407": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "13408": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "16384": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "16385": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Connected Clients",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "1d"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_database_numbackends[5m])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 8,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datname": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "coffee": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "flash": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "postgres": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "template0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "template1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Idle Sessions",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_activity_count{state=~\"idle|idle in transaction|idle in transaction (aborted)\"}[5m])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 16,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Open FIle Descriptors",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "avg(rate(process_open_fds{pod=\"postgres-0\"}[5m]))\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "widget-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 16,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datid": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "13407": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "13408": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "16384": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "16385": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Fetched",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "query=rate(pg_stat_database_tup_fetched[5m])\u0026duration={{ duration }}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 48,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datid": "series",
+                        "datname": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "13407": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "13408": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "16384": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "16385": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Temp Files (Bytes)",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_database_temp_bytes[5m])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "widget-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 24,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datid": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "13407": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "13408": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "16384": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "16385": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Inserted",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_database_tup_inserted[5m])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 48,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "metricname": "series",
+                        "namespace": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "pg_stat_bgwriter_checkpoint_sync_time": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "pg_stat_bgwriter_checkpoint_write_time": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Checkpont Stats",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(label_replace({__name__=~\"pg_stat_bgwriter_.*_write_time|pg_stat_bgwriter_.*_sync_time\"},\"metricname\", \"$1\", \"__name__\", \"(.*)\")[5m:])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 56,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "metricname": "series",
+                        "namespace": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "pg_stat_bgwriter_buffers_alloc": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "pg_stat_bgwriter_buffers_backend": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "pg_stat_bgwriter_buffers_backend_fsync": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "pg_stat_bgwriter_buffers_checkpoint": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "pg_stat_bgwriter_buffers_clean": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Buffers(bgwriter)",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(label_replace({__name__=~\"pg_stat_bgwriter_buffers_.*\"},\"metricname\",\"$1\",\"__name__\",\"(.*)\")[5m:])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 32,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datid": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "13407": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "13408": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "16384": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "16385": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Transactions Commited",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_database_xact_commit[5m])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "widget-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 24,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datid": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "13407": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "13408": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "16384": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "16385": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Updated",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_database_tup_updated[5m])\u0026duration={{ duration }}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 40,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datid": "unused",
+                        "job": "unused",
+                        "metricname": "series",
+                        "namespace": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "pg_stat_database_conflicts": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "pg_stat_database_deadlocks": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Conflicts \u0026 Deadlocks",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "query=rate(label_replace({__name__=~\"pg_.*conflicts|pg_.*_deadlocks\"}, \"metricname\", \"$1\", \"__name__\", \"(.*)\")[5m:])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "widget-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 32,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "__name__": "unused",
+                        "datid": "series",
+                        "instance": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "13407": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "13408": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "16384": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "16385": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Deleted",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_database_tup_deleted[5m])\u0026duration={{ duration }}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "step": {
+                        "mapTo": "step",
+                        "name": "step",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 40,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "datid": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "13407": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "13408": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "16384": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "16385": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PG-Transactions Rolled Back ",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "30m\n1h\n2h\n4h\n6h\n12h\n1d\n2d\n3d",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "6h"
+                            },
+                            {
+                                "enumOptions": "60s\n5m\n10m\n20m\n30m\n1h\n3h\n6h",
+                                "global": false,
+                                "locals": [],
+                                "name": "step",
+                                "title": "step",
+                                "type": "enum",
+                                "value": "5m"
+                            }
+                        ]
+                    },
+                    "query": "rate(pg_stat_database_xact_rollback[5m])\u0026duration={{duration}}\u0026step={{step}}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        }
+    ]
+}
