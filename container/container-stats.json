@@ -1,0 +1,2898 @@
+{
+    "dashboard": {
+        "name": "Container Stats",
+        "tags": []
+    },
+    "datasources": {
+        "4": {
+            "name": "LogiqPrometheus",
+            "options": {
+                "url": "http://prometheus-operated:9090"
+            },
+            "type": "logiq_prometheus"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 72,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "event-exporter-gke-666b7ffbf7-mpw6n": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "fluent-bit-79sbp": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "fluent-bit-d8g44": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "fluent-bit-t2sd2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "fluentbit-gke-6f8m9": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "fluentbit-gke-d7fj6": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "fluentbit-gke-wt7n7": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "gke-metrics-agent-67d64": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "gke-metrics-agent-dxk2c": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "gke-metrics-agent-r4j79": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "konnectivity-agent-89ppm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "konnectivity-agent-l2jxt": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "konnectivity-agent-z44w2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "kube-dns-9c59558bb-c5hhv": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "kube-dns-9c59558bb-nrgrj": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "kube-dns-autoscaler-5c78d65cd9-zq9rn": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "kube-proxy-gke-demo-default-pool-066f9e1e-g762": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "kube-proxy-gke-demo-default-pool-066f9e1e-mv8c": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "kube-proxy-gke-demo-default-pool-066f9e1e-r2h5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "l7-default-backend-5b76b455d-zfjvf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 28
+                        },
+                        "logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 29
+                        },
+                        "logiq-flash-sync-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 30
+                        },
+                        "logiq-grafana-6fd6c4958b-gr7pb": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 31
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 32
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 33
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 34
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 35
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-sddsw": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 36
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 37
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 38
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 39
+                        },
+                        "logiq-node-exporter-b54j2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 40
+                        },
+                        "logiq-node-exporter-h6zf8": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 41
+                        },
+                        "logiq-node-exporter-hqp59": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 42
+                        },
+                        "logiq-prometheus-operator-7d978886f-lzhtm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 43
+                        },
+                        "metrics-server-v0.3.6-547dc87f5f-w9f9p": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 44
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 45
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 46
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 47
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 48
+                        },
+                        "prometheus-to-sd-5hf7j": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 49
+                        },
+                        "prometheus-to-sd-6hcdr": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 50
+                        },
+                        "prometheus-to-sd-ztpk8": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 51
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 52
+                        },
+                        "stackdriver-metadata-agent-cluster-level-65f6d9fd66-x5frq": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 53
+                        },
+                        "value": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container CPU Total Time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(container_cpu_usage_seconds_total{container!~\"POD\",namespace=\"logiq\"}[5m])\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 32,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "id": "unused",
+                        "instance": "unused",
+                        "interface": "unused",
+                        "node": "series",
+                        "service": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "percentValues": false,
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "gke-demo-default-pool-066f9e1e-g762": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "gke-demo-default-pool-066f9e1e-mv8c": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "gke-demo-default-pool-066f9e1e-r2h5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "KiBytes"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container n/w Transmit",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "#floor(sum (rate (container_network_transmit_bytes_total[5m])))\n#Per node\n\nround(rate(container_network_transmit_bytes_total{container!~\"POD\"}[5m])/1024,0.1)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 40,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "id": "unused",
+                        "interface": "unused",
+                        "node": "series",
+                        "null": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "gke-demo-default-pool-066f9e1e-g762": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "gke-demo-default-pool-066f9e1e-mv8c": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "gke-demo-default-pool-066f9e1e-r2h5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "MiBytes"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container n/w Receive ",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(rate(container_network_receive_bytes_total{container!~\"POD\"}[5m])/1024,0.1)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 48,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "node": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "l7-default-backend-5b76b455d-zfjvf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "metrics-server-v0.3.6-547dc87f5f-w9f9p": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "stackdriver-metadata-agent-cluster-level-65f6d9fd66-x5frq": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container CPU Throttled Duration(Sec)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(container_cpu_cfs_throttled_seconds_total[5m])\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 56,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "namespace": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "l7-default-backend-5b76b455d-zfjvf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "metrics-server-v0.3.6-547dc87f5f-w9f9p": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "stackdriver-metadata-agent-cluster-level-65f6d9fd66-x5frq": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container CPU Throttling periods",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(container_cpu_cfs_periods_total[5m])\u0026duration=2h\u0026step=5m\n"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 16,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "container": "series",
+                        "pod": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "autoscaler": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "config-reloader": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "default-http-backend": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "dnsmasq": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "event-exporter": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "flash-discovery": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "fluent-bit": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "fluentbit": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "fluentbit-gke": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "gke-metrics-agent": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "grafana": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "konnectivity-agent": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "kube-proxy": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "kube-state-metrics": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "kubedns": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "kubernetes-ingress-default-backend": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "logiq-flash": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-flash-ml": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-flash-sync": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "logiq-kubernetes-ingress": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "metadata-agent": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "metadata-agent-nanny": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "metrics": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "metrics-server": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        },
+                        "metrics-server-nanny": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 28
+                        },
+                        "node-exporter": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 29
+                        },
+                        "postgres": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 30
+                        },
+                        "prometheus": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 31
+                        },
+                        "prometheus-config-reloader": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 32
+                        },
+                        "prometheus-to-sd": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 33
+                        },
+                        "prometheus-to-sd-exporter": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 34
+                        },
+                        "redis": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 35
+                        },
+                        "rules-configmap-reloader": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 36
+                        },
+                        "sidecar": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 37
+                        },
+                        "value": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container Memory Failures-pgmajfault",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(container_memory_failures_total{container!~\"POD\",failure_type=\"pgmajfault\",namespace=\"logiq\"}[5m])\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 24,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "endpoint": "unused",
+                        "id": "unused",
+                        "job": "unused",
+                        "node": "unused",
+                        "pod": "series",
+                        "service": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-sync-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-grafana-6fd6c4958b-gr7pb": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-sddsw": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "logiq-node-exporter-b54j2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "logiq-node-exporter-h6zf8": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-node-exporter-hqp59": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-prometheus-operator-7d978886f-lzhtm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "MiB"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container Max Memory Usage ",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(rate(container_memory_max_usage_bytes{container !=\"POD\",namespace=\"logiq\"}[5m])/1024,0.1)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 64,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-sync-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-grafana-6fd6c4958b-gr7pb": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-8n75j": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "logiq-node-exporter-b54j2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "logiq-node-exporter-h6zf8": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-node-exporter-hqp59": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-prometheus-operator-7d978886f-lzhtm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container CPU User Time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(rate(container_cpu_user_seconds_total{container!~\"POD\",namespace=\"logiq\"}[5m]))by(pod)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 88,
+                    "sizeX": 4,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-sync-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-grafana-6fd6c4958b-gr7pb": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-sddsw": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "logiq-node-exporter-b54j2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "logiq-node-exporter-h6zf8": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-node-exporter-hqp59": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-prometheus-operator-7d978886f-lzhtm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container Memory Limit Hits",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(container_memory_failcnt{container!~\"POD\",namespace=\"logiq\"}[5m])\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 8,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "container": "series",
+                        "failure_type": "unused",
+                        "node": "unused",
+                        "null": "unused",
+                        "pod": "unused",
+                        "scope": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "percentValues": false,
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "coffee": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "coffee-worker": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "config-reloader": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "flash-discovery": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "grafana": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "kube-state-metrics": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "kubernetes-ingress-default-backend": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-ml": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-flash-sync": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "logiq-kubernetes-ingress": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "metrics": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "node-exporter": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "postgres": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "prometheus": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "prometheus-config-reloader": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "redis": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "rules-configmap-reloader": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "value": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container Memory Failure-pgfault",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(container_memory_failures_total{container!~\"POD\",failure_type=\"pgfault\",namespace=\"logiq\"}[5m])\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 80,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "persistentvolumeclaim": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "percentValues": false,
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "data-flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "data-logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "data-logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "data-logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "data-postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "logiq-grafana": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "prometheus-logiq-prometheus-prometheus-db-prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "name": "prometheus-2",
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "prometheus-logiq-prometheus-prometheus-db-prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "name": "prometheus-2",
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "prometheus-logiq-prometheus-prometheus-db-prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "name": "prometheus-1",
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "rangeMax": 100,
+                            "title": {
+                                "text": "PVC Usage in Percentage"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "rangeMax": null,
+                            "title": {
+                                "text": "PVC Name"
+                            },
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "PVC Usage In Percentage",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "(100 * (sum by (persistentvolumeclaim) (kubelet_volume_stats_used_bytes{persistentvolumeclaim!~\"alert.*\"}) / sum by (persistentvolumeclaim) (kubelet_volume_stats_capacity_bytes{persistentvolumeclaim!~\"alert.*\"})))\u0026duration=7d\u0026step=1h"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "name": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-sync-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-grafana-6fd6c4958b-gr7pb": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-sddsw": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "logiq-node-exporter-b54j2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "logiq-node-exporter-h6zf8": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-node-exporter-hqp59": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-prometheus-operator-7d978886f-lzhtm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container Working Memory Set",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(rate(container_memory_working_set_bytes{container!~\"POD\",namespace=\"logiq\"}[5m])/1024/1024,0.1)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 64,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-sync-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-grafana-6fd6c4958b-gr7pb": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-8n75j": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "logiq-node-exporter-b54j2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "logiq-node-exporter-h6zf8": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-node-exporter-hqp59": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-prometheus-operator-7d978886f-lzhtm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Container CPU System Time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(rate(container_cpu_system_seconds_total{container!~\"POD\",namespace=\"logiq\"}[5m]))by(pod)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        }
+    ]
+}
