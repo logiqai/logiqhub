@@ -16,8 +16,14 @@
 
 ```
 logiqctl create dashboard -f redis-cluster-monitoring.json
+logiqctl create dashboard -f Redis-General-Settings.json
+logiqctl create dashboard -f Redis-Database-Status.json
 ```
 
 ## Screenshot
 ![image info](./redis-dash-0.png)
 ![image info](./redis-dash-1.png)
+![image info](./redis-general-1.png)
+![image info](./redis-general-2.png)
+![image info](./redis-database-1.png)
+![image info](./redis-database-2.png)
