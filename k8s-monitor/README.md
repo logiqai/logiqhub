@@ -26,8 +26,7 @@ logiqctl create dashboard -f node.json
 
 ![image info](./apiserver-0.png)
 ![image info](./apiserver-1.png)
-![image info](./cluster-0.png)
-![image info](./cluster-1.png)
+![image info](./cluster.png)
 ![image info](./container-0.png)
 ![image info](./container-1.png)
 ![image info](./kube-cluster.png)
