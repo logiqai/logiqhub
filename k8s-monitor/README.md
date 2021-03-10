@@ -14,7 +14,7 @@
 * Run logiqctl to import the dashboard json
 
 ```
-logiqctl create dashboard -f apiserver.json
+logiqctl create dashboard -f api-server.json
 logiqctl create dashboard -f cluster.json
 logiqctl create dashboard -f container.json
 logiqctl create dashboard -f kube-cluster.json
@@ -23,17 +23,6 @@ logiqctl create dashboard -f node.json
 
 
 ## Screenshot
-* All the screenshots are arranged in following manner
-...
-apiserver-0.png
-apiserver-1.png
-cluster-0.png
-cluster-1.png
-container-0.png
-container-1.png
-kube-cluster.png
-node.png
-...
 
 ![image info](./apiserver-0.png)
 ![image info](./apiserver-1.png)
