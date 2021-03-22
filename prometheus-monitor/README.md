@@ -6,7 +6,7 @@
 ## Configuration
 
 * Edit for ex: alert-manager.json and edit the *"datasources"* section with your prometheus endpoint
-* Edit the namespaces you want to monitor - defaults to container-stats
+* Edit the namespaces you want to monitor - defaults to alert-manager
 
 ## Steps to import
 
