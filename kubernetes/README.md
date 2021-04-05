@@ -21,7 +21,6 @@ logiqctl create dashboard -f kube-cluster.json
 logiqctl create dashboard -f node.json
 ```
 
-
 ## Screenshot
 
 ![image info](./apiserver-0.png)
