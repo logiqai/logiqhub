@@ -1,0 +1,1188 @@
+{
+    "dashboard": {
+        "name": "Redis cluster monitoring",
+        "tags": []
+    },
+    "datasources": {
+        "3": {
+            "name": "Monitoring",
+            "options": {
+                "url": "http://prometheus-prometheus:9090"
+            },
+            "type": "prometheus"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "namespace": {
+                        "mapTo": "namespace",
+                        "name": "namespace",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 8,
+                    "sizeX": 2,
+                    "sizeY": 9
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "instance": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "percentValues": false,
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "redis-app-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "redis-app-slave-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "redis-app-slave-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "redis-app-slave-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "redis-app-slave-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": "Time"
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Kib/sec"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Network out bytes/sec",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "redis\nredis-2",
+                                "global": false,
+                                "locals": [],
+                                "name": "namespace",
+                                "title": "namespace",
+                                "type": "enum",
+                                "value": "redis"
+                            },
+                            {
+                                "enumOptions": "15m\n30m\n1h\n2h\n6h\n12h\n24h\n1w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "1h"
+                            }
+                        ]
+                    },
+                    "query": "query=round(irate(redis_net_output_bytes_total{namespace=\"{{namespace}}\"}[10m])/1000,0.01)\u0026duration={{duration}}\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "namespace": {
+                        "mapTo": "namespace",
+                        "name": "namespace",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "instance": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "percentValues": false,
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "redis-app-master-0": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "redis-app-slave-0": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "redis-app-slave-1": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "redis-app-slave-2": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "redis-app-slave-3": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": "Time"
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Mib"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Redis memory usage",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "redis\nredis-2",
+                                "global": false,
+                                "locals": [],
+                                "name": "namespace",
+                                "title": "namespace",
+                                "type": "enum",
+                                "value": "redis"
+                            },
+                            {
+                                "enumOptions": "15m\n30m\n1h\n2h\n6h\n12h\n24h\n1w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "1h"
+                            }
+                        ]
+                    },
+                    "query": "query=round(redis_memory_used_bytes{namespace=\"{{namespace}}\"}/1000000,0.01)\u0026duration={{duration}}\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "namespace": {
+                        "mapTo": "namespace",
+                        "name": "namespace",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 8,
+                    "sizeX": 2,
+                    "sizeY": 9
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cmd": "series",
+                        "namespace": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "column",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "auth": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "client": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "config": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "info": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "latency": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "ping": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "psync": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "replconf": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "slowlog": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": "Time"
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "microsecs"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Average command duration",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "redis\nredis-2",
+                                "global": false,
+                                "locals": [],
+                                "name": "namespace",
+                                "title": "namespace",
+                                "type": "enum",
+                                "value": "redis"
+                            },
+                            {
+                                "enumOptions": "15m\n30m\n1h\n2h\n6h\n12h\n24h\n1w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "1h"
+                            }
+                        ]
+                    },
+                    "query": "query=round(avg((redis_commands_duration_seconds_total{namespace=\"{{namespace}}\"}/redis_commands_total{namespace=\"{{namespace}}\"})*1000000) by (cmd,namespace),0.01)\u0026duration={{duration}}\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "duration": {
+                        "mapTo": "duration",
+                        "name": "duration",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    },
+                    "namespace": {
+                        "mapTo": "namespace",
+                        "name": "namespace",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "instance": "unused",
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "percentValues": false,
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "redis-app-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "redis-app-slave-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "redis-app-slave-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "redis-app-slave-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "redis-app-slave-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": "Time"
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Kib/sec"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Network in bytes/sec",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "redis\nredis-2",
+                                "global": false,
+                                "locals": [],
+                                "name": "namespace",
+                                "title": "namespace",
+                                "type": "enum",
+                                "value": "redis"
+                            },
+                            {
+                                "enumOptions": "15m\n30m\n1h\n2h\n6h\n12h\n24h\n1w",
+                                "global": false,
+                                "locals": [],
+                                "name": "duration",
+                                "title": "duration",
+                                "type": "enum",
+                                "value": "1h"
+                            }
+                        ]
+                    },
+                    "query": "query=round(irate(redis_net_input_bytes_total{namespace=\"{{namespace}}\"}[10m])/1000,0.01)\u0026duration={{duration}}\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "namespace": {
+                        "mapTo": "namespace",
+                        "name": "namespace",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 8,
+                    "sizeX": 2,
+                    "sizeY": 9
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Table",
+                "options": {
+                    "autoHeight": true,
+                    "columns": [
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "dateTimeFormat": "DD/MM/YY HH:mm",
+                            "displayAs": "datetime",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "timestamp",
+                            "order": 100000,
+                            "title": "timestamp",
+                            "type": "datetime",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "value",
+                            "order": 100001,
+                            "title": "Connections",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "endpoint",
+                            "order": 100002,
+                            "title": "endpoint",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "service",
+                            "order": 100003,
+                            "title": "service",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "namespace",
+                            "order": 100004,
+                            "title": "namespace",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "instance",
+                            "order": 100005,
+                            "title": "instance",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "job",
+                            "order": 100006,
+                            "title": "job",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "__name__",
+                            "order": 100007,
+                            "title": "__name__",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "pod",
+                            "order": 100008,
+                            "title": "Pod",
+                            "type": "string",
+                            "visible": true
+                        }
+                    ],
+                    "defaultColumns": 3,
+                    "defaultRows": 14,
+                    "itemsPerPage": 25,
+                    "minColumns": 2
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Redis clients",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "redis\nredis-2",
+                                "global": false,
+                                "locals": [],
+                                "name": "namespace",
+                                "title": "namespace",
+                                "type": "enum",
+                                "value": "redis"
+                            }
+                        ]
+                    },
+                    "query": "query=redis_connected_clients{namespace=\"{{namespace}}\"}"
+                },
+                "type": "TABLE"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {
+                    "namespace": {
+                        "mapTo": "namespace",
+                        "name": "namespace",
+                        "title": "",
+                        "type": "dashboard-level",
+                        "value": null
+                    }
+                },
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Table",
+                "options": {
+                    "autoHeight": true,
+                    "columns": [
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "dateTimeFormat": "DD/MM/YY HH:mm",
+                            "displayAs": "datetime",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "timestamp",
+                            "order": 100000,
+                            "title": "timestamp",
+                            "type": "datetime",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "value",
+                            "order": 100001,
+                            "title": "Uptime (hrs)",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "endpoint",
+                            "order": 100002,
+                            "title": "endpoint",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "service",
+                            "order": 100003,
+                            "title": "service",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "namespace",
+                            "order": 100004,
+                            "title": "namespace",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "instance",
+                            "order": 100005,
+                            "title": "instance",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "job",
+                            "order": 100006,
+                            "title": "job",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "pod",
+                            "order": 100007,
+                            "title": "Pod",
+                            "type": "string",
+                            "visible": true
+                        }
+                    ],
+                    "defaultColumns": 3,
+                    "defaultRows": 14,
+                    "itemsPerPage": 25,
+                    "minColumns": 2
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Redis uptime",
+                    "options": {
+                        "parameters": [
+                            {
+                                "enumOptions": "redis\nredis-2",
+                                "global": false,
+                                "locals": [],
+                                "name": "namespace",
+                                "title": "namespace",
+                                "type": "enum",
+                                "value": "redis"
+                            }
+                        ]
+                    },
+                    "query": "query=round(redis_uptime_in_seconds{namespace=\"{{namespace}}\"}/3600,0.01)"
+                },
+                "type": "TABLE"
+            },
+            "width": 1
+        }
+    ]
+}
