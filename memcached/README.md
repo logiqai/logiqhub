@@ -20,3 +20,4 @@ logiqctl create dashboard -f memcached.json
 ## Screenshot
 ![image info](./memcached-0.png)
 ![image info](./memcached-1.png)
+
