@@ -15,7 +15,6 @@
 
 ```
 logiqctl create dashboard -f mongodb.json
-
 ```
 
 ## Screenshot
