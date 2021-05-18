@@ -1,0 +1,1029 @@
+{
+    "dashboard": {
+        "name": "MemCached",
+        "tags": []
+    },
+    "datasources": {
+        "4": {
+            "name": "LogiqPrometheus",
+            "options": {
+                "url": "http://prometheus-operated:9090"
+            },
+            "type": "logiq_prometheus"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 5,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "counterColName": "value",
+                    "counterLabel": "Bytes",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Memory allocated to slab pages",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "memcached_malloced_bytes"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 18,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "instance": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]0",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "10.32.4.21:9150": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "No.of bytes sent to network",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(rate(memcached_written_bytes_total[5m]),0.01)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "counterColName": "value",
+                    "counterLabel": " ",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Max Connections",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "memcached_max_connections"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "counterColName": "version",
+                    "counterLabel": " ",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "MemCached Version",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "memcached_version"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "counterColName": "value",
+                    "counterLabel": "Days",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Up Time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "floor(memcached_uptime_seconds/86400)"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 5,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "counterColName": "value",
+                    "counterLabel": "Items",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Total No.of Items stored",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "memcached_items_total"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 26,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "name": "Reclaims",
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Total Reclaims",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(memcached_items_reclaimed_total)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 10,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "command": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "name": "Connections",
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Current Connections",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(memcached_current_connections)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 34,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "command": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "cas": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "decr": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "delete": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "flush": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "get": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "incr": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "set": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "touch": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "MemCache Total Commands",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "memcached_commands_total\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 18,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "instance": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "10.32.4.21:9150": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "No.of bytes read from network",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(memcached_read_bytes_total[5m])\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 5,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "counterColName": "value",
+                    "counterLabel": "MiB",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Storage allocated for memcache",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "memcached_limit_bytes/(1024^2)"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 34,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]0",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "% of storage used",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "(sum(memcached_current_bytes) / sum(memcached_limit_bytes))*100\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 26,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "name": "Evictions",
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "Total no.of Evictions",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(memcached_items_evicted_total)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 10,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]0",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "name": "Connections",
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 4,
+                    "description": null,
+                    "name": "No.of connections opened",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(rate(memcached_connections_total[5m]),0.01)\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        }
+    ]
+}
