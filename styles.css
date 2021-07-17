@@ -1,0 +1,16 @@
+.banner {
+    background-color: #e92062;
+    font-size: 4rem;
+    color: #FFFFFF;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    color: #e92062 !important;
+    background-color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+}
