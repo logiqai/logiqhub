@@ -1,5 +1,5 @@
 .banner {
-    background-color: #e92062;
+    background-color: #0F1C2A;
     font-size: 4rem;
     color: #FFFFFF;
     padding-top: 6rem;
@@ -10,7 +10,7 @@
 }
 
 .btn-primary:hover {
-    color: #e92062 !important;
+    color: #3E64FF !important;
     background-color: #FFFFFF !important;
     border-color: #FFFFFF !important;
 }
