@@ -9,7 +9,9 @@
     <title>LOGIQHub by LOGIQ.ai</title>
     <link rel="icon" href="media/favicon.png">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css" type="text/css">
     <!-- Bootstrap core CSS -->
@@ -38,7 +40,7 @@
   <body>
     
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e92062;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3E64FF; font-family: 'Nunito', sans-serif;">
     <div class="container-fluid">
       <a class="navbar-brand" href="https://logiq.ai/"><img src="media/logiq-white.png" style="width: 9rem;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,11 +105,11 @@
 </header>
 <main>
   <div class="col-md-12" style="padding: 0">
-    <div class="banner bg-dark">
-        <p class="banner-text">LOGIQHub</p>
+    <div class="banner" style="font-family: 'Nunito', sans-serif;">
+        <p class="banner-text" style="font-weight: bolder;">LOGIQHub</p>
         <p style="font-size: 1.25rem;" class="ml-1">Get up and running with LOGIQ quickly using pre-built dashboards for popular applications and infrastructure services.</p>
         <p>
-          <a href="https://github.com/logiqai/logiqhub" target="_blank" class="btn btn-primary my-2" style="color: white; background-color: #e92062; border-color: #e92062;">Download now</a>
+          <a href="https://github.com/logiqai/logiqhub" target="_blank" class="btn btn-primary my-2" style="color: white; background-color: #3E64FF; border-color: #3E64FF;">Download now</a>
         </p>
     </div>
 </div>
@@ -123,14 +125,14 @@
     </div>
   </section>-->
 
-  <div class="album py-5">
+  <div class="album py-5" style="font-family: 'Nunito', sans-serif;">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/fluent-bit.png" width="50%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">Fluent Bit</h5>
+              <h5 class="card-title" style="font-weight: bolder;">Fluent Bit</h5>
               <p class="card-text">Monitor and observe your Fluent Bit cluster<br><br><br></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -144,7 +146,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/kafka_highres.png" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">Kafka</h5>
+              <h5 class="card-title" style="font-weight: bolder;">Kafka</h5>
               <p class="card-text">Monitor consumer lag and other important Kafka cluster metrics in an instant<br><br></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -158,7 +160,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/kubernetes.png" width="419.33" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">Kubernetes</h5>
+              <h5 class="card-title" style="font-weight: bolder;">Kubernetes</h5>
               <p class="card-text">Monitor container, ApiServer, pods, and node-level metrics and stats using the LOGIQ Prometheus connector</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -173,7 +175,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/logiq.png" width="50%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">LOGIQ</h5>
+              <h5 class="card-title" style="font-weight: bolder;">LOGIQ</h5>
               <p class="card-text">A single dashboard to monitor your LOGIQ cluster<br><br></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -187,7 +189,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/memcached.png" width="50%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">Memcached</h5>
+              <h5 class="card-title" style="font-weight: bolder;">Memcached</h5>
               <p class="card-text">Monitor your Memcached in-memory data store via the LOGIQ Prometheus connector</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -201,7 +203,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/mongodb.png" width="50%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">MongoDB</h5>
+              <h5 class="card-title" style="font-weight: bolder;">MongoDB</h5>
               <p class="card-text">Monitor all key usage and operational metrics for your MongoDB instance</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -216,7 +218,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/mysql.png" width="50%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">MySQL</h5>
+              <h5 class="card-title" style="font-weight: bolder;">MySQL</h5>
               <p class="card-text">Gather health, usage, and performance metrics for MySQL.<br><br></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -230,7 +232,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/postgresql.png" width="50%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">PostgreSQL</h5>
+              <h5 class="card-title" style="font-weight: bolder;">PostgreSQL</h5>
               <p class="card-text">Visualize and collate essential metrics from your PostgreSQL database in a single dashboard.<br><br></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -244,7 +246,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/prometheus.png" width="50%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">Prometheus</h5>
+              <h5 class="card-title" style="font-weight: bolder;">Prometheus</h5>
               <p class="card-text">A single dashboard to monitor Prometheus and AlertManager metrics ingested using the LOGIQ Prometheus connector.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -258,7 +260,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="media/redis.png" width="50%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
             <div class="card-body" style="border-top: solid">
-              <h5 class="card-title">Redis</h5>
+              <h5 class="card-title" style="font-weight: bolder;">Redis</h5>
               <p class="card-text">A dashboard to monitor one or more Redis clusters with logs and metrics ingested via the LOGIQ Prometheus connector. Includes a dropdown selector to switch between Redis instances running on different namespaces.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -274,7 +276,7 @@
 
 </main>
 
-<footer class="text-muted py-5">
+<footer class="text-muted py-5" style="font-family: 'Nunito', sans-serif;">
   <div class="container">
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
@@ -283,7 +285,6 @@
     <p class="mb-0">Not using LOGIQ yet? Install the free-forever <a href="https://docs.logiq.ai/" target="_blank">LOGIQ PaaS Community Edition</a>.</p>
   </div>
 </footer>
-
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
