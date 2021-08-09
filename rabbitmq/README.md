@@ -5,7 +5,7 @@
 
 ## Configuration
 
-* Edit for ex: alert-manager.json and edit the *"datasources"* section with your prometheus endpoint
+* Edit for ex: rabbitmq.json and edit the *"datasources"* section with your prometheus endpoint
 * Edit the namespaces you want to monitor - defaults to rabbitmq
 
 ## Steps to import
