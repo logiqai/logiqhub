@@ -1,10 +1,10 @@
 {
     "dashboard": {
-        "name": "Container Stats",
+        "name": "Container",
         "tags": []
     },
     "datasources": {
-        "4": {
+        "10": {
             "name": "LogiqPrometheus",
             "options": {
                 "url": "http://prometheus-operated:9090"
@@ -24,8 +24,8 @@
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 72,
-                    "sizeX": 6,
+                    "row": 40,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -59,332 +59,176 @@
                             "type": "data",
                             "visible": true
                         },
-                        "stacking": "stack"
+                        "stacking": null
                     },
                     "seriesOptions": {
                         "alertmanager-logiq-prometheus-alertmanager-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 1
+                            "zIndex": 0
                         },
                         "alertmanager-logiq-prometheus-alertmanager-1": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 2
+                            "zIndex": 1
                         },
                         "alertmanager-logiq-prometheus-alertmanager-2": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 3
+                            "zIndex": 2
                         },
                         "coffee-server-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 4
+                            "zIndex": 3
                         },
                         "coffee-worker-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 5
+                            "zIndex": 4
                         },
-                        "event-exporter-gke-666b7ffbf7-mpw6n": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 6
-                        },
-                        "flash-discovery-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 7
-                        },
-                        "fluent-bit-79sbp": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 8
-                        },
-                        "fluent-bit-d8g44": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 9
-                        },
-                        "fluent-bit-t2sd2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 10
-                        },
-                        "fluentbit-gke-6f8m9": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 11
-                        },
-                        "fluentbit-gke-d7fj6": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 12
-                        },
-                        "fluentbit-gke-wt7n7": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 13
-                        },
-                        "gke-metrics-agent-67d64": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 14
-                        },
-                        "gke-metrics-agent-dxk2c": {
+                        "coffee-worker-1": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 15
                         },
-                        "gke-metrics-agent-r4j79": {
+                        "coffee-worker-2": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 16
                         },
-                        "konnectivity-agent-89ppm": {
+                        "coffee-worker-3": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 17
                         },
-                        "konnectivity-agent-l2jxt": {
+                        "coffee-worker-4": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 18
                         },
-                        "konnectivity-agent-z44w2": {
+                        "coffee-worker-5": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 19
                         },
-                        "kube-dns-9c59558bb-c5hhv": {
+                        "flash-discovery-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 20
-                        },
-                        "kube-dns-9c59558bb-nrgrj": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 21
-                        },
-                        "kube-dns-autoscaler-5c78d65cd9-zq9rn": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 22
-                        },
-                        "kube-proxy-gke-demo-default-pool-066f9e1e-g762": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 23
-                        },
-                        "kube-proxy-gke-demo-default-pool-066f9e1e-mv8c": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 24
-                        },
-                        "kube-proxy-gke-demo-default-pool-066f9e1e-r2h5": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 25
-                        },
-                        "l7-default-backend-5b76b455d-zfjvf": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 26
+                            "zIndex": 5
                         },
                         "logiq-flash-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 27
+                            "zIndex": 6
                         },
                         "logiq-flash-1": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 28
+                            "zIndex": 7
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
                         },
                         "logiq-flash-ml-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 29
+                            "zIndex": 8
+                        },
+                        "logiq-flash-ml-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
                         },
                         "logiq-flash-sync-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 30
+                            "zIndex": 9
                         },
-                        "logiq-grafana-6fd6c4958b-gr7pb": {
+                        "logiq-kube-state-metrics-5bc4c76648-5ck67": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 31
+                            "zIndex": 23
                         },
-                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
+                        "logiq-kube-state-metrics-5bc4c76648-h4qpp": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 32
+                            "zIndex": 24
                         },
-                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
+                        "logiq-kubernetes-ingress-6f9c5675b9-h5h7l": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 33
+                            "zIndex": 25
                         },
-                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
+                        "logiq-kubernetes-ingress-default-backend-67c9ddc6f5-qc7cm": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 34
+                            "zIndex": 26
                         },
-                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
+                        "logiq-prometheus-operator-5945c48cf6-rpfqx": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 35
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-sddsw": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 36
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 37
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 38
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 39
-                        },
-                        "logiq-node-exporter-b54j2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 40
-                        },
-                        "logiq-node-exporter-h6zf8": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 41
-                        },
-                        "logiq-node-exporter-hqp59": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 42
-                        },
-                        "logiq-prometheus-operator-7d978886f-lzhtm": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 43
-                        },
-                        "metrics-server-v0.3.6-547dc87f5f-w9f9p": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 44
+                            "zIndex": 27
                         },
                         "postgres-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 45
+                            "zIndex": 10
                         },
                         "prometheus-logiq-prometheus-prometheus-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 46
+                            "zIndex": 11
                         },
                         "prometheus-logiq-prometheus-prometheus-1": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 47
+                            "zIndex": 12
                         },
                         "prometheus-logiq-prometheus-prometheus-2": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 48
-                        },
-                        "prometheus-to-sd-5hf7j": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 49
-                        },
-                        "prometheus-to-sd-6hcdr": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 50
-                        },
-                        "prometheus-to-sd-ztpk8": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 51
+                            "zIndex": 13
                         },
                         "redis-master-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 52
-                        },
-                        "stackdriver-metadata-agent-cluster-level-65f6d9fd66-x5frq": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 53
-                        },
-                        "value": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 0
+                            "zIndex": 14
                         }
                     },
                     "showDataLabels": false,
@@ -408,7 +252,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container CPU Total Time",
                     "options": {
@@ -431,8 +275,8 @@
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 32,
-                    "sizeX": 6,
+                    "row": 16,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -471,22 +315,22 @@
                             "visible": true
                         },
                         "percentValues": false,
-                        "stacking": "stack"
+                        "stacking": null
                     },
                     "seriesOptions": {
-                        "gke-demo-default-pool-066f9e1e-g762": {
+                        "ip-172-31-82-183.ec2.internal": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 0
                         },
-                        "gke-demo-default-pool-066f9e1e-mv8c": {
+                        "ip-172-31-84-4.ec2.internal": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 1
                         },
-                        "gke-demo-default-pool-066f9e1e-r2h5": {
+                        "ip-172-31-89-215.ec2.internal": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
@@ -517,7 +361,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container n/w Transmit",
                     "options": {
@@ -535,13 +379,13 @@
                 "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "col": 0,
+                    "col": 3,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 40,
-                    "sizeX": 6,
+                    "row": 16,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -553,7 +397,6 @@
                         "id": "unused",
                         "interface": "unused",
                         "node": "series",
-                        "null": "unused",
                         "timestamp": "x",
                         "value": "y"
                     },
@@ -578,22 +421,22 @@
                             "type": "data",
                             "visible": true
                         },
-                        "stacking": "stack"
+                        "stacking": null
                     },
                     "seriesOptions": {
-                        "gke-demo-default-pool-066f9e1e-g762": {
+                        "ip-172-31-82-183.ec2.internal": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 0
                         },
-                        "gke-demo-default-pool-066f9e1e-mv8c": {
+                        "ip-172-31-84-4.ec2.internal": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 1
                         },
-                        "gke-demo-default-pool-066f9e1e-r2h5": {
+                        "ip-172-31-89-215.ec2.internal": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
@@ -624,7 +467,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container n/w Receive ",
                     "options": {
@@ -647,7 +490,7 @@
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 48,
+                    "row": 24,
                     "sizeX": 6,
                     "sizeY": 8
                 }
@@ -683,7 +526,7 @@
                             "type": "data",
                             "visible": true
                         },
-                        "stacking": "stack"
+                        "stacking": null
                     },
                     "seriesOptions": {
                         "alertmanager-logiq-prometheus-alertmanager-0": {
@@ -716,53 +559,77 @@
                             "yAxis": 0,
                             "zIndex": 4
                         },
-                        "l7-default-backend-5b76b455d-zfjvf": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 5
-                        },
-                        "logiq-flash-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 6
-                        },
-                        "logiq-flash-1": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 7
-                        },
-                        "metrics-server-v0.3.6-547dc87f5f-w9f9p": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 8
-                        },
-                        "prometheus-logiq-prometheus-prometheus-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 9
-                        },
-                        "prometheus-logiq-prometheus-prometheus-1": {
+                        "coffee-worker-1": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 10
                         },
-                        "prometheus-logiq-prometheus-prometheus-2": {
+                        "coffee-worker-2": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 11
                         },
-                        "stackdriver-metadata-agent-cluster-level-65f6d9fd66-x5frq": {
+                        "coffee-worker-3": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 12
+                        },
+                        "coffee-worker-4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "coffee-worker-5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
                         }
                     },
                     "showDataLabels": false,
@@ -786,7 +653,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container CPU Throttled Duration(Sec)",
                     "options": {
@@ -804,13 +671,13 @@
                 "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "col": 0,
+                    "col": 3,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 56,
-                    "sizeX": 6,
+                    "row": 24,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -845,7 +712,7 @@
                             "type": "data",
                             "visible": true
                         },
-                        "stacking": "stack"
+                        "stacking": null
                     },
                     "seriesOptions": {
                         "alertmanager-logiq-prometheus-alertmanager-0": {
@@ -878,53 +745,77 @@
                             "yAxis": 0,
                             "zIndex": 4
                         },
-                        "l7-default-backend-5b76b455d-zfjvf": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 5
-                        },
-                        "logiq-flash-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 6
-                        },
-                        "logiq-flash-1": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 7
-                        },
-                        "metrics-server-v0.3.6-547dc87f5f-w9f9p": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 8
-                        },
-                        "prometheus-logiq-prometheus-prometheus-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 9
-                        },
-                        "prometheus-logiq-prometheus-prometheus-1": {
+                        "coffee-worker-1": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 10
                         },
-                        "prometheus-logiq-prometheus-prometheus-2": {
+                        "coffee-worker-2": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 11
                         },
-                        "stackdriver-metadata-agent-cluster-level-65f6d9fd66-x5frq": {
+                        "coffee-worker-3": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 12
+                        },
+                        "coffee-worker-4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "coffee-worker-5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
                         }
                     },
                     "showDataLabels": false,
@@ -948,7 +839,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container CPU Throttling periods",
                     "options": {
@@ -971,8 +862,8 @@
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 16,
-                    "sizeX": 6,
+                    "row": 8,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -1260,7 +1151,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container Memory Failures-pgmajfault",
                     "options": {
@@ -1278,13 +1169,13 @@
                 "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "col": 0,
+                    "col": 3,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 24,
-                    "sizeX": 6,
+                    "row": 8,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -1323,7 +1214,7 @@
                             "type": "data",
                             "visible": true
                         },
-                        "stacking": "stack"
+                        "stacking": null
                     },
                     "seriesOptions": {
                         "alertmanager-logiq-prometheus-alertmanager-0": {
@@ -1356,6 +1247,36 @@
                             "yAxis": 0,
                             "zIndex": 4
                         },
+                        "coffee-worker-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "coffee-worker-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "coffee-worker-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "coffee-worker-4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "coffee-worker-5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
                         "flash-discovery-0": {
                             "index": 0,
                             "type": "line",
@@ -1374,11 +1295,29 @@
                             "yAxis": 0,
                             "zIndex": 7
                         },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
                         "logiq-flash-ml-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 8
+                        },
+                        "logiq-flash-ml-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
                         },
                         "logiq-flash-sync-0": {
                             "index": 0,
@@ -1386,113 +1325,65 @@
                             "yAxis": 0,
                             "zIndex": 9
                         },
-                        "logiq-grafana-6fd6c4958b-gr7pb": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 10
-                        },
-                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 11
-                        },
-                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 12
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 13
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 14
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-sddsw": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 15
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 16
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 17
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 18
-                        },
-                        "logiq-node-exporter-b54j2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 19
-                        },
-                        "logiq-node-exporter-h6zf8": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 20
-                        },
-                        "logiq-node-exporter-hqp59": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 21
-                        },
-                        "logiq-prometheus-operator-7d978886f-lzhtm": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 22
-                        },
-                        "postgres-0": {
+                        "logiq-kube-state-metrics-5bc4c76648-5ck67": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 23
                         },
-                        "prometheus-logiq-prometheus-prometheus-0": {
+                        "logiq-kube-state-metrics-5bc4c76648-h4qpp": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 24
                         },
-                        "prometheus-logiq-prometheus-prometheus-1": {
+                        "logiq-kubernetes-ingress-6f9c5675b9-h5h7l": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 25
                         },
-                        "prometheus-logiq-prometheus-prometheus-2": {
+                        "logiq-kubernetes-ingress-default-backend-67c9ddc6f5-qc7cm": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 26
                         },
-                        "redis-master-0": {
+                        "logiq-prometheus-operator-5945c48cf6-rpfqx": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 27
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
                         }
                     },
                     "showDataLabels": false,
@@ -1519,7 +1410,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container Max Memory Usage ",
                     "options": {
@@ -1542,7 +1433,7 @@
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 64,
+                    "row": 48,
                     "sizeX": 3,
                     "sizeY": 8
                 }
@@ -1658,257 +1549,6 @@
                             "yAxis": 0,
                             "zIndex": 12
                         },
-                        "logiq-kubernetes-ingress-7489f47cc4-8n75j": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 13
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 14
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 15
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 16
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 17
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 18
-                        },
-                        "logiq-node-exporter-b54j2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 19
-                        },
-                        "logiq-node-exporter-h6zf8": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 20
-                        },
-                        "logiq-node-exporter-hqp59": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 21
-                        },
-                        "logiq-prometheus-operator-7d978886f-lzhtm": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 22
-                        },
-                        "postgres-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 23
-                        },
-                        "prometheus-logiq-prometheus-prometheus-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 24
-                        },
-                        "prometheus-logiq-prometheus-prometheus-1": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 25
-                        },
-                        "prometheus-logiq-prometheus-prometheus-2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 26
-                        },
-                        "redis-master-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 27
-                        }
-                    },
-                    "showDataLabels": false,
-                    "sortX": true,
-                    "textFormat": "",
-                    "valuesOptions": {},
-                    "xAxis": {
-                        "labels": {
-                            "enabled": true
-                        },
-                        "type": "-"
-                    },
-                    "yAxis": [
-                        {
-                            "type": "linear"
-                        },
-                        {
-                            "opposite": true,
-                            "type": "linear"
-                        }
-                    ]
-                },
-                "query": {
-                    "data_source_id": 4,
-                    "description": null,
-                    "name": "Container CPU User Time",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "sum(rate(container_cpu_user_seconds_total{container!~\"POD\",namespace=\"logiq\"}[5m]))by(pod)\u0026duration=2h\u0026step=5m"
-                },
-                "type": "CHART"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 0,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 1,
-                    "minSizeY": 5,
-                    "row": 88,
-                    "sizeX": 4,
-                    "sizeY": 8
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Chart",
-                "options": {
-                    "columnMapping": {
-                        "pod": "series",
-                        "timestamp": "x",
-                        "value": "y"
-                    },
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
-                    "dateTimeFormat": "DD/MM/YY HH:mm",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "error_y": {
-                        "type": "data",
-                        "visible": true
-                    },
-                    "globalSeriesType": "line",
-                    "legend": {
-                        "enabled": true
-                    },
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "series": {
-                        "error_y": {
-                            "type": "data",
-                            "visible": true
-                        },
-                        "stacking": "stack"
-                    },
-                    "seriesOptions": {
-                        "alertmanager-logiq-prometheus-alertmanager-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 0
-                        },
-                        "alertmanager-logiq-prometheus-alertmanager-1": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 1
-                        },
-                        "alertmanager-logiq-prometheus-alertmanager-2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 2
-                        },
-                        "coffee-server-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 3
-                        },
-                        "coffee-worker-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 4
-                        },
-                        "flash-discovery-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 5
-                        },
-                        "logiq-flash-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 6
-                        },
-                        "logiq-flash-1": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 7
-                        },
-                        "logiq-flash-ml-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 8
-                        },
-                        "logiq-flash-sync-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 9
-                        },
-                        "logiq-grafana-6fd6c4958b-gr7pb": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 10
-                        },
-                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 11
-                        },
-                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 12
-                        },
                         "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
                             "index": 0,
                             "type": "line",
@@ -2021,7 +1661,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container Memory Limit Hits",
                     "options": {
@@ -2039,13 +1679,13 @@
                 "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "col": 0,
+                    "col": 3,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 8,
-                    "sizeX": 6,
+                    "row": 0,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -2057,7 +1697,6 @@
                         "container": "series",
                         "failure_type": "unused",
                         "node": "unused",
-                        "null": "unused",
                         "pod": "unused",
                         "scope": "unused",
                         "timestamp": "x",
@@ -2085,7 +1724,7 @@
                             "visible": true
                         },
                         "percentValues": false,
-                        "stacking": "stack"
+                        "stacking": null
                     },
                     "seriesOptions": {
                         "alertmanager": {
@@ -2118,95 +1757,83 @@
                             "yAxis": 0,
                             "zIndex": 4
                         },
-                        "grafana": {
+                        "kube-state-metrics": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 5
                         },
-                        "kube-state-metrics": {
+                        "kubernetes-ingress-default-backend": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 6
                         },
-                        "kubernetes-ingress-default-backend": {
+                        "logiq-flash": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 7
                         },
-                        "logiq-flash": {
+                        "logiq-flash-ml": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 8
                         },
-                        "logiq-flash-ml": {
+                        "logiq-flash-sync": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 9
                         },
-                        "logiq-flash-sync": {
+                        "logiq-kubernetes-ingress": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 10
                         },
-                        "logiq-kubernetes-ingress": {
+                        "metrics": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 11
                         },
-                        "metrics": {
+                        "postgres": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 12
                         },
-                        "node-exporter": {
+                        "prometheus": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 13
                         },
-                        "postgres": {
+                        "prometheus-config-reloader": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 14
                         },
-                        "prometheus": {
+                        "redis": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 15
                         },
-                        "prometheus-config-reloader": {
+                        "rules-configmap-reloader": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 16
                         },
-                        "redis": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 17
-                        },
-                        "rules-configmap-reloader": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 18
-                        },
                         "value": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 19
+                            "zIndex": 17
                         }
                     },
                     "showDataLabels": false,
@@ -2230,7 +1857,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container Memory Failure-pgfault",
                     "options": {
@@ -2248,13 +1875,515 @@
                 "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 32,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "coffee-worker-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "coffee-worker-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "coffee-worker-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "coffee-worker-4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "coffee-worker-5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-ml-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "logiq-flash-sync-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-kube-state-metrics-5bc4c76648-5ck67": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "logiq-kube-state-metrics-5bc4c76648-h4qpp": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "logiq-kubernetes-ingress-6f9c5675b9-h5h7l": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "logiq-kubernetes-ingress-default-backend-67c9ddc6f5-qc7cm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "logiq-prometheus-operator-5945c48cf6-rpfqx": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 10,
+                    "description": null,
+                    "name": "Container CPU System Time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(rate(container_cpu_system_seconds_total{container!~\"POD\",namespace=\"logiq\"}[5m]))by(pod)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
                     "col": 0,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
-                    "row": 80,
-                    "sizeX": 6,
+                    "row": 32,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "alertmanager-logiq-prometheus-alertmanager-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "alertmanager-logiq-prometheus-alertmanager-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "coffee-server-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "coffee-worker-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "coffee-worker-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "coffee-worker-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "coffee-worker-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "coffee-worker-4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "coffee-worker-5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "flash-discovery-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-flash-ml-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-ml-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "logiq-flash-sync-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-kube-state-metrics-5bc4c76648-5ck67": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "logiq-kube-state-metrics-5bc4c76648-h4qpp": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "logiq-kubernetes-ingress-6f9c5675b9-h5h7l": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "logiq-kubernetes-ingress-default-backend-67c9ddc6f5-qc7cm": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "logiq-prometheus-operator-5945c48cf6-rpfqx": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        },
+                        "postgres-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "prometheus-logiq-prometheus-prometheus-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "prometheus-logiq-prometheus-prometheus-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "prometheus-logiq-prometheus-prometheus-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "redis-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 10,
+                    "description": null,
+                    "name": "Container CPU User Time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(rate(container_cpu_user_seconds_total{container!~\"POD\",namespace=\"logiq\"}[5m]))by(pod)\u0026duration=2h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 40,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -2310,11 +2439,53 @@
                             "yAxis": 0,
                             "zIndex": 2
                         },
+                        "data-logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "data-logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
                         "data-logiq-flash-ml-0": {
                             "index": 0,
                             "type": "line",
                             "yAxis": 0,
                             "zIndex": 3
+                        },
+                        "data-logiq-flash-ml-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "data-my-release-elasticsearch-data-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "data-my-release-elasticsearch-data-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "data-my-release-elasticsearch-master-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "data-my-release-elasticsearch-master-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
                         },
                         "data-postgres-0": {
                             "index": 0,
@@ -2322,32 +2493,26 @@
                             "yAxis": 0,
                             "zIndex": 4
                         },
-                        "logiq-grafana": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 5
-                        },
                         "prometheus-logiq-prometheus-prometheus-db-prometheus-logiq-prometheus-prometheus-0": {
                             "index": 0,
                             "name": "prometheus-2",
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 6
+                            "zIndex": 5
                         },
                         "prometheus-logiq-prometheus-prometheus-db-prometheus-logiq-prometheus-prometheus-1": {
                             "index": 0,
                             "name": "prometheus-2",
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 7
+                            "zIndex": 6
                         },
                         "prometheus-logiq-prometheus-prometheus-db-prometheus-logiq-prometheus-prometheus-2": {
                             "index": 0,
                             "name": "prometheus-1",
                             "type": "line",
                             "yAxis": 0,
-                            "zIndex": 8
+                            "zIndex": 7
                         }
                     },
                     "showDataLabels": false,
@@ -2379,7 +2544,7 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "PVC Usage In Percentage",
                     "options": {
@@ -2403,7 +2568,7 @@
                     "minSizeX": 1,
                     "minSizeY": 5,
                     "row": 0,
-                    "sizeX": 6,
+                    "sizeX": 3,
                     "sizeY": 8
                 }
             },
@@ -2631,264 +2796,13 @@
                     ]
                 },
                 "query": {
-                    "data_source_id": 4,
+                    "data_source_id": 10,
                     "description": null,
                     "name": "Container Working Memory Set",
                     "options": {
                         "parameters": []
                     },
                     "query": "round(rate(container_memory_working_set_bytes{container!~\"POD\",namespace=\"logiq\"}[5m])/1024/1024,0.1)\u0026duration=2h\u0026step=5m"
-                },
-                "type": "CHART"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 3,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 1,
-                    "minSizeY": 5,
-                    "row": 64,
-                    "sizeX": 3,
-                    "sizeY": 8
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Chart",
-                "options": {
-                    "columnMapping": {
-                        "pod": "series",
-                        "timestamp": "x",
-                        "value": "y"
-                    },
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
-                    "dateTimeFormat": "DD/MM/YY HH:mm",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "error_y": {
-                        "type": "data",
-                        "visible": true
-                    },
-                    "globalSeriesType": "line",
-                    "legend": {
-                        "enabled": true
-                    },
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "series": {
-                        "error_y": {
-                            "type": "data",
-                            "visible": true
-                        },
-                        "stacking": "stack"
-                    },
-                    "seriesOptions": {
-                        "alertmanager-logiq-prometheus-alertmanager-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 0
-                        },
-                        "alertmanager-logiq-prometheus-alertmanager-1": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 1
-                        },
-                        "alertmanager-logiq-prometheus-alertmanager-2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 2
-                        },
-                        "coffee-server-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 3
-                        },
-                        "coffee-worker-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 4
-                        },
-                        "flash-discovery-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 5
-                        },
-                        "logiq-flash-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 6
-                        },
-                        "logiq-flash-1": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 7
-                        },
-                        "logiq-flash-ml-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 8
-                        },
-                        "logiq-flash-sync-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 9
-                        },
-                        "logiq-grafana-6fd6c4958b-gr7pb": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 10
-                        },
-                        "logiq-kube-state-metrics-8544b9b47d-s26rz": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 11
-                        },
-                        "logiq-kube-state-metrics-8544b9b47d-ztdqg": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 12
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-8n75j": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 13
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-m6h24": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 14
-                        },
-                        "logiq-kubernetes-ingress-7489f47cc4-qmrhf": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 15
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-9znqz": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 16
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-dm5dn": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 17
-                        },
-                        "logiq-kubernetes-ingress-default-backend-598855f7bb-f77r4": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 18
-                        },
-                        "logiq-node-exporter-b54j2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 19
-                        },
-                        "logiq-node-exporter-h6zf8": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 20
-                        },
-                        "logiq-node-exporter-hqp59": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 21
-                        },
-                        "logiq-prometheus-operator-7d978886f-lzhtm": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 22
-                        },
-                        "postgres-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 23
-                        },
-                        "prometheus-logiq-prometheus-prometheus-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 24
-                        },
-                        "prometheus-logiq-prometheus-prometheus-1": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 25
-                        },
-                        "prometheus-logiq-prometheus-prometheus-2": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 26
-                        },
-                        "redis-master-0": {
-                            "index": 0,
-                            "type": "line",
-                            "yAxis": 0,
-                            "zIndex": 27
-                        }
-                    },
-                    "showDataLabels": false,
-                    "sortX": true,
-                    "textFormat": "",
-                    "valuesOptions": {},
-                    "xAxis": {
-                        "labels": {
-                            "enabled": true
-                        },
-                        "type": "-"
-                    },
-                    "yAxis": [
-                        {
-                            "type": "linear"
-                        },
-                        {
-                            "opposite": true,
-                            "type": "linear"
-                        }
-                    ]
-                },
-                "query": {
-                    "data_source_id": 4,
-                    "description": null,
-                    "name": "Container CPU System Time",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "sum(rate(container_cpu_system_seconds_total{container!~\"POD\",namespace=\"logiq\"}[5m]))by(pod)\u0026duration=2h\u0026step=5m"
                 },
                 "type": "CHART"
             },
