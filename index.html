@@ -49,13 +49,10 @@
     }
 
     /* Add padding BETWEEN each column */
-    .row,
-    .row>.column {
-      padding: 8px;
-    }
+
     .column {
             float: left;
-            width: 33.33%;
+            width: 20%;
             display: none;
             /* Hide all elements by default */
         }
@@ -211,7 +208,7 @@
     </nav>
   </header>
   <main>
-    <div class="col-md-12" style="padding: 0">
+    <div class="col-md-12 col-xs col-sm" style="padding: 0">
       <div class="banner" style="font-family: 'Nunito', sans-serif;">
         <p class="banner-text" style="font-weight: bolder;">Integrations</p>
         <p style="font-size: 1.25rem;" class="ml-1">Connect LogFlow to virtually any data source and
@@ -221,7 +218,7 @@
     <div class="album py-5" style="font-family: 'Nunito', sans-serif;">
       <div class="container">
         <div id="myBtnContainer" style="padding: 2rem">
-          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+          <!--<button class="btn active" onclick="filterSelection('all')"> Show all</button>-->
           <button class="btn" onclick="filterSelection('agents')"> Agents</button>
           <button class="btn" onclick="filterSelection('analytics')"> Analytics</button>
           <!--<button class="btn" onclick="filterSelection('applications')"> Applications</button>-->
@@ -247,7 +244,7 @@
           <div class="column agents">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/logstash.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/logstash.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -259,7 +256,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/kubernetes.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/kubernetes.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -271,7 +268,7 @@
           <div class="column agents">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/fluent-bit.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/fluent-bit.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -284,7 +281,7 @@
           <div class="column agents">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/fluentd.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/fluentd.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -296,7 +293,7 @@
           <div class="column protocol">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -308,7 +305,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/aws-cloudwatch.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/aws-cloudwatch.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -321,7 +318,7 @@
           <div class="column firewall">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/paloalto.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/paloalto.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -333,7 +330,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/azure.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/azure.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -345,7 +342,7 @@
           <div class="column observability">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/prometheus.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/prometheus.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -358,7 +355,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/docker.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/docker.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -370,7 +367,7 @@
           <div class="column observability analytics security">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -382,7 +379,7 @@
           <div class="column security">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/arcsight.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/arcsight.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -395,7 +392,7 @@
           <div class="column db">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/mongodb.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/mongodb.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -407,7 +404,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/elastic.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/elastic.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -419,7 +416,7 @@
           <div class="column db">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/redis.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/redis.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -432,7 +429,7 @@
           <div class="column eventing protocol">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/kafka_highres.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/kafka_highres.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -444,7 +441,7 @@
           <div class="column analytics">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/databricks.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/databricks.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -456,7 +453,7 @@
           <div class="column security">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/qradar.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/qradar.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -469,7 +466,7 @@
           <div class="column observability">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/datadog.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/datadog.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -482,7 +479,7 @@
           <div class="column observability">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/newrelic.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/newrelic.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -494,7 +491,7 @@
           <div class="column observability security">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/dynatrace.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/dynatrace.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -506,7 +503,7 @@
           <div class="column observability analytics">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/logiq.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/logiq.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -518,7 +515,7 @@
           <div class="column storage">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/azure-blob.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/azure-blob.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -530,7 +527,7 @@
           <div class="column storage">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/aws-s3.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/aws-s3.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -542,7 +539,7 @@
           <div class="column storage">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/gcs.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/gcs.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -554,7 +551,7 @@
           <div class="column storage">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/wasabi.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/wasabi.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -566,7 +563,7 @@
           <div class="column storage">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/minio.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/minio.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -578,7 +575,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/aws.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/aws.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -590,7 +587,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/digital-ocean.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/digital-ocean.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -602,7 +599,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/gcp.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/gcp.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -614,7 +611,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/vmware.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/vmware.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -626,7 +623,7 @@
           <div class="column cloud">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/microsoft-azure.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/microsoft-azure.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -638,7 +635,7 @@
           <div class="column db">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/memcached.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/memcached.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -650,7 +647,7 @@
           <div class="column db">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/mysql.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/mysql.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -662,7 +659,7 @@
           <div class="column db">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/postgresql.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/postgresql.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -674,7 +671,7 @@
           <div class="column eventing">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -686,7 +683,7 @@
           <div class="column firewall">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/fortinet.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/fortinet.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -698,7 +695,7 @@
           <div class="column firewall">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/sophos.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/sophos.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -710,7 +707,7 @@
           <div class="column firewall">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/barracuda.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/barracuda.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -722,7 +719,7 @@
           <div class="column os">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/macos.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/macos.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -734,7 +731,7 @@
           <div class="column os">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/windows.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/windows.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -746,7 +743,7 @@
           <div class="column os">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/linux.png" width="50%" height="225" role="img"
+                <img class="bd-placeholder-img card-img-top" src="media/linux.png" width="50%" height="auto" role="img"
                   aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -758,7 +755,7 @@
           <div class="column os">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/ubuntu.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/ubuntu.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -770,7 +767,7 @@
           <div class="column os">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/opensuse.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/opensuse.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -782,7 +779,7 @@
           <div class="column os">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/fedora.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/fedora.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -794,7 +791,7 @@
           <div class="column itsm">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/servicenow.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/servicenow.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -806,7 +803,7 @@
           <div class="column itsm">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/pagerduty.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/pagerduty.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -818,7 +815,7 @@
           <div class="column itsm">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/solarwinds.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/solarwinds.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -830,7 +827,7 @@
           <div class="column itsm">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/jira-service.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/jira-service.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -842,7 +839,7 @@
           <div class="column itsm">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/zendesk.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/zendesk.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -854,7 +851,7 @@
           <div class="column itsm">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/opsgenie.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/opsgenie.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -866,7 +863,7 @@
           <div class="column itsm">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/rundeck.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/rundeck.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -878,7 +875,7 @@
           <div class="column itsm">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/xmatters.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/xmatters.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -890,7 +887,7 @@
           <div class="column comms">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/slack.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/slack.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -902,7 +899,7 @@
           <div class="column comms">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/mattermost.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/mattermost.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -914,7 +911,7 @@
           <div class="column comms">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/chatwork.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/chatwork.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -926,7 +923,7 @@
           <div class="column comms">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/email.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/email.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -938,7 +935,7 @@
           <div class="column comms">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/webhook.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/webhook.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -950,7 +947,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/maven.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/maven.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -962,7 +959,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/gradle.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/gradle.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -974,7 +971,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/spinnaker.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/spinnaker.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -986,7 +983,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/jfrog.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/jfrog.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -998,7 +995,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/azure-pipelines.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/azure-pipelines.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -1010,7 +1007,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/github-actions.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/github-actions.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -1022,7 +1019,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/jenkins.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/jenkins.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -1034,7 +1031,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/sentry.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/sentry.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -1046,7 +1043,7 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/aws-codepipeline.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/aws-codepipeline.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
@@ -1058,11 +1055,95 @@
           <div class="column devops">
             <div class="card h-100">
               <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/circleci.png" width="50%" height="225"
+                <img class="bd-placeholder-img card-img-top" src="media/circleci.png" width="50%" height="auto"
                   role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#55595c" /></img>
                 <div class="card-body" style="border-top: solid">
                   <h5 class="card-title" style="font-weight: bolder;">CircleCI</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="auto"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">RELP</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/json.png" width="50%" height="auto"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">JSON</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/iis.png" width="50%" height="auto"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">IIS</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/w3c.png" width="50%" height="auto"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">W3C</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/ncsa.png" width="50%" height="auto"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">NCSA</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/elf.png" width="50%" height="auto"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">ELF</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/syslog.png" width="50%" height="auto"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Syslog</h5>
                 </div>
               </div>
             </div>
@@ -1072,7 +1153,7 @@
                     <div class="card h-100">
                         <div class="content">
                             <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
+                                height="auto" role="img" aria-label="Placeholder: Thumbnail"
                                 preserveAspectRatio="xMidYMid slice" focusable="false">
                             <rect width="100%" height="100%" fill="#55595c" /></img>
                             <div class="card-body" style="border-top: solid">
@@ -1086,7 +1167,7 @@
                     <div class="card h-100">
                         <div class="content">
                             <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
+                                height="auto" role="img" aria-label="Placeholder: Thumbnail"
                                 preserveAspectRatio="xMidYMid slice" focusable="false">
                             <rect width="100%" height="100%" fill="#55595c" /></img>
                             <div class="card-body" style="border-top: solid">
