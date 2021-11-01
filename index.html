@@ -2,529 +2,1076 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>LOGIQ.AI Integrations Central</title>
-    <link rel="icon" href="media/favicon.png">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>LOGIQ.AI Integrations Central</title>
+  <link rel="icon" href="media/favicon.png">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css" type="text/css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Bootstrap JS-->
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Bootstrap JS-->
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #f1f1f1;
-            font-family: Arial;
-        }
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial;
+    }
 
-        /* Center website */
-        .main {
-            max-width: 1000px;
-            margin: auto;
-        }
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        h1 {
-            font-size: 50px;
-            word-break: break-all;
-        }
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
 
-        .row {
-            margin: 10px -16px;
-        }
+    .row {
+      margin: 10px -16px;
+    }
 
-        /* Add padding BETWEEN each column */
-        .row,
-        .row>.column {
-            padding: 8px;
-        }
-
-        /* Create three equal columns that floats next to each other */
-        .column {
+    /* Add padding BETWEEN each column */
+    .row,
+    .row>.column {
+      padding: 8px;
+    }
+    .column {
             float: left;
             width: 33.33%;
             display: none;
             /* Hide all elements by default */
         }
 
-        .card {
-            border-radius: 4px;
-            background: #fff;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
-            transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-            cursor: pointer;
-        }
+    .card {
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+      transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+      cursor: pointer;
+      width: fit-content
+    }
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
-        }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    }
 
-        /* Clear floats after rows */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
+    /* Clear floats after rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-        /* Content */
-        .content {
-            background-color: white;
-            padding: 10px;
-        }
+    /* Content */
+    .content {
+      background-color: white;
+      padding: 10px;
+    }
 
-        /* The "show" class is added to the filtered elements */
-        .show {
-            display: block;
-        }
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: block;
+    }
 
-        /* Style the buttons */
-        .btn {
-            border: none;
-            outline: none;
-            padding: 12px 16px;
-            background-color: white;
-            cursor: pointer;
-        }
+    /* Style the buttons */
+    .btn {
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      background-color: white;
+      cursor: pointer;
+    }
 
-        .btn:hover {
-            background-color: #ddd;
-        }
+    .btn:hover {
+      background-color: #ddd;
+    }
 
-        .btn.active {
-            background-color: #666;
-            color: white;
-        }
-    </style>
+    .btn.active {
+      background-color: #666;
+      color: white;
+    }
+  </style>
 
 
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light"
-            style="background-color: #3E64FF; font-family: 'Nunito', sans-serif;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="https://logiq.ai/"><img src="media/logiq-white.png"
-                        style="width: 9rem;"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"
-                                style="font-weight: bolder; color: white">
-                                Products
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="https://logiq.ai/log-management/" target="_blank">Log
-                                        Management</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/monitoring/"
-                                        target="_blank">Monitoring</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/api-observability/"
-                                        target="_blank">API Observability</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/logflow/"
-                                        target="_blank">LogFlow</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/k8s/" target="_blank">Kubernetes
-                                        Monitoring</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <p class="dropdown-item" href="" style="font-weight: bolder;">Features</p>
-                                </li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/byob-data-isolation/"
-                                        target="_blank">#NoStorageTax</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/integrations/"
-                                        target="_blank">Integrations</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/logiq-ctl/" target="_blank">CLI</a>
-                                </li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/eventing/"
-                                        target="_blank">Alerts</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/integrated-ui/"
-                                        target="_blank">Integrated UI</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"
-                                style="font-weight: bolder; color: white">
-                                Resources
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <p class="dropdown-item" href="" style="font-weight: bolder;">Get Started</p>
-                                </li>
-                                <li><a class="dropdown-item" href="https://docs.logiq.ai/logiq-server/quickstart-guide"
-                                        target="_blank">Try out LOGIQ</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/resources/"
-                                        target="_blank">Resources</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/blog/" target="_blank">Blog</a></li>
-                                <li><a class="dropdown-item" href="https://glossary.logiq.ai/"
-                                        target="_blank">Glossary</a></li>
-                                <li><a class="dropdown-item" href="https://docs.logiq.ai/"
-                                        target="_blank">Documentation</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <p class="dropdown-item" href="" style="font-weight: bolder;">More from LOGIQ</p>
-                                </li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/faqs/" target="_blank">FAQs</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/product-briefs/"
-                                        target="_blank">Product Briefs</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/ebooks/" target="_blank">eBooks</a>
-                                </li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/videos/" target="_blank">Videos</a>
-                                </li>
-                                <li><a class="dropdown-item"
-                                        href="https://logiq.ai/oreilly-kubernetes-best-practices-for-building-successful-applications-on-kubernetes/"
-                                        target="_blank">Kubernetes Best Practices</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/cost-savings-calculator/"
-                                        target="_blank">TCO Calculator</a></li>
-                                <li><a class="dropdown-item" href="https://logiq.ai/how-does-logiq-compare/"
-                                        target="_blank">How does LOGIQ compare?</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"
-                                style="font-weight: bolder; color: white">
-                                Documentation
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="https://docs.logiq.ai/" target="_blank">Docs</a></li>
-                                <li><a class="dropdown-item" href="https://logiqctl.logiq.ai/"
-                                        target="_blank">logiqctl</a></li>
-                                <li><a class="dropdown-item" href="https://glossary.logiq.ai/"
-                                        target="_blank">Glossary</a></li>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="col-md-12" style="padding: 0">
-            <div class="banner" style="font-family: 'Nunito', sans-serif;">
-                <p class="banner-text" style="font-weight: bolder;">Integrations</p>
-                <p style="font-size: 1.25rem;" class="ml-1">Connect LogFlow to virtually any data source and
-                    destination.</p>
-                <p>
-                    <a href="https://github.com/logiqai/logiqhub" target="_blank" class="btn btn-primary my-2"
-                        style="color: white; background-color: #3E64FF; border-color: #3E64FF;">Download now</a>
-                </p>
-            </div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #3E64FF; font-family: 'Nunito', sans-serif;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://logiq.ai/"><img src="media/logiq-white.png" style="width: 9rem;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" style="font-weight: bolder; color: white">
+                Products
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://logiq.ai/log-management/" target="_blank">Log
+                    Management</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/monitoring/" target="_blank">Monitoring</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/api-observability/" target="_blank">API
+                    Observability</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/logflow/" target="_blank">LogFlow</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/k8s/" target="_blank">Kubernetes
+                    Monitoring</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <p class="dropdown-item" href="" style="font-weight: bolder;">Features</p>
+                </li>
+                <li><a class="dropdown-item" href="https://logiq.ai/byob-data-isolation/"
+                    target="_blank">#NoStorageTax</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/integrations/" target="_blank">Integrations</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/logiq-ctl/" target="_blank">CLI</a>
+                </li>
+                <li><a class="dropdown-item" href="https://logiq.ai/eventing/" target="_blank">Alerts</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/integrated-ui/" target="_blank">Integrated UI</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" style="font-weight: bolder; color: white">
+                Resources
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <p class="dropdown-item" href="" style="font-weight: bolder;">Get Started</p>
+                </li>
+                <li><a class="dropdown-item" href="https://docs.logiq.ai/logiq-server/quickstart-guide"
+                    target="_blank">Try out LOGIQ</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/resources/" target="_blank">Resources</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/blog/" target="_blank">Blog</a></li>
+                <li><a class="dropdown-item" href="https://glossary.logiq.ai/" target="_blank">Glossary</a></li>
+                <li><a class="dropdown-item" href="https://docs.logiq.ai/" target="_blank">Documentation</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <p class="dropdown-item" href="" style="font-weight: bolder;">More from LOGIQ</p>
+                </li>
+                <li><a class="dropdown-item" href="https://logiq.ai/faqs/" target="_blank">FAQs</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/product-briefs/" target="_blank">Product Briefs</a>
+                </li>
+                <li><a class="dropdown-item" href="https://logiq.ai/ebooks/" target="_blank">eBooks</a>
+                </li>
+                <li><a class="dropdown-item" href="https://logiq.ai/videos/" target="_blank">Videos</a>
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://logiq.ai/oreilly-kubernetes-best-practices-for-building-successful-applications-on-kubernetes/"
+                    target="_blank">Kubernetes Best Practices</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/cost-savings-calculator/" target="_blank">TCO
+                    Calculator</a></li>
+                <li><a class="dropdown-item" href="https://logiq.ai/how-does-logiq-compare/" target="_blank">How does
+                    LOGIQ compare?</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" style="font-weight: bolder; color: white">
+                Documentation
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://docs.logiq.ai/" target="_blank">Docs</a></li>
+                <li><a class="dropdown-item" href="https://logiqctl.logiq.ai/" target="_blank">logiqctl</a></li>
+                <li><a class="dropdown-item" href="https://glossary.logiq.ai/" target="_blank">Glossary</a></li>
+            </li>
+          </ul>
         </div>
-        <div class="container">
-            <div id="myBtnContainer" style="padding: 2rem">
-                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                <button class="btn" onclick="filterSelection('os')"> Operating Systems</button>
-                <button class="btn" onclick="filterSelection('servers')"> Servers</button>
-                <button class="btn" onclick="filterSelection('agents')"> Agents</button>
-                <button class="btn" onclick="filterSelection('applications')"> Applications</button>
-                <button class="btn" onclick="filterSelection('cloud')"> Cloud Providers</button>
-                <button class="btn" onclick="filterSelection('protocol')"> Protocols</button>
-                <button class="btn" onclick="filterSelection('firewall')"> Firewall</button>
-                <button class="btn" onclick="filterSelection('forwarder')"> Forwarders</button>
-            </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="col-md-12" style="padding: 0">
+      <div class="banner" style="font-family: 'Nunito', sans-serif;">
+        <p class="banner-text" style="font-weight: bolder;">Integrations</p>
+        <p style="font-size: 1.25rem;" class="ml-1">Connect LogFlow to virtually any data source and
+          destination.</p>
+        <p>
+          <a href="https://github.com/logiqai/logiqhub" target="_blank" class="btn btn-primary my-2"
+            style="color: white; background-color: #3E64FF; border-color: #3E64FF;">Download now</a>
+        </p>
+      </div>
+    </div>
+    <div class="album py-5" style="font-family: 'Nunito', sans-serif;">
+      <div class="container">
+        <div id="myBtnContainer" style="padding: 2rem">
+          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+          <button class="btn" onclick="filterSelection('agents')"> Agents</button>
+          <button class="btn" onclick="filterSelection('analytics')"> Analytics</button>
+          <button class="btn" onclick="filterSelection('applications')"> Applications</button>
+          <button class="btn" onclick="filterSelection('cloud')"> Cloud Providers</button>
+          <button class="btn" onclick="filterSelection('comms')"> Communications</button>
+          <button class="btn" onclick="filterSelection('db')"> Databases</button>
+          <button class="btn" onclick="filterSelection('devops')"> DevOps</button>
+          <button class="btn" onclick="filterSelection('firewall')"> Firewall</button>
+          <button class="btn" onclick="filterSelection('forwarder')"> Forwarders</button>
+          <button class="btn" onclick="filterSelection('itsm')"> ITSM/ITOM</button>
+          <button class="btn" onclick="filterSelection('protocol')"> Protocols</button>
+          <button class="btn" onclick="filterSelection('observability')">Observability platforms</button>
+          <button class="btn" onclick="filterSelection('os')"> Operating Systems</button>
+          <button class="btn" onclick="filterSelection('security')"> Security</button>
+          <button class="btn" onclick="filterSelection('servers')"> Servers</button>
+          <button class="btn" onclick="filterSelection('storage')"> Storage</button>
         </div>
+      </div>
 
-        <div class="container">
-            <!-- Portfolio Gallery Grid -->
-            <div class="row">
-                <div class="column os">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/macos.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">macOS</h5>
-                                <p>Forward macOS endpoint logs to LogFlow</p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container">
+        <!-- Portfolio Gallery Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="column agents">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/logstash.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Logstash</h5>
                 </div>
-                <div class="column os">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/windows.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Windows</h5>
-                                <p>Forward Windows endpoint logs to LogFlow</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/kubernetes.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Kubernetes</h5>
                 </div>
-                <div class="column os">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/linux.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Linux</h5>
-                                <p>Forward Linux endpoint logs to LogFlow</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column servers cloud agents">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/fluent-bit.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Fluent Bit</h5>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="column agents">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/logstash.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Logstash Syslog Output Plugin</h5>
-                                <p>Forward <code>syslog</code> messages to LogFlow</p><br>
-                            </div>
-                        </div>
-                    </div>
+          <div class="column servers cloud agents">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/fluentd.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Fluentd</h5>
                 </div>
-                <div class="column agents protocol">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/logstash.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Logstash HTTP Output Plugin</h5>
-                                <p>Forward logs using Logstash HTTP output plugin</p><br>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column agents protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Rsyslog</h5>
                 </div>
-                <div class="column servers cloud agents">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/fluent-bit.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Kubernetes</h5>
-                                <p>Forward Kubernetes logs to LogFlow using Fluent Bit</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/aws-cloudwatch.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">AWS CloudWatch</h5>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="column servers cloud agents">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/fluentd.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Kubernetes</h5>
-                                <p>Forward Kubernetes logs to LogFlow using Fluentd</p><br>
-                            </div>
-                        </div>
-                    </div>
+          <div class="column firewall">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/paloalto.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Palo Alto Firewall</h5>
                 </div>
-                <div class="column agents protocol">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Rsyslog over RELP</h5>
-                                <p>Forward <code>syslog</code> messages using Rsyslog over RELP</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/azure.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Azure Event Hubs</h5>
                 </div>
-                <div class="column cloud">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/aws-cloudwatch.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">AWS CloudWatch</h5>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column observability">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/prometheus.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Prometheus</h5>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="column firewall">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/paloalto.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Palo Alto Firewall</h5>
-                                <p>Forward Palo Alto Firewall logs to LogFlow</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/docker.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Docker</h5>
                 </div>
-                <div class="column cloud">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/azure.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Azure Event Hubs</h5>
-                                <p>Forward Azure events to LogFlow</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column observability analytics security">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Splunk</h5>
                 </div>
-                <div class="column applications">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/prometheus.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Prometheus</h5>
-                                <p>Connect your Prometheus instance to LogFlow</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column forwarder protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/arcsight.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">ArcSight</h5>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="column cloud">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/docker.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Docker</h5>
-                                <p>Forward Docker logs to LogFlow</p><br>
-                            </div>
-                        </div>
-                    </div>
+          <div class="column db">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/mongodb.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">MongoDB</h5>
                 </div>
-                <div class="column forwarder protocol">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Splunk Universal Forwarder - Syslog over TCP</h5>
-                                <p>Forward <code>syslog</code> messages to Splunk over TCP</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column forwarder protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/elastic.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Elastic</h5>
                 </div>
-                <div class="column forwarder protocol">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/arcsight.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">ArcSight Logger - TCP</h5>
-                                <p>Forward <code>syslog</code> frames over TCP</p><br>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column db">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/redis.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Redis</h5>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="column forwarder protocol">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/arcsight.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">ArcSight Logger - CEF over TCP</h5>
-                                <p>Forward ArcSight CEF frames over TCP</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="column forwarder protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/kafka_highres.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Apache Kafka</h5>
                 </div>
-                <div class="column forwarder protocol">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/elastic.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Elastic-compatible JSON Forwarder</h5>
-                                <p>Forward data to an Elastic index</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column analytics">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/databricks.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Databricks</h5>
                 </div>
-                <div class="column forwarder protocol">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Splunk HTTP Event Collector</h5>
-                                <p>Forward batched JSON data to Splunk</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="column security">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/qradar.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">IBM Security QRadar</h5>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="column forwarder protocol">
-                    <div class="card h-100">
-                        <div class="content">
-                            <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%"
-                                height="225" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c" /></img>
-                            <div class="card-body" style="border-top: solid">
-                                <h5 class="card-title" style="font-weight: bolder;">Splunk Universal Forwarder - CEF over TCP</h5>
-                                <p><code>syslog</code> CEF forwarder for Splunk</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="column observability">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/datadog.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Datadog</h5>
                 </div>
-                <!--<div class="column cloud">
+              </div>
+            </div>
+          </div>
+
+          <div class="column observability">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/newrelic.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">New Relic</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column observability security">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/dynatrace.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Dynatrace</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column observability analytics">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/logiq.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">LOGIQ</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column storage">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/azure-blob.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Azure Blob Storage</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column storage">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/aws-s3.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Amazon Web Services S3</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column storage">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/gcs.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Google Cloud Storage</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column storage">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/wasabi.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Wasabi</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column storage">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/minio.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">MinIO</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/aws.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Amazon Web Services</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/digital-ocean.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">DigitalOcean</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/gcp.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Google Cloud Platform</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/vmware.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">VMware</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column cloud">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/microsoft-azure.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Microsoft Azure</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column db">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/memcached.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Memcached</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column db">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/mysql.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">MySQL</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column db">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/postgresql.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">PostgreSQL</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column forwarder protocol">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">RabbitMQ</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column firewall">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/fortinet.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Fortinet Next-Gen Firewall</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column firewall">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/sophos.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Sophos</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column firewall">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/barracuda.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Barracuda</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column os">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/macos.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">macOS</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column os">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/windows.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Windows</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column os">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/linux.png" width="50%" height="225" role="img"
+                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Linux</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column os">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/ubuntu.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Ubuntu</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column os">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/opensuse.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">SUSE Linux</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column os">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/fedora.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Fedora Linux</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column itsm">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/servicenow.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">ServiceNow</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column itsm">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/pagerduty.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">PagerDuty</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column os">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/solarwinds.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Solar Winds</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column itsm">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/jira-service.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Jira Service Management</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column itsm">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/zendesk.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Zendesk</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column itsm">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/opsgenie.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">OpsGenie</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column itsm">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/rundeck.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Rundeck</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column itsm">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/xmatters.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">xMatters</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column comms">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/slack.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Slack</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column comms">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/mattermost.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Mattermost</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column comms">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/chatwork.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Chatwork</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column comms">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/email.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Email</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column comms">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/webhook.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Webhook</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/maven.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Maven</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/gradle.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Gradle</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/spinnaker.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Spinnaker</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/jfrog.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">JFrog</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/azure-pipelines.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Azure Pipelines</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/github-actions.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">GitHub Actions</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/jenkins.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Jenkins</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/sentry.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">Sentry</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/aws-codepipeline.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">AWS CodePipeline</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column devops">
+            <div class="card h-100">
+              <div class="content">
+                <img class="bd-placeholder-img card-img-top" src="media/circleci.png" width="50%" height="225"
+                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#55595c" /></img>
+                <div class="card-body" style="border-top: solid">
+                  <h5 class="card-title" style="font-weight: bolder;">CircleCI</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!--<div class="column cloud">
                     <div class="card h-100">
                         <div class="content">
                             <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%"
@@ -552,66 +1099,69 @@
                         </div>
                     </div>
                 </div>-->
-                <!-- END GRID -->
-            </div>
+          <!-- END GRID -->
         </div>
+      </div>
+    </div>
 
-        <!-- END MAIN -->
-        </div>
+    <!-- END MAIN -->
+    </div>
 
-        <script>
-            filterSelection("all")
-            function filterSelection(c) {
-                var x, i;
-                x = document.getElementsByClassName("column");
-                if (c == "all") c = "";
-                for (i = 0; i < x.length; i++) {
-                    w3RemoveClass(x[i], "show");
-                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-                }
-            }
+    <script>
+      filterSelection("all")
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
 
-            function w3AddClass(element, name) {
-                var i, arr1, arr2;
-                arr1 = element.className.split(" ");
-                arr2 = name.split(" ");
-                for (i = 0; i < arr2.length; i++) {
-                    if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-                }
-            }
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+      }
 
-            function w3RemoveClass(element, name) {
-                var i, arr1, arr2;
-                arr1 = element.className.split(" ");
-                arr2 = name.split(" ");
-                for (i = 0; i < arr2.length; i++) {
-                    while (arr1.indexOf(arr2[i]) > -1) {
-                        arr1.splice(arr1.indexOf(arr2[i]), 1);
-                    }
-                }
-                element.className = arr1.join(" ");
-            }
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
 
 
-            // Add active class to the current button (highlight it)
-            var btnContainer = document.getElementById("myBtnContainer");
-            var btns = btnContainer.getElementsByClassName("btn");
-            for (var i = 0; i < btns.length; i++) {
-                btns[i].addEventListener("click", function () {
-                    var current = document.getElementsByClassName("active");
-                    current[0].className = current[0].className.replace(" active", "");
-                    this.className += " active";
-                });
-            }
-        </script>
-    </main>
-    <footer class="text-muted py-5" style="font-family: 'Nunito', sans-serif;">
-        <div class="container">
-          <p class="float-end mb-1">
-            <a href="#">Back to top</a>
-          </p>
-          <p class="mb-1">These dashboards give you a starting point for monitoring and observing your applications. Feel free to download and customize them to suit your need.</p>
-          <p class="mb-0">Not using LOGIQ yet? Install the free-forever <a href="https://docs.logiq.ai/" target="_blank">LOGIQ PaaS Community Edition</a>.</p>
-        </div>
-      </footer>
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+    </script>
+  </main>
+  <footer class="text-muted py-5" style="font-family: 'Nunito', sans-serif;">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="mb-1">These dashboards give you a starting point for monitoring and observing your applications. Feel
+        free to download and customize them to suit your need.</p>
+      <p class="mb-0">Not using LOGIQ yet? Install the free-forever <a href="https://docs.logiq.ai/"
+          target="_blank">LOGIQ PaaS Community Edition</a>.</p>
+    </div>
+  </footer>
 </body>
