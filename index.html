@@ -215,10 +215,6 @@
         <p class="banner-text" style="font-weight: bolder;">Integrations</p>
         <p style="font-size: 1.25rem;" class="ml-1">Connect LogFlow to virtually any data source and
           destination.</p>
-        <p>
-          <a href="https://github.com/logiqai/logiqhub" target="_blank" class="btn btn-primary my-2"
-            style="color: white; background-color: #3E64FF; border-color: #3E64FF;">Download now</a>
-        </p>
       </div>
     </div>
     <div class="album py-5" style="font-family: 'Nunito', sans-serif;">
@@ -233,8 +229,8 @@
           <button class="btn" onclick="filterSelection('db')"> Databases</button>
           <button class="btn" onclick="filterSelection('devops')"> DevOps</button>
           <button class="btn" onclick="filterSelection('firewall')"> Firewall</button>
-          <button class="btn" onclick="filterSelection('forwarder')"> Forwarders</button>
           <button class="btn" onclick="filterSelection('itsm')"> ITSM/ITOM</button>
+          <button class="btn" onclick="filterSelection('eventing')"> Messaging Queue</button>
           <button class="btn" onclick="filterSelection('protocol')"> Protocols</button>
           <button class="btn" onclick="filterSelection('observability')">Observability platforms</button>
           <button class="btn" onclick="filterSelection('os')"> Operating Systems</button>
@@ -271,7 +267,7 @@
               </div>
             </div>
           </div>
-          <div class="column servers cloud agents">
+          <div class="column agents">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/fluent-bit.png" width="50%" height="225"
@@ -284,7 +280,7 @@
             </div>
           </div>
 
-          <div class="column servers cloud agents">
+          <div class="column agents">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/fluentd.png" width="50%" height="225" role="img"
@@ -296,7 +292,7 @@
               </div>
             </div>
           </div>
-          <div class="column agents protocol">
+          <div class="column protocol">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="225" role="img"
@@ -382,7 +378,7 @@
               </div>
             </div>
           </div>
-          <div class="column forwarder protocol">
+          <div class="column security">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/arcsight.png" width="50%" height="225"
@@ -407,7 +403,7 @@
               </div>
             </div>
           </div>
-          <div class="column forwarder protocol">
+          <div class="column cloud">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/elastic.png" width="50%" height="225" role="img"
@@ -432,7 +428,7 @@
             </div>
           </div>
 
-          <div class="column forwarder protocol">
+          <div class="column eventing protocol">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/kafka_highres.png" width="50%" height="225"
@@ -674,7 +670,7 @@
               </div>
             </div>
           </div>
-          <div class="column forwarder protocol">
+          <div class="column eventing">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%" height="225"
