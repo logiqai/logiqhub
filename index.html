@@ -31,6 +31,7 @@
     body {
       background-color: #f1f1f1;
       font-family: Arial;
+      overflow-x: hidden;
     }
 
     /* Center website */
@@ -107,6 +108,13 @@
       background-color: #3E64FF;
       color: white;
     }
+
+    @media only screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+    
   </style>
 
 
@@ -216,7 +224,7 @@
       </div>
     </div>
     <div class="album py-5" style="font-family: 'Nunito', sans-serif;">
-      <div class="container">
+      <div class="container-fluid">
         <div id="myBtnContainer" style="padding: 2rem">
           <!--<button class="btn active" onclick="filterSelection('all')"> Show all</button>-->
           <button class="btn" onclick="filterSelection('agents')"> Agents</button>
@@ -240,7 +248,7 @@
 
       <div class="container">
         <!-- Portfolio Gallery Grid -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row row-cols-5 row-cols-sm-1 row-cols-xs-1 g-3">
           <div class="column agents">
             <div class="card h-100">
               <div class="content">
