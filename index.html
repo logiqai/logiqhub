@@ -103,6 +103,10 @@
       color: #FFFFFF;
     }
 
+    .hover {
+      background-color: #3E64FF !important; 
+      color: #FFFFFF;
+    }
 
     @media only screen and (max-width: 600px) {
   .column {
@@ -116,7 +120,7 @@
 
 </head>
 
-<body>
+<body onload="filterSelection('cloud')">
 
   <!--<header>
     <nav class="navbar navbar-expand-lg navbar-light"
@@ -225,7 +229,7 @@
           <button class="btn" onclick="filterSelection('agents')"> Agents</button>
           <button class="btn" onclick="filterSelection('analytics')"> Analytics</button>
           <!--<button class="btn" onclick="filterSelection('applications')"> Applications</button>-->
-          <button class="btn" onclick="filterSelection('cloud')"> Cloud Providers</button>
+          <button class="btn" onclick="filterSelection('cloud')"> Cloud Providers</button> 
           <button class="btn" onclick="filterSelection('comms')"> Communications</button>
           <button class="btn" onclick="filterSelection('db')"> Databases</button>
           <button class="btn" onclick="filterSelection('devops')"> DevOps</button>
