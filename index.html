@@ -52,11 +52,11 @@
     /* Add padding BETWEEN each column */
 
     .column {
-            float: left;
-            width: 20%;
-            display: none;
-            /* Hide all elements by default */
-        }
+      float: left;
+      width: 20%;
+      display: none;
+      /* Hide all elements by default */
+    }
 
     .card {
       border-radius: 6px;
@@ -98,23 +98,17 @@
       cursor: pointer;
     }
 
-    .active, .btn:hover {
-      background-color: #3E64FF !important; 
-      color: #FFFFFF;
-    }
-
-    .hover {
+    .btn:focus, .btn:hover {
       background-color: #3E64FF !important; 
       color: #FFFFFF;
     }
 
     @media only screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    padding: 0 1.5rem 0 1.5rem;
-  }
-}
-    
+      .column {
+        width: 100%;
+        padding: 0 1.5rem 0 1.5rem;
+      }
+    }
   </style>
 
 
@@ -222,796 +216,796 @@
         <p style="font-size: 1.25rem;" class="ml-1">Connect LogFlow to virtually any data source, destination, and incident management system.</p>
       </div>
     </div>-->
-    <div class="album py-5" style="font-family: 'Nunito', sans-serif;">
-      <div class="container-fluid">
-        <div id="myBtnContainer" style="padding: 2rem">
-          <!--<button class="btn active" onclick="filterSelection('all')"> Show all</button>-->
-          <button class="btn" onclick="filterSelection('agents')"> Agents</button>
-          <button class="btn" onclick="filterSelection('analytics')"> Analytics</button>
-          <!--<button class="btn" onclick="filterSelection('applications')"> Applications</button>-->
-          <button class="btn" onclick="filterSelection('cloud')"> Cloud Providers</button> 
-          <button class="btn" onclick="filterSelection('comms')"> Communications</button>
-          <button class="btn" onclick="filterSelection('db')"> Databases</button>
-          <button class="btn" onclick="filterSelection('devops')"> DevOps</button>
-          <button class="btn" onclick="filterSelection('firewall')"> Firewall</button>
-          <button class="btn" onclick="filterSelection('itsm')"> ITSM/ITOM</button>
-          <button class="btn" onclick="filterSelection('eventing')"> Messaging Queue</button>
-          <button class="btn" onclick="filterSelection('protocol')"> Protocols</button>
-          <button class="btn" onclick="filterSelection('observability')">Observability platforms</button>
-          <button class="btn" onclick="filterSelection('os')"> Operating Systems</button>
-          <button class="btn" onclick="filterSelection('security')"> Security</button>
-          <!--<button class="btn" onclick="filterSelection('servers')"> Servers</button>-->
-          <button class="btn" onclick="filterSelection('storage')"> Storage</button>
-        </div>
+  <div class="album py-5" style="font-family: 'Nunito', sans-serif;">
+    <div class="container-fluid">
+      <div id="myBtnContainer" style="padding: 2rem">
+        <!--<button class="btn active" onclick="filterSelection('all')"> Show all</button>-->
+        <button class="btn" onclick="filterSelection('agents')"> Agents</button>
+        <button class="btn" onclick="filterSelection('analytics')"> Analytics</button>
+        <!--<button class="btn" onclick="filterSelection('applications')"> Applications</button>-->
+        <button class="btn" onload="changeColor" onclick="filterSelection('cloud')"> Cloud Providers</button>
+        <button class="btn" onclick="filterSelection('comms')"> Communications</button>
+        <button class="btn" onclick="filterSelection('db')"> Databases</button>
+        <button class="btn" onclick="filterSelection('devops')"> DevOps</button>
+        <button class="btn" onclick="filterSelection('firewall')"> Firewall</button>
+        <button class="btn" onclick="filterSelection('itsm')"> ITSM/ITOM</button>
+        <button class="btn" onclick="filterSelection('eventing')"> Messaging Queue</button>
+        <button class="btn" onclick="filterSelection('protocol')"> Protocols</button>
+        <button class="btn" onclick="filterSelection('observability')">Observability platforms</button>
+        <button class="btn" onclick="filterSelection('os')"> Operating Systems</button>
+        <button class="btn" onclick="filterSelection('security')"> Security</button>
+        <!--<button class="btn" onclick="filterSelection('servers')"> Servers</button>-->
+        <button class="btn" onclick="filterSelection('storage')"> Storage</button>
       </div>
+    </div>
 
-      <div class="container">
-        <!-- Portfolio Gallery Grid -->
-        <div class="row row-cols-5 row-cols-sm-1 row-cols-xs-1 g-3">
-          <div class="column agents">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/logstash.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Logstash</h5>
-                </div>
+    <div class="container">
+      <!-- Portfolio Gallery Grid -->
+      <div class="row row-cols-5 row-cols-sm-1 row-cols-xs-1 g-3">
+        <div class="column agents">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/logstash.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Logstash</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/kubernetes.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Kubernetes</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/kubernetes.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Kubernetes</h5>
               </div>
             </div>
           </div>
-          <div class="column agents">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/fluent-bit.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Fluent Bit</h5>
-                </div>
+        </div>
+        <div class="column agents">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/fluent-bit.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Fluent Bit</h5>
               </div>
             </div>
           </div>
-          <div class="column agents">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Splunk Universal Forwarder</h5>
-                </div>
+        </div>
+        <div class="column agents">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Splunk Universal Forwarder</h5>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="column agents">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/fluentd.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Fluentd</h5>
-                </div>
+        <div class="column agents">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/fluentd.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Fluentd</h5>
               </div>
             </div>
           </div>
-          <div class="column agents protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Rsyslog</h5>
-                </div>
+        </div>
+        <div class="column agents protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Rsyslog</h5>
               </div>
             </div>
           </div>
-          <div class="column agents">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/datadog.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">DogStatsD</h5>
-                </div>
+        </div>
+        <div class="column agents">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/datadog.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">DogStatsD</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/aws-cloudwatch.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">AWS CloudWatch</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/aws-cloudwatch.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">AWS CloudWatch</h5>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="column firewall">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/paloalto.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Palo Alto Firewall</h5>
-                </div>
+        <div class="column firewall">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/paloalto.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Palo Alto Firewall</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/azure.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Azure Event Hubs</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/azure.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Azure Event Hubs</h5>
               </div>
             </div>
           </div>
-          <div class="column observability">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/prometheus.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Prometheus</h5>
-                </div>
+        </div>
+        <div class="column observability">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/prometheus.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Prometheus</h5>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/docker.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Docker</h5>
-                </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/docker.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Docker</h5>
               </div>
             </div>
           </div>
-          <div class="column observability analytics security">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Splunk</h5>
-                </div>
+        </div>
+        <div class="column observability analytics security">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/splunk.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Splunk</h5>
               </div>
             </div>
           </div>
-          <div class="column security">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/arcsight.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">ArcSight</h5>
-                </div>
+        </div>
+        <div class="column security">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/arcsight.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">ArcSight</h5>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="column db analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/mongodb.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">MongoDB</h5>
-                </div>
+        <div class="column db analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/mongodb.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">MongoDB</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/elastic.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Elastic</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/elastic.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Elastic</h5>
               </div>
             </div>
           </div>
-          <div class="column db analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/redis.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Redis</h5>
-                </div>
+        </div>
+        <div class="column db analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/redis.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Redis</h5>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="column eventing protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/kafka_highres.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Apache Kafka</h5>
-                </div>
+        <div class="column eventing protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/kafka_highres.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Apache Kafka</h5>
               </div>
             </div>
           </div>
-          <div class="column analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/databricks.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Databricks</h5>
-                </div>
+        </div>
+        <div class="column analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/databricks.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Databricks</h5>
               </div>
             </div>
           </div>
-          <div class="column db analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/powerbi.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Microsoft Power BI</h5>
-                </div>
+        </div>
+        <div class="column db analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/powerbi.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Microsoft Power BI</h5>
               </div>
             </div>
           </div>
-          <div class="column analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/snowflake.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Snowflake</h5>
-                </div>
+        </div>
+        <div class="column analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/snowflake.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Snowflake</h5>
               </div>
             </div>
           </div>
-          <div class="column security">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/qradar.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">IBM Security QRadar</h5>
-                </div>
+        </div>
+        <div class="column security">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/qradar.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">IBM Security QRadar</h5>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="column observability">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/datadog.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Datadog</h5>
-                </div>
+        <div class="column observability">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/datadog.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Datadog</h5>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="column observability">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/newrelic.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">New Relic</h5>
-                </div>
+        <div class="column observability">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/newrelic.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">New Relic</h5>
               </div>
             </div>
           </div>
-          <div class="column observability security">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/dynatrace.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Dynatrace</h5>
-                </div>
+        </div>
+        <div class="column observability security">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/dynatrace.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Dynatrace</h5>
               </div>
             </div>
           </div>
-          <div class="column observability">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/logiq.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">LOGIQ</h5>
-                </div>
+        </div>
+        <div class="column observability">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/logiq.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">LOGIQ</h5>
               </div>
             </div>
           </div>
-          <div class="column storage">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/azure-blob.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Azure Blob Storage</h5>
-                </div>
+        </div>
+        <div class="column storage">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/azure-blob.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Azure Blob Storage</h5>
               </div>
             </div>
           </div>
-          <div class="column storage">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/aws-s3.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Amazon Web Services S3</h5>
-                </div>
+        </div>
+        <div class="column storage">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/aws-s3.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Amazon Web Services S3</h5>
               </div>
             </div>
           </div>
-          <div class="column storage">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/gcs.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Google Cloud Storage</h5>
-                </div>
+        </div>
+        <div class="column storage">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/gcs.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Google Cloud Storage</h5>
               </div>
             </div>
           </div>
-          <div class="column storage">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/wasabi.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Wasabi</h5>
-                </div>
+        </div>
+        <div class="column storage">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/wasabi.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Wasabi</h5>
               </div>
             </div>
           </div>
-          <div class="column storage">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/minio.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">MinIO</h5>
-                </div>
+        </div>
+        <div class="column storage">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/minio.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">MinIO</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/aws.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Amazon Web Services</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/aws.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Amazon Web Services</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/digital-ocean.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">DigitalOcean</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/digital-ocean.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">DigitalOcean</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/gcp.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Google Cloud Platform</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/gcp.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Google Cloud Platform</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/microsoft-azure.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Microsoft Azure</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/microsoft-azure.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Microsoft Azure</h5>
               </div>
             </div>
           </div>
-          <div class="column cloud">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/oracle.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Oracle Cloud Infrastructure</h5>
-                </div>
+        </div>
+        <div class="column cloud">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/oracle.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Oracle Cloud Infrastructure</h5>
               </div>
             </div>
           </div>
-          <div class="column db analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/memcached.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Memcached</h5>
-                </div>
+        </div>
+        <div class="column db analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/memcached.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Memcached</h5>
               </div>
             </div>
           </div>
-          <div class="column db analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/couchdb.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Apache CouchDB</h5>
-                </div>
+        </div>
+        <div class="column db analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/couchdb.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Apache CouchDB</h5>
               </div>
             </div>
           </div>
-          <div class="column db analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/mysql.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">MySQL</h5>
-                </div>
+        </div>
+        <div class="column db analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/mysql.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">MySQL</h5>
               </div>
             </div>
           </div>
-          <div class="column db analytics">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/postgresql.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">PostgreSQL</h5>
-                </div>
+        </div>
+        <div class="column db analytics">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/postgresql.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">PostgreSQL</h5>
               </div>
             </div>
           </div>
-          <div class="column eventing">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">RabbitMQ</h5>
-                </div>
+        </div>
+        <div class="column eventing">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">RabbitMQ</h5>
               </div>
             </div>
           </div>
-          <div class="column firewall">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/fortinet.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Fortinet Next-Gen Firewall</h5>
-                </div>
+        </div>
+        <div class="column firewall">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/fortinet.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Fortinet Next-Gen Firewall</h5>
               </div>
             </div>
           </div>
-          <div class="column firewall">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/sophos.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Sophos</h5>
-                </div>
+        </div>
+        <div class="column firewall">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/sophos.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Sophos</h5>
               </div>
             </div>
           </div>
-          <div class="column firewall">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/barracuda.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Barracuda</h5>
-                </div>
+        </div>
+        <div class="column firewall">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/barracuda.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Barracuda</h5>
               </div>
             </div>
           </div>
-          <div class="column os">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/macos.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">macOS</h5>
-                </div>
+        </div>
+        <div class="column os">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/macos.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">macOS</h5>
               </div>
             </div>
           </div>
-          <div class="column os">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/windows.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Windows</h5>
-                </div>
+        </div>
+        <div class="column os">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/windows.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Windows</h5>
               </div>
             </div>
           </div>
-          <div class="column os">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/linux.png" width="50%" height="auto" role="img"
-                  aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Linux</h5>
-                </div>
+        </div>
+        <div class="column os">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/linux.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Linux</h5>
               </div>
             </div>
           </div>
-          <div class="column os">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/ubuntu.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Ubuntu</h5>
-                </div>
+        </div>
+        <div class="column os">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/ubuntu.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Ubuntu</h5>
               </div>
             </div>
           </div>
-          <div class="column os">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/opensuse.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">SUSE Linux</h5>
-                </div>
+        </div>
+        <div class="column os">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/opensuse.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">SUSE Linux</h5>
               </div>
             </div>
           </div>
-          <div class="column os">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/fedora.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Fedora Linux</h5>
-                </div>
+        </div>
+        <div class="column os">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/fedora.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Fedora Linux</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/servicenow.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">ServiceNow</h5>
-                </div>
+        </div>
+        <div class="column itsm">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/servicenow.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">ServiceNow</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/pagerduty.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">PagerDuty</h5>
-                </div>
+        </div>
+        <div class="column itsm">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/pagerduty.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">PagerDuty</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/solarwinds.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Solar Winds</h5>
-                </div>
+        </div>
+        <div class="column itsm">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/solarwinds.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Solar Winds</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/jira-service.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Jira Service Management</h5>
-                </div>
+        </div>
+        <div class="column itsm">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/jira-service.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Jira Service Management</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/zendesk.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Zendesk</h5>
-                </div>
+        </div>
+        <div class="column itsm">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/zendesk.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Zendesk</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/opsgenie.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">OpsGenie</h5>
-                </div>
+        </div>
+        <div class="column itsm">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/opsgenie.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">OpsGenie</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/rundeck.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Rundeck</h5>
-                </div>
+        </div>
+        <div class="column itsm">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/rundeck.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Rundeck</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/xmatters.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">xMatters</h5>
-                </div>
+        </div>
+        <div class="column itsm">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/xmatters.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">xMatters</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm comms">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/slack.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Slack</h5>
-                </div>
+        </div>
+        <div class="column itsm comms">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/slack.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Slack</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm comms">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/mattermost.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Mattermost</h5>
-                </div>
+        </div>
+        <div class="column itsm comms">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/mattermost.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Mattermost</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm comms">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/chatwork.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Chatwork</h5>
-                </div>
+        </div>
+        <div class="column itsm comms">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/chatwork.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Chatwork</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm comms">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/email.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Email</h5>
-                </div>
+        </div>
+        <div class="column itsm comms">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/email.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Email</h5>
               </div>
             </div>
           </div>
-          <div class="column itsm comms">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/webhook.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Webhook</h5>
-                </div>
+        </div>
+        <div class="column itsm comms">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/webhook.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Webhook</h5>
               </div>
             </div>
           </div>
-          <!--<div class="column devops">
+        </div>
+        <!--<div class="column devops">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/maven.png" width="50%" height="auto"
@@ -1071,43 +1065,43 @@
               </div>
             </div>
           </div>-->
-          <div class="column devops">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/github-actions.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">GitHub Actions</h5>
-                </div>
+        <div class="column devops">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/github-actions.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">GitHub Actions</h5>
               </div>
             </div>
           </div>
-          <div class="column devops">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/jenkins.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Jenkins</h5>
-                </div>
+        </div>
+        <div class="column devops">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/jenkins.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Jenkins</h5>
               </div>
             </div>
           </div>
-          <div class="column devops">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/sentry.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Sentry</h5>
-                </div>
+        </div>
+        <div class="column devops">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/sentry.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Sentry</h5>
               </div>
             </div>
           </div>
-          <!--<div class="column devops">
+        </div>
+        <!--<div class="column devops">
             <div class="card h-100">
               <div class="content">
                 <img class="bd-placeholder-img card-img-top" src="media/aws-codepipeline.png" width="50%" height="auto"
@@ -1131,104 +1125,104 @@
               </div>
             </div>
           </div>-->
-          <div class="column protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">RELP</h5>
-                </div>
+        <div class="column protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/rsyslog.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">RELP</h5>
               </div>
             </div>
           </div>
-          <div class="column protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/json.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">JSON</h5>
-                </div>
+        </div>
+        <div class="column protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/json.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">JSON</h5>
               </div>
             </div>
           </div>
-          <div class="column protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/iis.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">IIS</h5>
-                </div>
+        </div>
+        <div class="column protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/iis.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">IIS</h5>
               </div>
             </div>
           </div>
-          <div class="column protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/w3c.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">W3C</h5>
-                </div>
+        </div>
+        <div class="column protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/w3c.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">W3C</h5>
               </div>
             </div>
           </div>
-          <div class="column protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/ncsa.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">NCSA</h5>
-                </div>
+        </div>
+        <div class="column protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/ncsa.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">NCSA</h5>
               </div>
             </div>
           </div>
-          <div class="column protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/elf.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">ELF</h5>
-                </div>
+        </div>
+        <div class="column protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/elf.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">ELF</h5>
               </div>
             </div>
           </div>
-          <div class="column agents protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/syslog.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">Syslog</h5>
-                </div>
+        </div>
+        <div class="column agents protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/syslog.png" width="50%" height="auto" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">Syslog</h5>
               </div>
             </div>
           </div>
-          <div class="column protocol">
-            <div class="card h-100">
-              <div class="content">
-                <img class="bd-placeholder-img card-img-top" src="media/arcsight-cef.png" width="50%" height="auto"
-                  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="#55595c" /></img>
-                <div class="card-body" style="border-top: solid">
-                  <h5 class="card-title" style="font-weight: bolder;">CEF</h5>
-                </div>
+        </div>
+        <div class="column protocol">
+          <div class="card h-100">
+            <div class="content">
+              <img class="bd-placeholder-img card-img-top" src="media/arcsight-cef.png" width="50%" height="auto"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" /></img>
+              <div class="card-body" style="border-top: solid">
+                <h5 class="card-title" style="font-weight: bolder;">CEF</h5>
               </div>
             </div>
           </div>
-        
-          <!--<div class="column cloud">
+        </div>
+
+        <!--<div class="column cloud">
                     <div class="card h-100">
                         <div class="content">
                             <img class="bd-placeholder-img card-img-top" src="media/rabbitmq.png" width="50%"
@@ -1256,59 +1250,65 @@
                         </div>
                     </div>
                 </div>-->
-          <!-- END GRID -->
-        </div>
+        <!-- END GRID -->
       </div>
     </div>
+  </div>
 
-    <!-- END MAIN -->
-    </div>
+  <!-- END MAIN -->
+  </div>
 
-    <script>
-      filterSelection("all")
-      function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("column");
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-          w3RemoveClass(x[i], "show");
-          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  <script>
+
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("column");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+      }
+    }
+
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
         }
       }
-
-      function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-          if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-        }
-      }
-
-      function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-          while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);
-          }
-        }
-        element.className = arr1.join(" ");
-      }
+      element.className = arr1.join(" ");
+    }
 
 
-      // Add active class to the current button (highlight it)
-      var btnContainer = document.getElementById("myBtnContainer");
-      var btns = btnContainer.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-          var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
-      }
-    </script>
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+
+    function changeColor(event) {
+      const el = event.target;
+      el.setAttribute('style', 'background-color: blue');
+    }
+  </script>
   </main>
   <!--<footer class="text-muted py-5" style="font-family: 'Nunito', sans-serif;">
     <div class="container">
