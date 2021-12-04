@@ -1,0 +1,148 @@
+{
+    "dashboard": {
+        "name": "AWS Cloud Trail",
+        "tags": []
+    },
+    "datasources": {
+        "1": {
+            "name": "logiq_reports",
+            "options": {},
+            "type": "reports"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 13,
+                    "sizeX": 3,
+                    "sizeY": 15
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Map (Markers)",
+                "options": {
+                    "classify": "groupby_iso_country_code",
+                    "clusterMarkers": true,
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "groups": {
+                        "IND": {
+                            "color": "#2ca02c"
+                        },
+                        "JPN": {
+                            "color": "#9467bd"
+                        },
+                        "KOR": {
+                            "color": "#8c564b"
+                        },
+                        "SGP": {
+                            "color": "#d62728"
+                        },
+                        "USA": {
+                            "color": "#ff7f0e"
+                        }
+                    },
+                    "latColName": "groupby_latitude",
+                    "lonColName": "groupby_longitude",
+                    "mapTileUrl": "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    "minColumns": 2
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "reporting query generated on Thu, 18 Nov 2021 14:27:22 GMT",
+                    "name": "CloudTrail Events by Region",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "namespace: logiq:logflow.logiq.ai\napplication: cloudtrail\naggregate: count\ngroup_by:\n  - iso_country_code\n  - latitude\n  - longitude\nduration:\n  relative: 604800\n"
+                },
+                "type": "MAP"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 3,
+                    "sizeY": 15
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Map (Choropleth)",
+                "options": {
+                    "bounds": [
+                        [
+                            -50.35542520380285,
+                            -238.64548278792847
+                        ],
+                        [
+                            82.63095743199695,
+                            237.84906486398998
+                        ]
+                    ],
+                    "clusteringMode": "q",
+                    "colors": {
+                        "background": "#ffffff",
+                        "borders": "#ffffff",
+                        "max": "#002FB4",
+                        "min": "#799CFF",
+                        "noValue": "#dddddd"
+                    },
+                    "countryCodeColumn": "groupby_iso_country_code",
+                    "countryCodeType": "iso_a3",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "legend": {
+                        "alignText": "right",
+                        "position": "bottom-left",
+                        "visible": true
+                    },
+                    "minColumns": 2,
+                    "noValuePlaceholder": "N/A",
+                    "popup": {
+                        "enabled": true,
+                        "template": "Country: \u003cb\u003e{{ @@name_long }} ({{ @@iso_a2 }})\u003c/b\u003e\n\u003cbr\u003e\nValue: \u003cb\u003e{{ @@value }}\u003c/b\u003e"
+                    },
+                    "steps": 5,
+                    "tooltip": {
+                        "enabled": true,
+                        "template": "\u003cb\u003e{{ @@name }}\u003c/b\u003e: {{ @@value }}"
+                    },
+                    "valueColumn": "value",
+                    "valueFormat": "0,0.00"
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "reporting query generated on Thu, 18 Nov 2021 14:27:22 GMT",
+                    "name": "CloudTrail Events by Country",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "namespace: logiq:logflow.logiq.ai\napplication: cloudtrail\naggregate: count\ngroup_by:\n  - iso_country_code\nduration:\n  relative: 604800\n"
+                },
+                "type": "CHOROPLETH"
+            },
+            "width": 1
+        }
+    ]
+}
