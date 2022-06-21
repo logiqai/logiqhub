@@ -1,0 +1,2024 @@
+{
+    "dashboard": {
+        "name": "Elastic",
+        "tags": []
+    },
+    "datasources": {
+        "11": {
+            "name": "Elastic-Exporter",
+            "options": {
+                "url": "http://101.53.133.60:9090"
+            },
+            "type": "prometheus"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 23,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "instance": "unused",
+                        "job": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "color": "#3BD973",
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "color": "#FB8D3D",
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Primary Shards",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_active_primary_shards\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": " ",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Primary Shards",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_active_primary_shards\u0026duration=6h\u0026step=5m"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 5,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": " ",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Initializing Shards",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_initializing_shards"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 63,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Indexing time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(elasticsearch_indices_indexing_index_time_seconds_total[5m])\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 71,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Merging time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(elasticsearch_indices_merges_total_time_seconds_total[5m])\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 39,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "gc": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "GC time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "irate(elasticsearch_jvm_gc_collection_seconds_sum[5m])\u0026duration=6h\u0026step=5m\n"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 55,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "es_client_node": "unused",
+                        "es_data_node": "unused",
+                        "host": "unused",
+                        "instance": "unused",
+                        "job": "unused",
+                        "null": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Documents deleting rate",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "irate(elasticsearch_indices_docs_deleted[5m])\u0026duration=24h\u0026step=10m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 39,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "gc": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "GC count",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "irate(elasticsearch_jvm_gc_collection_seconds_count[5m])\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 1,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": "Node(s)",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "No.of Nodes",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(elasticsearch_cluster_health_number_of_nodes)"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 5,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": " ",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Active Shards",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_active_shards\u0026duration=6h\u0026step=5m"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 47,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Documents count",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_indices_docs\u0026duration=24d\u0026step=10m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 63,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Query time",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(elasticsearch_indices_search_query_time_seconds[5m])\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 10,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": " ",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Delayed Un. Shards",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_delayed_unassigned_shards"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 47,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "yError",
+                        "es_client_node": "unused",
+                        "es_data_node": "unused",
+                        "gc": "unused",
+                        "host": "unused",
+                        "instance": "unused",
+                        "job": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Documents indexing rate",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "irate(elasticsearch_indices_indexing_index_total[5m])\u0026duration=24h\u0026step=10m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 10,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": "Descriptors",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Open file descriptors",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_process_open_files_count"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 31,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "Anomaly": "yError",
+                        "MA12": "y",
+                        "MA48": "y",
+                        "area": "unused",
+                        "cluster": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "MA12": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "MA48": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "value": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "MBytes"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "JVM Heap memory used",
+                    "options": {
+                        "baseliningOptions": {
+                            "mawindow": 48,
+                            "operations": [
+                                "baselining",
+                                "anomaly_detection"
+                            ],
+                            "timeColumn": "timestamp",
+                            "valueColumn": "value"
+                        },
+                        "parameters": []
+                    },
+                    "query": "irate(elasticsearch_jvm_memory_used_bytes{area=\"heap\"}[5m])/(1024^2)\u0026duration=24h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 1,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 1,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": "Node(s)",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "No.of Data Nodes",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(elasticsearch_cluster_health_number_of_data_nodes)"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 71,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "instance": "unused",
+                        "job": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "column",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "color": "#3BD973",
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "color": "#FB8D3D",
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Health Status",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_status"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "color",
+                    "counterLabel": " ",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Health Status",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_status"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 15,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Avg CPU Usage",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "sum(elasticsearch_process_cpu_percent) by (cluster)/count(elasticsearch_process_cpu_percent)by (cluster)\u0026duration=24h\u0026step=10m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 10,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": "Task(s)",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Pending Tasks",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_number_of_pending_tasks"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 31,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "elasticsearch": {
+                            "color": "#E92828",
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Percent (%)"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "JVM Heap memory used Avg",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": " sum by (cluster)((elasticsearch_jvm_memory_used_bytes{area=\"heap\"})/(elasticsearch_jvm_memory_max_bytes{area=\"heap\"}))*100\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 15,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Percent (%)"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Disk usage",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "(elasticsearch_filesystem_data_available_bytes/elasticsearch_filesystem_data_size_bytes)*100\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 55,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Documents merging rate",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "rate(elasticsearch_indices_merges_total[5m])\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 5,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": null,
+                    "counterColName": "value",
+                    "counterLabel": " ",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": null
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Unassigned Shards",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_unassigned_shards"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 23,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "cluster": "series",
+                        "instance": "unused",
+                        "job": "unused",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "area",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "docker-cluster": {
+                            "color": "#3BD973",
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "elasticsearch": {
+                            "color": "#FB8D3D",
+                            "index": 0,
+                            "type": "area",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 11,
+                    "description": null,
+                    "name": "Active Shards",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "elasticsearch_cluster_health_active_shards\u0026duration=6h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        }
+    ]
+}
