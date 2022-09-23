@@ -1,0 +1,2273 @@
+{
+    "dashboard": {
+        "name": "LOGIQ Monitoring",
+        "tags": []
+    },
+    "datasources": {
+        "2": {
+            "name": "LogiqMonitoring",
+            "options": {
+                "url": "http://prometheus-operated:9090"
+            },
+            "type": "logiq_prometheus"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": null,
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "go_memstats_heap_alloc_bytes - ingest",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "(round(go_memstats_heap_alloc_bytes{namespace=\"lflow\",pod=~\"logiq-flash-\\\\d|logiq-flash-ml-\\\\d\"}/1000000000,0.1))\u0026duration=1h\u0026step=5m"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 16,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": null,
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "null": "series",
+                        "pod": "x",
+                        "timestamp": "unused",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "scatter",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "logiq_back_pressure_counter",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "query=logiq_back_pressure_counter"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "operation": "series",
+                        "pod": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "scatter",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "dq": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "inc": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "jok": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "mb": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "mdone": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "mdq": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "mq": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "query": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "rec": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "wr": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "wrb": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "Mover",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "logiq_mover_count{operation=~\".*\"}"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 24,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "Anomaly": "yError",
+                        "anomalyForecast": "y",
+                        "forecast": "y",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "anomalyForecast": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "forecast": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "value": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "GB/h"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "GB/h (last 8d)",
+                    "options": {
+                        "baseliningOptions": {
+                            "forecastDays": 10,
+                            "operations": [
+                                "forecast",
+                                "anomaly_detection"
+                            ],
+                            "timeColumn": "timestamp",
+                            "valueColumn": "value"
+                        },
+                        "parameters": []
+                    },
+                    "query": "query=round(sum(increase(logiq_data_received_bytes[5m]))/1000000000*12,0.01)\u0026duration=8d\u0026step=1h"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 8,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "null": "series",
+                        "pod": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "scatter",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {
+                        "delete": {},
+                        "get": {},
+                        "post": {},
+                        "put": {}
+                    },
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "Per pod ingest rate",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(increase(logiq_data_received_bytes[5m])*12/1000000000,0.01)"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 8,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "go_memstats_heap_alloc_bytes - api",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "query=round(go_memstats_heap_alloc_bytes{namespace=\"lflow\",pod=~\"logiq-flash-ml-\\\\d|logiq-flash-ml-\\\\d\\\\d\"}/1000000000,0.1)\u0026duration=4h\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 24,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "YYYY-MM-DD HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "scatter",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "Ingest free disk space (%)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(logiq_file_sizes_bytes{pod=~\"logiq-flash-\\\\d|logiq-flash-ml-\\\\d\",fileName=\"free\"}/(1000000000*498)*100,0.01)"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 16,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "GB/h"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "GB/h",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "query=round(sum(increase(logiq_data_received_bytes[5m]))/1000000000*12,0.01)\u0026duration=1d\u0026step=1h"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 32,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "exported_namespace": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "MM/DD/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "USDeveloper:usdv": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "USField:usfield": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "# Messages/sec by Namespace",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(sum by (exported_namespace) (rate(logiq_namespace_app_message_count[5m])),1)\u0026duration=30d\u0026step=1h"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 32,
+                    "sizeX": 3,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Batch Size",
+                "options": {
+                    "columnMapping": {
+                        "instance": "unused",
+                        "pod": "x",
+                        "timestamp": "unused",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "MM/DD/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "scatter",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "Batch size [5m]",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round((increase(logiq_json_batch_size_count_sum[5m]))/(increase(logiq_json_batch_size_count_count[5m])),1)"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 40,
+                    "sizeX": 6,
+                    "sizeY": 10
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "MM/DD/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "logiq-flash-109": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "logiq-flash-110": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "logiq-flash-112": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "logiq-flash-113": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "logiq-flash-114": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "logiq-flash-115": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-116": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-117": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-118": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-119": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-flash-120": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "logiq-flash-121": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "logiq-flash-122": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "logiq-flash-123": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "logiq-flash-124": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-flash-125": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-flash-126": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "logiq-flash-127": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "IngestDb files",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "query=logiq_ingestdb_files_count\u0026duration=2h\u0026step=60s"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 50,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "folder": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "MM/DD/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "logiq_metadata_db_usage",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "logiq_metadata_db_usage\u0026duration=12h\u0026step=1h"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 58,
+                    "sizeX": 6,
+                    "sizeY": 8
+                }
+            },
+            "text": null,
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "pod": "series",
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "YYYY-MM-DD HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "line",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "logiq-flash-0": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "logiq-flash-1": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "logiq-flash-10": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        },
+                        "logiq-flash-100": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 3
+                        },
+                        "logiq-flash-101": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 4
+                        },
+                        "logiq-flash-102": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 5
+                        },
+                        "logiq-flash-103": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 6
+                        },
+                        "logiq-flash-104": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 7
+                        },
+                        "logiq-flash-105": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 8
+                        },
+                        "logiq-flash-106": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 9
+                        },
+                        "logiq-flash-107": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 10
+                        },
+                        "logiq-flash-108": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 11
+                        },
+                        "logiq-flash-109": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 12
+                        },
+                        "logiq-flash-11": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 13
+                        },
+                        "logiq-flash-110": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 14
+                        },
+                        "logiq-flash-111": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 15
+                        },
+                        "logiq-flash-112": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 16
+                        },
+                        "logiq-flash-113": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 17
+                        },
+                        "logiq-flash-114": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 18
+                        },
+                        "logiq-flash-115": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 19
+                        },
+                        "logiq-flash-116": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 20
+                        },
+                        "logiq-flash-117": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 21
+                        },
+                        "logiq-flash-118": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 22
+                        },
+                        "logiq-flash-119": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 23
+                        },
+                        "logiq-flash-12": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 24
+                        },
+                        "logiq-flash-120": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 25
+                        },
+                        "logiq-flash-121": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 26
+                        },
+                        "logiq-flash-122": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 27
+                        },
+                        "logiq-flash-123": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 28
+                        },
+                        "logiq-flash-124": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 29
+                        },
+                        "logiq-flash-125": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 30
+                        },
+                        "logiq-flash-126": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 31
+                        },
+                        "logiq-flash-127": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 32
+                        },
+                        "logiq-flash-128": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 33
+                        },
+                        "logiq-flash-129": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 34
+                        },
+                        "logiq-flash-13": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 35
+                        },
+                        "logiq-flash-130": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 36
+                        },
+                        "logiq-flash-131": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 37
+                        },
+                        "logiq-flash-132": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 38
+                        },
+                        "logiq-flash-133": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 39
+                        },
+                        "logiq-flash-134": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 40
+                        },
+                        "logiq-flash-135": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 41
+                        },
+                        "logiq-flash-136": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 42
+                        },
+                        "logiq-flash-137": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 43
+                        },
+                        "logiq-flash-138": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 44
+                        },
+                        "logiq-flash-139": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 45
+                        },
+                        "logiq-flash-14": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 46
+                        },
+                        "logiq-flash-140": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 47
+                        },
+                        "logiq-flash-141": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 48
+                        },
+                        "logiq-flash-142": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 49
+                        },
+                        "logiq-flash-143": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 50
+                        },
+                        "logiq-flash-15": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 51
+                        },
+                        "logiq-flash-16": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 52
+                        },
+                        "logiq-flash-17": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 53
+                        },
+                        "logiq-flash-18": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 54
+                        },
+                        "logiq-flash-19": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 55
+                        },
+                        "logiq-flash-2": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 56
+                        },
+                        "logiq-flash-20": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 57
+                        },
+                        "logiq-flash-21": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 58
+                        },
+                        "logiq-flash-22": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 59
+                        },
+                        "logiq-flash-23": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 60
+                        },
+                        "logiq-flash-24": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 61
+                        },
+                        "logiq-flash-25": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 62
+                        },
+                        "logiq-flash-26": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 63
+                        },
+                        "logiq-flash-27": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 64
+                        },
+                        "logiq-flash-28": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 65
+                        },
+                        "logiq-flash-29": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 66
+                        },
+                        "logiq-flash-3": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 67
+                        },
+                        "logiq-flash-30": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 68
+                        },
+                        "logiq-flash-31": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 69
+                        },
+                        "logiq-flash-32": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 70
+                        },
+                        "logiq-flash-33": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 71
+                        },
+                        "logiq-flash-34": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 72
+                        },
+                        "logiq-flash-35": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 73
+                        },
+                        "logiq-flash-36": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 74
+                        },
+                        "logiq-flash-37": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 75
+                        },
+                        "logiq-flash-38": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 76
+                        },
+                        "logiq-flash-39": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 77
+                        },
+                        "logiq-flash-4": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 78
+                        },
+                        "logiq-flash-40": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 79
+                        },
+                        "logiq-flash-41": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 80
+                        },
+                        "logiq-flash-42": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 81
+                        },
+                        "logiq-flash-43": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 82
+                        },
+                        "logiq-flash-44": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 83
+                        },
+                        "logiq-flash-45": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 84
+                        },
+                        "logiq-flash-46": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 85
+                        },
+                        "logiq-flash-47": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 86
+                        },
+                        "logiq-flash-48": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 87
+                        },
+                        "logiq-flash-49": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 88
+                        },
+                        "logiq-flash-5": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 89
+                        },
+                        "logiq-flash-50": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 90
+                        },
+                        "logiq-flash-51": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 91
+                        },
+                        "logiq-flash-52": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 92
+                        },
+                        "logiq-flash-53": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 93
+                        },
+                        "logiq-flash-54": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 94
+                        },
+                        "logiq-flash-55": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 95
+                        },
+                        "logiq-flash-56": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 96
+                        },
+                        "logiq-flash-57": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 97
+                        },
+                        "logiq-flash-58": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 98
+                        },
+                        "logiq-flash-59": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 99
+                        },
+                        "logiq-flash-6": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 100
+                        },
+                        "logiq-flash-60": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 101
+                        },
+                        "logiq-flash-61": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 102
+                        },
+                        "logiq-flash-62": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 103
+                        },
+                        "logiq-flash-63": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 104
+                        },
+                        "logiq-flash-64": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 105
+                        },
+                        "logiq-flash-65": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 106
+                        },
+                        "logiq-flash-66": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 107
+                        },
+                        "logiq-flash-67": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 108
+                        },
+                        "logiq-flash-68": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 109
+                        },
+                        "logiq-flash-69": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 110
+                        },
+                        "logiq-flash-7": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 111
+                        },
+                        "logiq-flash-70": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 112
+                        },
+                        "logiq-flash-71": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 113
+                        },
+                        "logiq-flash-72": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 114
+                        },
+                        "logiq-flash-73": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 115
+                        },
+                        "logiq-flash-74": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 116
+                        },
+                        "logiq-flash-75": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 117
+                        },
+                        "logiq-flash-76": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 118
+                        },
+                        "logiq-flash-77": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 119
+                        },
+                        "logiq-flash-78": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 120
+                        },
+                        "logiq-flash-79": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 121
+                        },
+                        "logiq-flash-8": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 122
+                        },
+                        "logiq-flash-80": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 123
+                        },
+                        "logiq-flash-81": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 124
+                        },
+                        "logiq-flash-82": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 125
+                        },
+                        "logiq-flash-83": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 126
+                        },
+                        "logiq-flash-84": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 127
+                        },
+                        "logiq-flash-85": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 128
+                        },
+                        "logiq-flash-86": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 129
+                        },
+                        "logiq-flash-87": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 130
+                        },
+                        "logiq-flash-88": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 131
+                        },
+                        "logiq-flash-89": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 132
+                        },
+                        "logiq-flash-9": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 133
+                        },
+                        "logiq-flash-90": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 134
+                        },
+                        "logiq-flash-91": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 135
+                        },
+                        "logiq-flash-92": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 136
+                        },
+                        "logiq-flash-93": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 137
+                        },
+                        "logiq-flash-94": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 138
+                        },
+                        "logiq-flash-95": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 139
+                        },
+                        "logiq-flash-96": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 140
+                        },
+                        "logiq-flash-97": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 141
+                        },
+                        "logiq-flash-98": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 142
+                        },
+                        "logiq-flash-99": {
+                            "index": 0,
+                            "type": "line",
+                            "yAxis": 0,
+                            "zIndex": 143
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": null,
+                    "name": "Ingest free disk %  per pod",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "100 * (sum by (pod) (logiq_file_sizes_bytes{pod=~\"logiq-flash-\\\\d\\\\d|logiq-flash-\\\\d|logiq-flash-\\\\d\\\\d\\\\d\",fileName=\"free\"})/sum by (pod) (logiq_file_sizes_bytes{pod=~\"logiq-flash-\\\\d\\\\d|logiq-flash-\\\\d|logiq-flash-\\\\d\\\\d\\\\d\",fileName=\"all\"}))\u0026duration=12d\u0026step=18h\n"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        }
+    ]
+}
