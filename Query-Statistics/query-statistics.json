@@ -1,0 +1,724 @@
+{
+    "dashboard": {
+        "name": "Query statistics",
+        "tags": []
+    },
+    "datasources": {
+        "12": {
+            "name": "Flash",
+            "options": {
+                "dbname": "flash",
+                "host": "postgres",
+                "password": "--------",
+                "port": 5432,
+                "user": "postgres"
+            },
+            "type": "pg"
+        },
+        "3": {
+            "name": "LogFlow",
+            "options": {
+                "dbname": "flash",
+                "host": "postgres",
+                "password": "--------",
+                "port": 5432,
+                "user": "postgres"
+            },
+            "type": "pg"
+        }
+    },
+    "widgets": [
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": true,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 17,
+                    "sizeX": 2,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Table",
+                "options": {},
+                "query": {
+                    "data_source_id": 12,
+                    "description": null,
+                    "name": "Users (15d)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "select count(*), createdby from queryhistory where createdby != '' and to_timestamp(createdat) \u003e NOW() - INTERVAL '15 DAY' group by createdby order by count desc"
+                },
+                "type": "TABLE"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": true,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 7,
+                    "sizeX": 4,
+                    "sizeY": 37
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Table",
+                "options": {
+                    "autoHeight": true,
+                    "columns": [
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "id",
+                            "order": 100000,
+                            "title": "id",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "number",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "requesttype",
+                            "numberFormat": "0,0",
+                            "order": 100001,
+                            "title": "requesttype",
+                            "type": "integer",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "namespace",
+                            "order": 100002,
+                            "title": "namespace",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "applicationnames",
+                            "order": 100003,
+                            "title": "applicationnames",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": true,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "keyword",
+                            "order": 100004,
+                            "title": "keyword",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "hostname",
+                            "order": 100005,
+                            "title": "hostname",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": true,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "createdby",
+                            "order": 100006,
+                            "title": "createdby",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "dateTimeFormat": "X",
+                            "displayAs": "datetime",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "createdat",
+                            "numberFormat": "0,0",
+                            "order": 100007,
+                            "title": "createdat",
+                            "type": "integer",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "number",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "duration",
+                            "order": 100008,
+                            "title": "duration",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "boolean",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "relative",
+                            "order": 100009,
+                            "title": "relative",
+                            "type": "boolean",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "number",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "durationsec",
+                            "numberFormat": "0,0",
+                            "order": 100010,
+                            "title": "durationsec",
+                            "type": "integer",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "number",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "timetofirst",
+                            "numberFormat": "0,0",
+                            "order": 100011,
+                            "title": "timetofirst",
+                            "type": "integer",
+                            "visible": true
+                        }
+                    ],
+                    "defaultColumns": 3,
+                    "defaultRows": 14,
+                    "itemsPerPage": 25,
+                    "minColumns": 2
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Query history (15d)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "select * from queryhistory where to_timestamp(createdat) \u003e NOW() - INTERVAL '15 DAY'"
+                },
+                "type": "TABLE"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 7
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "counterColName": "count",
+                    "counterLabel": "Queries",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Query count",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "select count(*) from queryhistory"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 2,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 7
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "count": "y",
+                        "durationhr": "unused",
+                        "durationmin": "x"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "YYYY-MM-DD HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "scatter",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "count": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": "Minutes"
+                        },
+                        "type": "logarithmic"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Query search range (15d)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "select count(*),durationsec/60 as durationmin, durationsec/3600 as durationhr from queryhistory where requesttype in (2,4) and durationsec \u003e 0 and to_timestamp(createdat) \u003e NOW() - INTERVAL '15 DAY' group by durationsec"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 7,
+                    "sizeX": 2,
+                    "sizeY": 10
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "count": "y",
+                        "timetofirst": "x"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "YYYY-MM-DD HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "scatter",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "count": {
+                            "index": 0,
+                            "type": "scatter",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "TTFR (Seconds) (15d)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "select count(*),timetofirst from queryhistory where timetofirst \u003e 0 and to_timestamp(createdat) \u003e NOW() - INTERVAL '15 DAY' group by timetofirst"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 4,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 7
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "count": "y",
+                        "count1": "size",
+                        "requesttype": "series",
+                        "timetofirst": "x"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "MM/DD/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "bubble",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": null
+                    },
+                    "seriesOptions": {
+                        "1": {
+                            "index": 0,
+                            "type": "bubble",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        },
+                        "2": {
+                            "index": 0,
+                            "type": "bubble",
+                            "yAxis": 0,
+                            "zIndex": 1
+                        },
+                        "4": {
+                            "index": 0,
+                            "type": "bubble",
+                            "yAxis": 0,
+                            "zIndex": 2
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 3,
+                    "description": null,
+                    "name": "Bubble - TTFR (seconds)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "select count(*),count(*),timetofirst,requesttype from queryhistory where timetofirst \u003e 0 and to_timestamp(createdat) \u003e NOW() - INTERVAL '30 DAY' group by timetofirst,requesttype"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        }
+    ]
+}
