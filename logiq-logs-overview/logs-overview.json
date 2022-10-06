@@ -201,7 +201,7 @@
                     "options": {
                         "parameters": []
                     },
-                    "query": "round(avg(increase(logiq_data_received_bytes[5m])*12/1000000000)/1,0.01)*100"
+                    "query": "((sum(rate(logiq_data_received_bytes[5m]))*3600/1000000000*1)/(count (count by (pod) (logiq_data_received_bytes))))*100"
                 },
                 "type": "GAUGE"
             },
