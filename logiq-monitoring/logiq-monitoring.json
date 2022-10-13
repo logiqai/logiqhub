@@ -548,7 +548,7 @@
                     "options": {
                         "parameters": []
                     },
-                    "query": "round(increase(logiq_data_received_bytes[5m])*12/1000000000,0.01)"
+                    "query": "round(sum by (pod)(increase(logiq_data_received_bytes[5m]))*12/1000000000,0.01)"
                 },
                 "type": "CHART"
             },
