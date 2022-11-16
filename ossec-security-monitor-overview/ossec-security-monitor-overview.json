@@ -12,7 +12,7 @@
         "2": {
             "name": "LogiqMonitoring",
             "options": {
-                "url": "http://prometheus-operated:9090"
+                "url": "http://lq2502-thanos-query:9090"
             },
             "type": "logiq_prometheus"
         }
@@ -24,42 +24,100 @@
                 "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "col": 0,
+                    "col": 1,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 1,
-                    "minSizeY": 1,
-                    "row": 0,
+                    "minSizeY": 5,
+                    "row": 19,
                     "sizeX": 2,
-                    "sizeY": 8
+                    "sizeY": 9
                 }
             },
             "text": "",
             "visualization": {
-                "name": "Events",
+                "name": "Chart",
                 "options": {
-                    "bgColor": "#B554FF",
-                    "counterColName": "value",
-                    "counterLabel": "Million",
-                    "defaultColumns": 2,
-                    "defaultRows": 5,
-                    "rowNumber": 1,
-                    "stringDecChar": ".",
-                    "stringDecimal": 0,
-                    "stringThouSep": ",",
-                    "targetRowNumber": 1,
-                    "textColor": "#FFFFFF"
+                    "columnMapping": {
+                        "groupby_rule.mitre.tactic": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "DD/MM/YY HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "column",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "name": "Alerts",
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {
+                        "Credential Access": {},
+                        "Defense Evasion": {},
+                        "Impact": {},
+                        "Initial Access": {},
+                        "Lateral Movement": {},
+                        "Persistence": {},
+                        "Privilege Escalation": {}
+                    },
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": "Managers"
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "title": {
+                                "text": "Alerts"
+                            },
+                            "type": "linear"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
                 },
                 "query": {
-                    "data_source_id": 2,
-                    "description": null,
-                    "name": "Total events (24h)",
+                    "data_source_id": 1,
+                    "description": "",
+                    "name": "Top MITRE attack tactics",
                     "options": {
                         "parameters": []
                     },
-                    "query": "round(sum(increase(logiq_namespace_app_message_count[24h]))/1000000,1)"
+                    "query": "aggregate: count\nnamespace: ossec-tarsyer:ossec\napplication: ossec\ngroup_by:\n  - agent.name\n  - rule.mitre.tactic\nduration:\n  relative: 86400\nexpression_internal:\n  '1':\n    '1':\n      currentField: agent.name\n      searchValue: Logiq\n      operator: '=~'\nexpression: '{([agent.name] =~ ''Logiq'')}'\n"
                 },
-                "type": "COUNTER"
+                "type": "CHART"
             },
             "width": 1
         },
@@ -69,13 +127,107 @@
                 "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "col": 3,
+                    "col": 1,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 5,
+                    "row": 0,
+                    "sizeX": 2,
+                    "sizeY": 10
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Chart",
+                "options": {
+                    "columnMapping": {
+                        "timestamp": "x",
+                        "value": "y"
+                    },
+                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+                    "dateTimeFormat": "mm/dd/yyyy  HH:mm",
+                    "defaultColumns": 3,
+                    "defaultRows": 8,
+                    "error_y": {
+                        "type": "data",
+                        "visible": true
+                    },
+                    "globalSeriesType": "column",
+                    "legend": {
+                        "enabled": true
+                    },
+                    "minColumns": 1,
+                    "minRows": 5,
+                    "numberFormat": "0,0[.]00000",
+                    "percentFormat": "0[.]00%",
+                    "reverseX": false,
+                    "series": {
+                        "error_y": {
+                            "type": "data",
+                            "visible": true
+                        },
+                        "percentValues": false,
+                        "stacking": "stack"
+                    },
+                    "seriesOptions": {
+                        "value": {
+                            "index": 0,
+                            "type": "column",
+                            "yAxis": 0,
+                            "zIndex": 0
+                        }
+                    },
+                    "showDataLabels": false,
+                    "sortX": true,
+                    "textFormat": "",
+                    "valuesOptions": {},
+                    "xAxis": {
+                        "labels": {
+                            "enabled": true
+                        },
+                        "title": {
+                            "text": ""
+                        },
+                        "type": "-"
+                    },
+                    "yAxis": [
+                        {
+                            "rangeMin": null,
+                            "type": "logarithmic"
+                        },
+                        {
+                            "opposite": true,
+                            "type": "linear"
+                        }
+                    ]
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "",
+                    "name": "Alerts (6h)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "aggregate: count\nnamespace: ossec-tarsyer:ossec\napplication: ossec\ngroup_by:\n  - agent.name\nduration:\n  relative: 21600\nallowEmpty: true\nstep: 10m\n"
+                },
+                "type": "CHART"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 1,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 2,
                     "minSizeY": 1,
-                    "row": 24,
-                    "sizeX": 3,
+                    "row": 10,
+                    "sizeX": 5,
                     "sizeY": 9
                 }
             },
@@ -94,97 +246,6 @@
                                 "true"
                             ],
                             "dateTimeFormat": "DD/MM/YY HH:mm",
-                            "displayAs": "datetime",
-                            "highlightLinks": false,
-                            "imageHeight": "",
-                            "imageTitleTemplate": "{{ @ }}",
-                            "imageUrlTemplate": "{{ @ }}",
-                            "imageWidth": "",
-                            "linkOpenInNewTab": true,
-                            "linkTextTemplate": "{{ @ }}",
-                            "linkTitleTemplate": "{{ @ }}",
-                            "linkUrlTemplate": "{{ @ }}",
-                            "name": "timestamp",
-                            "order": 100000,
-                            "title": "timestamp",
-                            "type": "datetime",
-                            "visible": true
-                        },
-                        {
-                            "alignContent": "right",
-                            "allowHTML": true,
-                            "allowSearch": false,
-                            "booleanValues": [
-                                "false",
-                                "true"
-                            ],
-                            "displayAs": "number",
-                            "highlightLinks": false,
-                            "imageHeight": "",
-                            "imageTitleTemplate": "{{ @ }}",
-                            "imageUrlTemplate": "{{ @ }}",
-                            "imageWidth": "",
-                            "linkOpenInNewTab": true,
-                            "linkTextTemplate": "{{ @ }}",
-                            "linkTitleTemplate": "{{ @ }}",
-                            "linkUrlTemplate": "{{ @ }}",
-                            "name": "value",
-                            "numberFormat": "0,0.00",
-                            "order": 100001,
-                            "title": "value",
-                            "type": "float",
-                            "visible": true
-                        }
-                    ],
-                    "defaultColumns": 3,
-                    "defaultRows": 14,
-                    "itemsPerPage": 25,
-                    "minColumns": 2
-                },
-                "query": {
-                    "data_source_id": 1,
-                    "description": "reporting query generated on Mon, 07 Feb 2022 11:01:05 GMT",
-                    "name": "PCI DSS checks",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "namespace: hauler-secmon-dc1:ossec\napplication: ossec\naggregate: count\ngroup_by:\n  - rule.pci_dss\n  - agent.name\n  - rule.description\nduration:\n  relative: 86400\nallowEmpty: false\n"
-                },
-                "type": "TABLE"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 0,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 2,
-                    "minSizeY": 1,
-                    "row": 24,
-                    "sizeX": 3,
-                    "sizeY": 9
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Table",
-                "options": {
-                    "autoHeight": true,
-                    "columns": [
-                        {
-                            "alignContent": "right",
-                            "allowHTML": true,
-                            "allowSearch": false,
-                            "booleanValues": [
-                                "false",
-                                "true"
-                            ],
-                            "dateTimeFormat": "MM/DD/YY HH:mm",
                             "displayAs": "datetime",
                             "highlightLinks": false,
                             "imageHeight": "",
@@ -222,6 +283,215 @@
                             "name": "value",
                             "numberFormat": "0,0.00",
                             "order": 100001,
+                            "title": "Count",
+                            "type": "float",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_rule.pci_dss",
+                            "order": 100002,
+                            "title": "PCIDSS Rule",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_agent.name",
+                            "order": 100003,
+                            "title": "Agent name",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_rule.description",
+                            "order": 100004,
+                            "title": "Description",
+                            "type": "string",
+                            "visible": true
+                        }
+                    ],
+                    "defaultColumns": 3,
+                    "defaultRows": 14,
+                    "itemsPerPage": 25,
+                    "minColumns": 2
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "reporting query generated on Mon, 07 Feb 2022 11:01:05 GMT",
+                    "name": "PCI DSS checks",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "namespace: ossec-tarsyer:ossec\napplication: ossec\naggregate: count\ngroup_by:\n  - rule.pci_dss\n  - agent.name\n  - rule.description\nduration:\n  relative: 86400\nallowEmpty: false\nexpression_internal:\n  '1':\n    '1':\n      currentField: agent.name\n      searchValue: hauler\n      operator: '=~'\n    '2':\n      currentField: agent.name\n      searchValue: Logiq\n      operator: '=~'\nexpression: '{([agent.name] =~ ''hauler'' || [agent.name] =~ ''Logiq'')}'\n"
+                },
+                "type": "TABLE"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 5,
+                    "sizeX": 1,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "",
+                "options": {
+                    "bgColor": "#002FB4",
+                    "countRow": true,
+                    "counterColName": "value",
+                    "counterLabel": "Managers",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": "#FFFFFF"
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "",
+                    "name": "Managers",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "aggregate: count\nnamespace: ossec-tarsyer:ossec\napplication: ossec\ngroup_by:\n  - manager.name\nduration:\n  relative: 86400\n"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 19,
+                    "sizeX": 3,
+                    "sizeY": 9
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Table",
+                "options": {
+                    "autoHeight": true,
+                    "columns": [
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "dateTimeFormat": "MM/DD/YY HH:mm",
+                            "displayAs": "datetime",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "timestamp",
+                            "order": 0,
+                            "title": "Timestamp",
+                            "type": "datetime",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "number",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "value",
+                            "numberFormat": "0,0.00",
+                            "order": 1,
                             "title": "value",
                             "type": "float",
                             "visible": false
@@ -245,7 +515,7 @@
                             "linkTitleTemplate": "{{ @ }}",
                             "linkUrlTemplate": "{{ @ }}",
                             "name": "groupby_agent.name",
-                            "order": 100002,
+                            "order": 2,
                             "title": "Agent name",
                             "type": "string",
                             "visible": true
@@ -258,7 +528,7 @@
                                 "false",
                                 "true"
                             ],
-                            "displayAs": "string",
+                            "displayAs": "link",
                             "highlightLinks": false,
                             "imageHeight": "",
                             "imageTitleTemplate": "{{ @ }}",
@@ -267,9 +537,9 @@
                             "linkOpenInNewTab": true,
                             "linkTextTemplate": "{{ @ }}",
                             "linkTitleTemplate": "{{ @ }}",
-                            "linkUrlTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "/explore?keyWord={{ @ }}\u0026pageSize=100\u0026facets=true\u0026namespace=ossec-tarsyer:ossec\u0026applications=%5B%22ossec%22%5D\u0026qType=0\u0026isAdvanceQuery=false\u0026sharedSearch=true",
                             "name": "groupby_rule.mitre.id",
-                            "order": 100003,
+                            "order": 3,
                             "title": "Mitre Id",
                             "type": "string",
                             "visible": true
@@ -293,7 +563,7 @@
                             "linkTitleTemplate": "{{ @ }}",
                             "linkUrlTemplate": "{{ @ }}",
                             "name": "groupby_rule.mitre.tactic",
-                            "order": 100004,
+                            "order": 4,
                             "title": "Mitre tactic",
                             "type": "string",
                             "visible": true
@@ -317,7 +587,7 @@
                             "linkTitleTemplate": "{{ @ }}",
                             "linkUrlTemplate": "{{ @ }}",
                             "name": "groupby_rule.description",
-                            "order": 100005,
+                            "order": 5,
                             "title": "Description",
                             "type": "string",
                             "visible": true
@@ -341,7 +611,7 @@
                             "linkTitleTemplate": "{{ @ }}",
                             "linkUrlTemplate": "{{ @ }}",
                             "name": "groupby_rule.level",
-                            "order": 100006,
+                            "order": 6,
                             "title": "Level",
                             "type": "string",
                             "visible": true
@@ -365,7 +635,7 @@
                             "linkTitleTemplate": "{{ @ }}",
                             "linkUrlTemplate": "{{ @ }}",
                             "name": "groupby_rule.id",
-                            "order": 100007,
+                            "order": 7,
                             "title": "Rule id",
                             "type": "string",
                             "visible": true
@@ -378,12 +648,12 @@
                 },
                 "query": {
                     "data_source_id": 1,
-                    "description": null,
+                    "description": "",
                     "name": "MITRE alerts",
                     "options": {
                         "parameters": []
                     },
-                    "query": "aggregate: count\nnamespace: hauler-secmon-dc1:ossec\napplication: ossec\ngroup_by:\n  - agent.name\n  - rule.mitre.id\n  - rule.mitre.tactic\n  - rule.description\n  - rule.level\n  - rule.id\nduration:\n  relative: 86400\n"
+                    "query": "aggregate: count\nnamespace: ossec-tarsyer:ossec\napplication: ossec\ngroup_by:\n  - agent.name\n  - rule.mitre.id\n  - rule.mitre.tactic\n  - rule.description\n  - rule.level\n  - rule.id\nduration:\n  relative: 86400\n"
                 },
                 "type": "TABLE"
             },
@@ -398,11 +668,57 @@
                     "col": 0,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 35,
+                    "sizeX": 1,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": "#E92828",
+                    "countRow": true,
+                    "counterColName": "counter",
+                    "counterLabel": "HIPPA Alerts",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": "#FFFFFF"
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "",
+                    "name": "HIPAA Alerts ",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "aggregate: count\nnamespace: ossec-tarsyer:ossec\napplication: ossec\ngroup_by:\n  - agent.name\n  - rule.description\n  - rule.level\n  - rule.id\n  - rule.hipaa\nduration:\n  relative: 86400\n"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": true,
+                    "col": 1,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
                     "minSizeX": 2,
                     "minSizeY": 1,
-                    "row": 16,
-                    "sizeX": 2,
-                    "sizeY": 8
+                    "row": 35,
+                    "sizeX": 5,
+                    "sizeY": 10
                 }
             },
             "text": "",
@@ -432,9 +748,9 @@
                             "linkUrlTemplate": "{{ @ }}",
                             "name": "timestamp",
                             "order": 100000,
-                            "title": "Time",
+                            "title": "Timestamp",
                             "type": "datetime",
-                            "visible": false
+                            "visible": true
                         },
                         {
                             "alignContent": "right",
@@ -457,14 +773,14 @@
                             "name": "value",
                             "numberFormat": "0,0.00",
                             "order": 100001,
-                            "title": "Alerts",
+                            "title": "Count",
                             "type": "float",
                             "visible": true
                         },
                         {
                             "alignContent": "left",
                             "allowHTML": true,
-                            "allowSearch": true,
+                            "allowSearch": false,
                             "booleanValues": [
                                 "false",
                                 "true"
@@ -484,6 +800,102 @@
                             "title": "Agent name",
                             "type": "string",
                             "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_rule.description",
+                            "order": 100003,
+                            "title": "Description",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_rule.level",
+                            "order": 100004,
+                            "title": "groupby_rule.level",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_rule.id",
+                            "order": 100005,
+                            "title": "groupby_rule.id",
+                            "type": "string",
+                            "visible": false
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_rule.hipaa",
+                            "order": 100006,
+                            "title": "HIPAA Rule",
+                            "type": "string",
+                            "visible": true
                         }
                     ],
                     "defaultColumns": 3,
@@ -493,12 +905,12 @@
                 },
                 "query": {
                     "data_source_id": 1,
-                    "description": null,
-                    "name": "Agents",
+                    "description": "",
+                    "name": "HIPAA Alerts ",
                     "options": {
                         "parameters": []
                     },
-                    "query": "aggregate: count\nnamespace: hauler-secmon-dc1:ossec\napplication: ossec\ngroup_by:\n  - agent.name\nduration:\n  relative: 86400\nallowEmpty: true\n"
+                    "query": "aggregate: count\nnamespace: ossec-tarsyer:ossec\napplication: ossec\ngroup_by:\n  - agent.name\n  - rule.description\n  - rule.level\n  - rule.id\n  - rule.hipaa\nduration:\n  relative: 86400\n"
                 },
                 "type": "TABLE"
             },
@@ -510,14 +922,268 @@
                 "parameterMappings": {},
                 "position": {
                     "autoHeight": false,
-                    "col": 4,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 0,
+                    "sizeX": 1,
+                    "sizeY": 5
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "",
+                "options": {
+                    "bgColor": "#B554FF",
+                    "counterColName": "value",
+                    "counterLabel": "",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": "#FFFFFF"
+                },
+                "query": {
+                    "data_source_id": 2,
+                    "description": "",
+                    "name": "Total events (24h)",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "round(sum(increase(logiq_namespace_app_message_count{exported_namespace=~\".*ossec.*\"}[24h])),1)"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 1,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 2,
+                    "minSizeY": 1,
+                    "row": 28,
+                    "sizeX": 5,
+                    "sizeY": 7
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Table",
+                "options": {
+                    "autoHeight": true,
+                    "columns": [
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "dateTimeFormat": "DD/MM/YY HH:mm",
+                            "displayAs": "datetime",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "timestamp",
+                            "order": 100000,
+                            "title": "Timestamp",
+                            "type": "datetime",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "right",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "number",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "value",
+                            "numberFormat": "0,0.00",
+                            "order": 100001,
+                            "title": "Count",
+                            "type": "float",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_agent.name",
+                            "order": 100002,
+                            "title": "Agent name",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_rule.description",
+                            "order": 100003,
+                            "title": "Rule description",
+                            "type": "string",
+                            "visible": true
+                        },
+                        {
+                            "alignContent": "left",
+                            "allowHTML": true,
+                            "allowSearch": false,
+                            "booleanValues": [
+                                "false",
+                                "true"
+                            ],
+                            "displayAs": "string",
+                            "highlightLinks": false,
+                            "imageHeight": "",
+                            "imageTitleTemplate": "{{ @ }}",
+                            "imageUrlTemplate": "{{ @ }}",
+                            "imageWidth": "",
+                            "linkOpenInNewTab": true,
+                            "linkTextTemplate": "{{ @ }}",
+                            "linkTitleTemplate": "{{ @ }}",
+                            "linkUrlTemplate": "{{ @ }}",
+                            "name": "groupby_rule.gdpr",
+                            "order": 100004,
+                            "title": "GDPR Rule",
+                            "type": "string",
+                            "visible": true
+                        }
+                    ],
+                    "defaultColumns": 3,
+                    "defaultRows": 14,
+                    "itemsPerPage": 25,
+                    "minColumns": 2
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "reporting query generated on Mon, 07 Feb 2022 11:01:05 GMT",
+                    "name": "GDPR checks",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "namespace: ossec-tarsyer:ossec\napplication: ossec\naggregate: count\ngroup_by:\n  - agent.name\n  - rule.description\n  - rule.gdpr\nduration:\n  relative: 86400\nallowEmpty: false\n"
+                },
+                "type": "TABLE"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 28,
+                    "sizeX": 1,
+                    "sizeY": 7
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": "#00B6EB",
+                    "countRow": true,
+                    "counterColName": "counter",
+                    "counterLabel": "GDPR Checks",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": "#FFFFFF"
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "reporting query generated on Mon, 07 Feb 2022 11:01:05 GMT",
+                    "name": "GDPR checks",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "namespace: ossec-tarsyer:ossec\napplication: ossec\naggregate: count\ngroup_by:\n  - agent.name\n  - rule.description\n  - rule.gdpr\nduration:\n  relative: 86400\nallowEmpty: false\n"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 3,
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 1,
                     "minSizeY": 5,
                     "row": 0,
-                    "sizeX": 2,
-                    "sizeY": 8
+                    "sizeX": 3,
+                    "sizeY": 10
                 }
             },
             "text": "",
@@ -554,7 +1220,6 @@
                     "seriesOptions": {
                         "value": {
                             "index": 0,
-                            "name": "Agents",
                             "type": "pie",
                             "yAxis": 0,
                             "zIndex": 0
@@ -564,9 +1229,8 @@
                     "sortX": true,
                     "textFormat": "",
                     "valuesOptions": {
-                        "hauler-secmon-dc1-0": {},
-                        "ubuntu-tower": {},
-                        "ubuntu-tower-1": {}
+                        "Logiq": {},
+                        "hauler-ossec-tarsyer-0": {}
                     },
                     "xAxis": {
                         "labels": {
@@ -592,290 +1256,12 @@
                 },
                 "query": {
                     "data_source_id": 1,
-                    "description": null,
+                    "description": "",
                     "name": "Agents",
                     "options": {
                         "parameters": []
                     },
-                    "query": "aggregate: count\nnamespace: hauler-secmon-dc1:ossec\napplication: ossec\ngroup_by:\n  - agent.name\nduration:\n  relative: 86400\nallowEmpty: true\n"
-                },
-                "type": "CHART"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 2,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 1,
-                    "minSizeY": 1,
-                    "row": 8,
-                    "sizeX": 2,
-                    "sizeY": 8
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Counter",
-                "options": {
-                    "bgColor": "#00B6EB",
-                    "countRow": true,
-                    "counterColName": "counter",
-                    "counterLabel": "GDPR Checks",
-                    "defaultColumns": 2,
-                    "defaultRows": 5,
-                    "rowNumber": 1,
-                    "stringDecChar": ".",
-                    "stringDecimal": 0,
-                    "stringThouSep": ",",
-                    "targetRowNumber": 1,
-                    "textColor": "#FFFFFF"
-                },
-                "query": {
-                    "data_source_id": 1,
-                    "description": "reporting query generated on Mon, 07 Feb 2022 11:01:05 GMT",
-                    "name": "GDPR checks",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "namespace: hauler-secmon-dc1:ossec\napplication: ossec\naggregate: count\ngroup_by:\n  - agent.name\n  - rule.description\n  - rule.gdpr\n  - agent.ip_latitude\n  - agent.ip_longitude\nduration:\n  relative: 86400\nallowEmpty: false\n"
-                },
-                "type": "COUNTER"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 2,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 2,
-                    "minSizeY": 1,
-                    "row": 16,
-                    "sizeX": 4,
-                    "sizeY": 8
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Table",
-                "options": {},
-                "query": {
-                    "data_source_id": 1,
-                    "description": "reporting query generated on Mon, 07 Feb 2022 11:01:05 GMT",
-                    "name": "GDPR checks",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "namespace: hauler-secmon-dc1:ossec\napplication: ossec\naggregate: count\ngroup_by:\n  - agent.name\n  - rule.description\n  - rule.gdpr\n  - agent.ip_latitude\n  - agent.ip_longitude\nduration:\n  relative: 86400\nallowEmpty: false\n"
-                },
-                "type": "TABLE"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 3,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 1,
-                    "minSizeY": 5,
-                    "row": 33,
-                    "sizeX": 3,
-                    "sizeY": 9
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Chart",
-                "options": {
-                    "columnMapping": {
-                        "groupby_rule.mitre.tactic": "x",
-                        "value": "y"
-                    },
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
-                    "dateTimeFormat": "DD/MM/YY HH:mm",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "error_y": {
-                        "type": "data",
-                        "visible": true
-                    },
-                    "globalSeriesType": "pie",
-                    "legend": {
-                        "enabled": true
-                    },
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "series": {
-                        "error_y": {
-                            "type": "data",
-                            "visible": true
-                        },
-                        "stacking": null
-                    },
-                    "seriesOptions": {
-                        "value": {
-                            "index": 0,
-                            "name": "Alerts",
-                            "type": "pie",
-                            "yAxis": 0,
-                            "zIndex": 0
-                        }
-                    },
-                    "showDataLabels": true,
-                    "sortX": true,
-                    "textFormat": "",
-                    "valuesOptions": {
-                        "Credential Access": {},
-                        "Defense Evasion": {},
-                        "Discovery": {},
-                        "Impact": {}
-                    },
-                    "xAxis": {
-                        "labels": {
-                            "enabled": true
-                        },
-                        "title": {
-                            "text": "Managers"
-                        },
-                        "type": "-"
-                    },
-                    "yAxis": [
-                        {
-                            "title": {
-                                "text": "Alerts"
-                            },
-                            "type": "linear"
-                        },
-                        {
-                            "opposite": true,
-                            "type": "linear"
-                        }
-                    ]
-                },
-                "query": {
-                    "data_source_id": 1,
-                    "description": null,
-                    "name": "Top MITRE attack tactics",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "aggregate: count\nnamespace: hauler-secmon-dc1:ossec\napplication: ossec\ngroup_by:\n  - rule.mitre.tactic\nduration:\n  relative: 86400\n"
-                },
-                "type": "CHART"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 2,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 1,
-                    "minSizeY": 5,
-                    "row": 0,
-                    "sizeX": 2,
-                    "sizeY": 8
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Alerts",
-                "options": {
-                    "columnMapping": {
-                        "groupby_manager.name": "x",
-                        "value": "y"
-                    },
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
-                    "dateTimeFormat": "DD/MM/YY HH:mm",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "error_y": {
-                        "type": "data",
-                        "visible": true
-                    },
-                    "globalSeriesType": "pie",
-                    "legend": {
-                        "enabled": true
-                    },
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "series": {
-                        "error_y": {
-                            "type": "data",
-                            "visible": true
-                        },
-                        "stacking": null
-                    },
-                    "seriesOptions": {
-                        "value": {
-                            "index": 0,
-                            "name": "Managers",
-                            "type": "pie",
-                            "yAxis": 0,
-                            "zIndex": 0
-                        }
-                    },
-                    "showDataLabels": true,
-                    "sortX": true,
-                    "textFormat": "",
-                    "valuesOptions": {
-                        "hauler-secmon-dc1-0": {
-                            "color": "#049235"
-                        }
-                    },
-                    "xAxis": {
-                        "labels": {
-                            "enabled": true
-                        },
-                        "title": {
-                            "text": "Managers"
-                        },
-                        "type": "-"
-                    },
-                    "yAxis": [
-                        {
-                            "title": {
-                                "text": "Managers"
-                            },
-                            "type": "linear"
-                        },
-                        {
-                            "opposite": true,
-                            "type": "linear"
-                        }
-                    ]
-                },
-                "query": {
-                    "data_source_id": 1,
-                    "description": null,
-                    "name": "Managers",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "aggregate: count\nnamespace: hauler-secmon-dc1:ossec\napplication: ossec\ngroup_by:\n  - manager.name\nduration:\n  relative: 86400\n"
+                    "query": "aggregate: count\nnamespace: ossec-tarsyer:ossec\napplication: ossec\nduration:\n  relative: 86400\nallowEmpty: true\nmatch: false\ngroup_by:\n  - agent.name\nstep: ''\n"
                 },
                 "type": "CHART"
             },
@@ -891,162 +1277,10 @@
                     "maxSizeX": 6,
                     "maxSizeY": 1000,
                     "minSizeX": 1,
-                    "minSizeY": 5,
-                    "row": 33,
-                    "sizeX": 3,
+                    "minSizeY": 1,
+                    "row": 10,
+                    "sizeX": 1,
                     "sizeY": 9
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Chart",
-                "options": {
-                    "columnMapping": {
-                        "groupby_agent.name": "series",
-                        "timestamp": "x",
-                        "value": "y"
-                    },
-                    "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
-                    "dateTimeFormat": "mm/dd/yyyy  HH:mm",
-                    "defaultColumns": 3,
-                    "defaultRows": 8,
-                    "error_y": {
-                        "type": "data",
-                        "visible": true
-                    },
-                    "globalSeriesType": "column",
-                    "legend": {
-                        "enabled": true
-                    },
-                    "minColumns": 1,
-                    "minRows": 5,
-                    "numberFormat": "0,0[.]00000",
-                    "percentFormat": "0[.]00%",
-                    "reverseX": false,
-                    "series": {
-                        "error_y": {
-                            "type": "data",
-                            "visible": true
-                        },
-                        "percentValues": false,
-                        "stacking": "stack"
-                    },
-                    "seriesOptions": {
-                        "hauler-secmon-dc1-0": {
-                            "index": 0,
-                            "type": "column",
-                            "yAxis": 0,
-                            "zIndex": 2
-                        },
-                        "ubuntu-tower": {
-                            "index": 0,
-                            "type": "column",
-                            "yAxis": 0,
-                            "zIndex": 0
-                        },
-                        "ubuntu-tower-1": {
-                            "index": 0,
-                            "type": "column",
-                            "yAxis": 0,
-                            "zIndex": 1
-                        }
-                    },
-                    "showDataLabels": false,
-                    "sortX": true,
-                    "textFormat": "",
-                    "valuesOptions": {},
-                    "xAxis": {
-                        "labels": {
-                            "enabled": true
-                        },
-                        "title": {
-                            "text": ""
-                        },
-                        "type": "-"
-                    },
-                    "yAxis": [
-                        {
-                            "type": "logarithmic"
-                        },
-                        {
-                            "opposite": true,
-                            "type": "linear"
-                        }
-                    ]
-                },
-                "query": {
-                    "data_source_id": 1,
-                    "description": null,
-                    "name": "Agent alerts - historical",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "aggregate: count\nnamespace: hauler-secmon-dc1:ossec\napplication: ossec\ngroup_by:\n  - agent.name\nduration:\n  relative: 86400\nallowEmpty: true\nstep: 10m\n"
-                },
-                "type": "CHART"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 4,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 1,
-                    "minSizeY": 1,
-                    "row": 8,
-                    "sizeX": 2,
-                    "sizeY": 8
-                }
-            },
-            "text": "",
-            "visualization": {
-                "name": "Counter",
-                "options": {
-                    "bgColor": "#E92828",
-                    "countRow": true,
-                    "counterColName": "counter",
-                    "counterLabel": "MITRE Attacks",
-                    "defaultColumns": 2,
-                    "defaultRows": 5,
-                    "rowNumber": 1,
-                    "stringDecChar": ".",
-                    "stringDecimal": 0,
-                    "stringThouSep": ",",
-                    "targetRowNumber": 1,
-                    "textColor": "#FFFFFF"
-                },
-                "query": {
-                    "data_source_id": 1,
-                    "description": null,
-                    "name": "MITRE alerts",
-                    "options": {
-                        "parameters": []
-                    },
-                    "query": "aggregate: count\nnamespace: hauler-secmon-dc1:ossec\napplication: ossec\ngroup_by:\n  - agent.name\n  - rule.mitre.id\n  - rule.mitre.tactic\n  - rule.description\n  - rule.level\n  - rule.id\nduration:\n  relative: 86400\n"
-                },
-                "type": "COUNTER"
-            },
-            "width": 1
-        },
-        {
-            "options": {
-                "isHidden": false,
-                "parameterMappings": {},
-                "position": {
-                    "autoHeight": false,
-                    "col": 0,
-                    "maxSizeX": 6,
-                    "maxSizeY": 1000,
-                    "minSizeX": 1,
-                    "minSizeY": 1,
-                    "row": 8,
-                    "sizeX": 2,
-                    "sizeY": 8
                 }
             },
             "text": "",
@@ -1073,7 +1307,53 @@
                     "options": {
                         "parameters": []
                     },
-                    "query": "namespace: hauler-secmon-dc1:ossec\napplication: ossec\naggregate: count\ngroup_by:\n  - rule.pci_dss\n  - agent.name\n  - rule.description\nduration:\n  relative: 86400\nallowEmpty: false\n"
+                    "query": "namespace: ossec-tarsyer:ossec\napplication: ossec\naggregate: count\ngroup_by:\n  - rule.pci_dss\n  - agent.name\n  - rule.description\nduration:\n  relative: 86400\nallowEmpty: false\nexpression_internal:\n  '1':\n    '1':\n      currentField: agent.name\n      searchValue: hauler\n      operator: '=~'\n    '2':\n      currentField: agent.name\n      searchValue: Logiq\n      operator: '=~'\nexpression: '{([agent.name] =~ ''hauler'' || [agent.name] =~ ''Logiq'')}'\n"
+                },
+                "type": "COUNTER"
+            },
+            "width": 1
+        },
+        {
+            "options": {
+                "isHidden": false,
+                "parameterMappings": {},
+                "position": {
+                    "autoHeight": false,
+                    "col": 0,
+                    "maxSizeX": 6,
+                    "maxSizeY": 1000,
+                    "minSizeX": 1,
+                    "minSizeY": 1,
+                    "row": 19,
+                    "sizeX": 1,
+                    "sizeY": 9
+                }
+            },
+            "text": "",
+            "visualization": {
+                "name": "Counter",
+                "options": {
+                    "bgColor": "#E92828",
+                    "countRow": true,
+                    "counterColName": "counter",
+                    "counterLabel": "MITRE Attacks",
+                    "defaultColumns": 2,
+                    "defaultRows": 5,
+                    "rowNumber": 1,
+                    "stringDecChar": ".",
+                    "stringDecimal": 0,
+                    "stringThouSep": ",",
+                    "targetRowNumber": 1,
+                    "textColor": "#FFFFFF"
+                },
+                "query": {
+                    "data_source_id": 1,
+                    "description": "",
+                    "name": "MITRE alerts",
+                    "options": {
+                        "parameters": []
+                    },
+                    "query": "aggregate: count\nnamespace: ossec-tarsyer:ossec\napplication: ossec\ngroup_by:\n  - agent.name\n  - rule.mitre.id\n  - rule.mitre.tactic\n  - rule.description\n  - rule.level\n  - rule.id\nduration:\n  relative: 86400\n"
                 },
                 "type": "COUNTER"
             },
