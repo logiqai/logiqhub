@@ -1,0 +1,887 @@
+{
+ "dashboard": {
+  "id": 8,
+  "name": "VM Summary",
+  "tags": [],
+  "slug": "vm-summary_1"
+ },
+ "datasources": {
+  "4": {
+   "id": 4,
+   "name": "VMWARE",
+   "type": "logiq_prometheus",
+   "options": {
+    "url": "http://prometheus:9090"
+   }
+  }
+ },
+ "widgets": [
+  {
+   "id": 30,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 4,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 2,
+     "sizeY": 10
+    }
+   },
+   "visualization": {
+    "id": 59,
+    "name": "Gauge",
+    "type": "GAUGE",
+    "description": "",
+    "options": {
+     "colname": "value",
+     "color": "green",
+     "range": {
+      "max": "1",
+      "min": "0"
+     },
+     "ranges": [],
+     "stepRanges": [
+      {
+       "color": "red",
+       "max": 0,
+       "min": 0
+      },
+      {
+       "color": "green",
+       "max": "1",
+       "min": "1"
+      }
+     ],
+     "title": "Power State",
+     "unit": ""
+    },
+    "query": {
+     "id": 29,
+     "latest_query_data_id": 234,
+     "name": "VM Power state",
+     "description": "",
+     "query": "vmware_vm_power_state{vm_name=\"{{vm_name}}\"}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "Opennebula Test"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 32,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     },
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 5,
+     "sizeX": 2,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 63,
+    "name": "Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 31,
+     "latest_query_data_id": 4,
+     "name": "VM Power state time series",
+     "description": "",
+     "query": "vmware_vm_power_state{vm_name=\"{{vm_name}}\"}\u0026duration={{duration}}\u0026step=1m",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "Opennebula Test"
+       },
+       {
+        "enumOptions": "15m\n30m\n1h\n3h\n6h\n12h\n24h",
+        "global": false,
+        "locals": [],
+        "name": "duration",
+        "title": "duration",
+        "type": "enum",
+        "value": "30m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 31,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 5,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 61,
+    "name": "Total storage provisioned",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#E92828",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 30,
+     "latest_query_data_id": 3990,
+     "name": "Provisioned Storage by VM",
+     "description": "",
+     "query": "round(sum(vmware_vm_guest_disk_capacity{vm_name=\"{{vm_name}}\"})/(1000*1000*1000),0.001)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "CS VMware vCenter Prod"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 61,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 2,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 121,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#0F1C2A",
+     "counterColName": "value",
+     "counterLabel": "CPU",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 60,
+     "latest_query_data_id": 1701,
+     "name": "VM Cpu",
+     "description": "",
+     "query": "vmware_vm_num_cpu{vm_name=\"{{vm_name}}\"}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryColumn": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "Opennebula Test"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 63,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 2,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 5,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 123,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#E92828",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 61,
+     "latest_query_data_id": 3439,
+     "name": "VM Memory Max",
+     "description": "",
+     "query": "round(vmware_vm_memory_max{vm_name=\"{{vm_name}}\"}/1000,0.001)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "Opennebula Test"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 64,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 2,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 125,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#17BF51",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 62,
+     "latest_query_data_id": 3927,
+     "name": "VM Memory Average",
+     "description": "",
+     "query": "round(vmware_vm_mem_active_average{vm_name=\"{{vm_name}}\"}/(1000*1000),0.001)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "CS VMware vCenter Prod"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 68,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 133,
+    "name": "Total storage Used",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#049235",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 66,
+     "latest_query_data_id": 3487,
+     "name": "Storage Used by VM",
+     "description": "",
+     "query": "round(sum by (vm_name) (vmware_vm_guest_disk_capacity{vm_name=~\"{{vm_name}}\"}-vmware_vm_guest_disk_free{vm_name=~\"{{vm_name}}\"})/(1000*1000*1000),0.0001)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "Opennebula Test"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 84,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     },
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 10,
+     "sizeX": 6,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 65,
+    "name": "Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "Anomaly": "yError",
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "MHz"
+       },
+       "type": "logarithmic"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 32,
+     "latest_query_data_id": 12034,
+     "name": "Average VM CPU Usage",
+     "description": "",
+     "query": "vmware_vm_cpu_usage_average{vm_name=\"{{vm_name}}\"}\u0026duration={{duration}}\u0026step=1m",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "Opennebula Test"
+       },
+       {
+        "enumOptions": "15m\n30m\n1h\n3h\n6h\n12h\n24h",
+        "global": false,
+        "locals": [],
+        "name": "duration",
+        "title": "duration",
+        "type": "enum",
+        "value": "30m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 86,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     },
+     "vm_name": {
+      "mapTo": "vm_name",
+      "name": "vm_name",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 18,
+     "sizeX": 6,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 164,
+    "name": "Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "Anomaly": "yError",
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "MB"
+       },
+       "type": "logarithmic"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 86,
+     "latest_query_data_id": 12043,
+     "name": "Average VM Memory Usage",
+     "description": "",
+     "query": "vmware_vm_mem_active_average{vm_name=\"{{vm_name}}\"}/1000\u0026duration={{duration}}\u0026step=1m",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vm_name",
+        "queryId": 25,
+        "title": "vm_name",
+        "type": "query",
+        "value": "LOGIQ"
+       },
+       {
+        "enumOptions": "15m\n30m\n1h\n3h\n6h\n12h\n24h",
+        "global": false,
+        "locals": [],
+        "name": "duration",
+        "title": "duration",
+        "type": "enum",
+        "value": "30m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,1638 @@
+{
+ "dashboard": {
+  "id": 7,
+  "name": "Tenant Summary",
+  "tags": [],
+  "slug": "tenant-summary_1"
+ },
+ "datasources": {
+  "2": {
+   "id": 2,
+   "name": "LogiqMonitoring",
+   "type": "logiq_prometheus",
+   "options": {
+    "url": "http://prometheus:9090"
+   }
+  },
+  "4": {
+   "id": 4,
+   "name": "VMWARE",
+   "type": "logiq_prometheus",
+   "options": {
+    "url": "http://prometheus:9090"
+   }
+  },
+  "5": {
+   "id": 5,
+   "name": "QR",
+   "type": "results",
+   "options": {
+    "url": ""
+   }
+  }
+ },
+ "widgets": [
+  {
+   "id": 27,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 5,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 3,
+     "sizeX": 1,
+     "sizeY": 10
+    }
+   },
+   "visualization": {
+    "id": 53,
+    "name": "Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "power_state": "x",
+      "total_vms": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "pie",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "total_vms": {
+       "index": 0,
+       "name": "Total VM's",
+       "type": "pie",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": true,
+     "sortX": false,
+     "textFormat": "",
+     "valuesOptions": {
+      "0": {
+       "color": "#E92828"
+      },
+      "1": {
+       "color": "#17BF51"
+      }
+     },
+     "xAxis": {
+      "labels": {
+       "enabled": false
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "Total VM's"
+       },
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 26,
+     "latest_query_data_id": 12209,
+     "name": "Power state distribution",
+     "description": "",
+     "query": "select count(*) as total_vms, value as power_state from cached_query_33 group by value",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 5,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 35,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "cpu_quota": {
+      "mapTo": "cpu_quota",
+      "name": "cpu_quota",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 26,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 72,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#FFFFFF",
+     "counterColName": "value",
+     "counterLabel": "CPU's",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetColName": "quota",
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 36,
+     "latest_query_data_id": 12170,
+     "name": "CPU Usage and Capacity",
+     "description": "",
+     "query": "select {{cpu_quota}} as quota, value from cached_query_35",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 5,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "cpu_quota",
+        "title": "cpu_quota",
+        "type": "text",
+        "value": "1000"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 26,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 3,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 51,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#FFFFFF",
+     "countRow": true,
+     "counterColName": "counter",
+     "counterLabel": "Total VMs",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 25,
+     "latest_query_data_id": 12206,
+     "name": "VMS",
+     "description": "",
+     "query": "select vm_name from query_33",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 5,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 81,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 2,
+     "minSizeY": 1,
+     "row": 13,
+     "sizeX": 6,
+     "sizeY": 10
+    }
+   },
+   "visualization": {
+    "id": 156,
+    "name": "Table",
+    "type": "TABLE",
+    "description": "",
+    "options": {
+     "autoHeight": true,
+     "columns": [
+      {
+       "alignContent": "right",
+       "allowHTML": true,
+       "allowSearch": false,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "dateTimeFormat": "DD/MM/YY HH:mm",
+       "displayAs": "datetime",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "timestamp",
+       "order": 100000,
+       "title": "timestamp",
+       "type": "datetime",
+       "visible": false
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": false,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "value",
+       "order": 100001,
+       "title": "value",
+       "type": "string",
+       "visible": false
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "version",
+       "order": 100002,
+       "title": "Version",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": false,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "job",
+       "order": 100003,
+       "title": "job",
+       "type": "string",
+       "visible": false
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "cluster_name",
+       "order": 100004,
+       "title": "cluster_name",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": false,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "__name__",
+       "order": 100005,
+       "title": "__name__",
+       "type": "string",
+       "visible": false
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": false,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "instance",
+       "order": 100006,
+       "title": "instance",
+       "type": "string",
+       "visible": false
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "dc_name",
+       "order": 100007,
+       "title": "DC Name",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "build",
+       "order": 100008,
+       "title": "build",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "host_name",
+       "order": 100009,
+       "title": "Host name",
+       "type": "string",
+       "visible": true
+      }
+     ],
+     "defaultColumns": 3,
+     "defaultRows": 14,
+     "itemsPerPage": 25,
+     "minColumns": 2
+    },
+    "query": {
+     "id": 79,
+     "latest_query_data_id": 12214,
+     "name": "Host Product Info",
+     "description": "",
+     "query": "vmware_host_product_info",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 71,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 4,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 3,
+     "sizeX": 1,
+     "sizeY": 10
+    }
+   },
+   "visualization": {
+    "id": 135,
+    "name": "VMS Power State",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "power_state": "x",
+      "total_vms": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "column",
+     "legend": {
+      "enabled": false
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "percentValues": false,
+      "stacking": null
+     },
+     "seriesOptions": {
+      "total_vms": {
+       "color": "#00B6EB",
+       "index": 0,
+       "type": "column",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "title": {
+       "text": "Power State ( 0 - Off, 1 - On)"
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "#VMS"
+       },
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 26,
+     "latest_query_data_id": 12209,
+     "name": "Power state distribution",
+     "description": "",
+     "query": "select count(*) as total_vms, value as power_state from cached_query_33 group by value",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 5,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 79,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 2,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 3,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 152,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#FFFFFF",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 76,
+     "latest_query_data_id": 12205,
+     "name": "Host Memory Capacity",
+     "description": "",
+     "query": "round(sum(vmware_host_memory_max/1024))",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 80,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 8,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 154,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#A58AFF",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 77,
+     "latest_query_data_id": 12210,
+     "name": "Host Memory Usage",
+     "description": "",
+     "query": "round(sum(vmware_host_memory_usage)/1024)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 82,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 2,
+     "minSizeY": 1,
+     "row": 31,
+     "sizeX": 6,
+     "sizeY": 13
+    }
+   },
+   "visualization": {
+    "id": 158,
+    "name": "Table",
+    "type": "TABLE",
+    "description": "",
+    "options": {
+     "autoHeight": true,
+     "columns": [
+      {
+       "alignContent": "right",
+       "allowHTML": true,
+       "allowSearch": false,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "number",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "PowerState",
+       "numberFormat": "0,0",
+       "order": 0,
+       "title": "Power State",
+       "type": "integer",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "Name",
+       "order": 1,
+       "title": "Name",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "IP",
+       "order": 2,
+       "title": "IP",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "DC",
+       "order": 3,
+       "title": "DC",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "HOST",
+       "order": 4,
+       "title": "HOST",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "CLUSTER",
+       "order": 5,
+       "title": "CLUSTER",
+       "type": "string",
+       "visible": true
+      },
+      {
+       "alignContent": "right",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "number",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "CPU",
+       "numberFormat": "0,0",
+       "order": 6,
+       "title": "CPU",
+       "type": "integer",
+       "visible": true
+      },
+      {
+       "alignContent": "right",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "number",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "MemCapacityMB",
+       "numberFormat": "0,0",
+       "order": 7,
+       "title": "Memory capacity (MB)",
+       "type": "integer",
+       "visible": true
+      },
+      {
+       "alignContent": "right",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "number",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "MemoryUsageMB",
+       "numberFormat": "0,0.00",
+       "order": 8,
+       "title": "Memory usage (MB)",
+       "type": "float",
+       "visible": true
+      },
+      {
+       "alignContent": "right",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "number",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "StorageUsageMB",
+       "numberFormat": "0,0",
+       "order": 9,
+       "title": "Storage usage (MB)",
+       "type": "integer",
+       "visible": true
+      },
+      {
+       "alignContent": "right",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "number",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "StorageCapacityMB",
+       "numberFormat": "0,0",
+       "order": 10,
+       "title": "Storage capacity (MB)",
+       "type": "integer",
+       "visible": true
+      },
+      {
+       "alignContent": "left",
+       "allowHTML": true,
+       "allowSearch": true,
+       "booleanValues": [
+        "false",
+        "true"
+       ],
+       "displayAs": "string",
+       "highlightLinks": false,
+       "imageHeight": "",
+       "imageTitleTemplate": "{{ @ }}",
+       "imageUrlTemplate": "{{ @ }}",
+       "imageWidth": "",
+       "linkOpenInNewTab": true,
+       "linkTextTemplate": "{{ @ }}",
+       "linkTitleTemplate": "{{ @ }}",
+       "linkUrlTemplate": "{{ @ }}",
+       "name": "Network",
+       "order": 11,
+       "title": "Network",
+       "type": "string",
+       "visible": true
+      }
+     ],
+     "defaultColumns": 3,
+     "defaultRows": 14,
+     "itemsPerPage": 10,
+     "minColumns": 2
+    },
+    "query": {
+     "id": 81,
+     "latest_query_data_id": 12221,
+     "name": "Search VMS",
+     "description": "",
+     "query": "SELECT query_33.vm_name AS Name,\n       query_33.value AS PowerState,\n       query_33.network AS Network,\n       query_33.ip_address AS IP,\n       query_33.dc_name AS DC,\n       query_33.host_name AS HOST,\n       query_33.cluster_name AS CLUSTER,\n       query_80.value AS CPU,\n       query_82.value AS MemCapacityMB,\n       query_85.value AS StorageCapacityMB,\n       query_83.value AS MemoryUsageMB,\n       query_84.value AS StorageUsageMB\nFROM query_33\nLEFT OUTER JOIN query_80 on query_33.vm_name = query_80.vm_name\nLEFT OUTER JOIN query_82 on query_33.vm_name = query_82.vm_name\nLEFT OUTER JOIN query_85 on query_33.vm_name = query_85.vm_name\nLEFT OUTER JOIN query_83 on query_33.vm_name = query_83.vm_name\nLEFT OUTER JOIN query_84 on query_33.vm_name = query_84.vm_name\n",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 5,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 69,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vms_filter": {
+      "mapTo": "vms_filter",
+      "name": "vms_filter",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 2,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 8,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 129,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#A58AFF",
+     "countRow": false,
+     "counterColName": "value",
+     "counterLabel": "Total Memory (GB)",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetColName": null,
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 64,
+     "latest_query_data_id": 9538,
+     "name": "VMS Memory Usage",
+     "description": "",
+     "query": "round(sum(vmware_vm_mem_active_average{vm_name=~\"{{vms_filter}}\"})/(1000*1000),0.001)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vms_filter",
+        "queryId": 34,
+        "title": "vms_filter",
+        "type": "query",
+        "value": "vCLS-be2b54cd-198d-4225-a93b-8dc31961c4df|vCLS-b268f6ce-345e-456e-95cc-fc99f46da16a|vCLS-7513606c-5751-4dec-ae7f-0e8e6f404809|one-42-Test10|one-41-Ubuntu-20.04 test-41|one-40-Test10|one-11-Test3|one-1-API Test centos|one-0-Opennebula API Test|Ubuntu-20.04 test|SLES-12-SP3-CLI-16GB|Opennebula Test|LOGIQ|Intersight-appliance-1.0.9-499|Centos7 Nebula template 200GB test|CS VMware vCenter Prod|ANLYZ-MacOS 12.01 bckup 27.01.2023|ANLYZ-MacOS 12.01 bckup 15.12.2022|ANLYZ-MacOS 12.01"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 70,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vms_filter": {
+      "mapTo": "vms_filter",
+      "name": "vms_filter",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 1,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 26,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 49,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#FFFFFF",
+     "countRow": false,
+     "counterColName": "value",
+     "counterLabel": "Total Memory (GB)",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetColName": null,
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 24,
+     "latest_query_data_id": 12186,
+     "name": "VMS Memory Capacity",
+     "description": "",
+     "query": "round(sum(vmware_vm_memory_max{vm_name=~\"{{vms_filter}}\"})/1000,0.01)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vms_filter",
+        "queryId": 34,
+        "title": "vms_filter",
+        "type": "query",
+        "value": "vCLS-be2b54cd-198d-4225-a93b-8dc31961c4df|vCLS-b268f6ce-345e-456e-95cc-fc99f46da16a|vCLS-7513606c-5751-4dec-ae7f-0e8e6f404809|one-42-Test10|one-41-Ubuntu-20.04 test-41|one-40-Test10|one-11-Test3|one-1-API Test centos|one-0-Opennebula API Test|Ubuntu-20.04 test|SLES-12-SP3-CLI-16GB|Opennebula Test|LOGIQ|Intersight-appliance-1.0.9-499|Centos7 Nebula template 200GB test|CS VMware vCenter Prod|ANLYZ-MacOS 12.01 bckup 27.01.2023|ANLYZ-MacOS 12.01 bckup 15.12.2022|ANLYZ-MacOS 12.01"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 66,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vms_filter": {
+      "mapTo": "vms_filter",
+      "name": "vms_filter",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 8,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 131,
+    "name": "VMS Storage Usage",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#A58AFF",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 65,
+     "latest_query_data_id": 9528,
+     "name": "VMS Storage Usage",
+     "description": "",
+     "query": "round(sum(vmware_vm_guest_disk_capacity{vm_name=~\"{{vms_filter}}\"}-vmware_vm_guest_disk_free{vm_name=~\"{{vms_filter}}\"})/(1000*1000*1000),0.001)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vms_filter",
+        "queryId": 34,
+        "title": "vms_filter",
+        "type": "query",
+        "value": "vCLS-be2b54cd-198d-4225-a93b-8dc31961c4df|vCLS-b268f6ce-345e-456e-95cc-fc99f46da16a|vCLS-7513606c-5751-4dec-ae7f-0e8e6f404809|one-42-Test10|one-41-Ubuntu-20.04 test-41|one-40-Test10|one-11-Test3|one-1-API Test centos|one-0-Opennebula API Test|Ubuntu-20.04 test|SLES-12-SP3-CLI-16GB|Opennebula Test|LOGIQ|Intersight-appliance-1.0.9-499|Centos7 Nebula template 200GB test|CS VMware vCenter Prod|ANLYZ-MacOS 12.01 bckup 27.01.2023|ANLYZ-MacOS 12.01 bckup 15.12.2022|ANLYZ-MacOS 12.01"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 78,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 1,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 3,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 150,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#FFFFFF",
+     "counterColName": "value",
+     "counterLabel": "CPU",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 75,
+     "latest_query_data_id": 12207,
+     "name": "Host CPUS",
+     "description": "",
+     "query": "sum(vmware_host_num_cpu)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 29,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "vms_filter": {
+      "mapTo": "vms_filter",
+      "name": "vms_filter",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 2,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 26,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 57,
+    "name": "Total VM Disk storage",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": null,
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": null
+    },
+    "query": {
+     "id": 28,
+     "latest_query_data_id": 3503,
+     "name": "Guest Storage total",
+     "description": "",
+     "query": "round(sum(vmware_vm_guest_disk_capacity{vm_name=~\"{{vms_filter}}\"})/(1000*1000*1000),1)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 4,
+     "version": 1,
+     "tags": [
+      "tenant"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "vms_filter",
+        "queryId": 34,
+        "title": "vms_filter",
+        "type": "query",
+        "value": "vCLS-be2b54cd-198d-4225-a93b-8dc31961c4df|Centos7 Nebula template 200GB test|Ubuntu-20.04 test|SLES-12-SP3-CLI-16GB|ANLYZ-MacOS 12.01 bckup 27.01.2023|LOGIQ|one-28-Test9|one-36-Test10|one-37-Test10|vCLS-7513606c-5751-4dec-ae7f-0e8e6f404809|one-11-Test3|ANLYZ-MacOS 12.01|ANLYZ-MacOS 12.01 bckup 15.12.2022|one-32-Test1|one-33-Test10|CS VMware vCenter Prod|Intersight-appliance-1.0.9-499|Opennebula Test|one-0-Opennebula API Test|one-1-API Test centos|one-34-Test10|one-35-Test1|vCLS-b268f6ce-345e-456e-95cc-fc99f46da16a"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 77,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "ads_filter": {
+      "mapTo": "ads_filter",
+      "name": "ads_filter",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 3,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 146,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#FFFFFF",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 73,
+     "latest_query_data_id": 12060,
+     "name": "Datastore Capacity",
+     "description": "",
+     "query": "round(sum(vmware_datastore_capacity_size{ds_name=~\"{{ads_filter}}\"})/(1000*1000*1000))",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "ads_filter",
+        "queryId": 72,
+        "title": "ads_filter",
+        "type": "query",
+        "value": "datastore1 (20)|datastore1 (19)|HP_VOL_9|HP_VOL_8|HP_VOL_7|HP_VOL_6|HP_VOL 5|HP_VOL 4|HP_VOL 3|HP_VOL 2|HP_LUN"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 76,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "ads_filter": {
+      "mapTo": "ads_filter",
+      "name": "ads_filter",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 1,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 8,
+     "sizeX": 1,
+     "sizeY": 5
+    }
+   },
+   "visualization": {
+    "id": 148,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#A58AFF",
+     "counterColName": "value",
+     "counterLabel": "GB",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#0F1C2A"
+    },
+    "query": {
+     "id": 74,
+     "latest_query_data_id": 12090,
+     "name": "Datastore Usage",
+     "description": "",
+     "query": "round(sum(vmware_datastore_uncommited_size{ds_name=~\"{{ads_filter}}\"})/(1000*1000*1000))",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "ads_filter",
+        "queryId": 72,
+        "title": "ads_filter",
+        "type": "query",
+        "value": "datastore1 (20)|datastore1 (19)|HP_VOL_9|HP_VOL_8|HP_VOL_7|HP_VOL_6|HP_VOL 5|HP_VOL 4|HP_VOL 3|HP_VOL 2|HP_LUN"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  }
+ ]
+}
