@@ -1,0 +1,1374 @@
+{
+ "dashboard": {
+  "id": 9,
+  "name": "Windows Monitoring",
+  "tags": [],
+  "slug": "windows-monitoring"
+ },
+ "datasources": {
+  "2": {
+   "id": 2,
+   "name": "LogiqMonitoring",
+   "type": "logiq_prometheus",
+   "options": {
+    "url": "http://lq7408-thanos-query:9090"
+   }
+  }
+ },
+ "widgets": [
+  {
+   "id": 74,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 2,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 153,
+    "name": "Counter",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#002FB4",
+     "countRow": false,
+     "counterColName": "value",
+     "counterLabel": "Days",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 75,
+     "latest_query_data_id": 45637,
+     "name": "Uptime",
+     "description": "",
+     "query": "round((windows_os_time-windows_system_system_up_time{instance=\"{{instance}}\"})/(24*3600),0.01)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 76,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 2,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 2,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 157,
+    "name": "Memory Used",
+    "type": "GAUGE",
+    "description": "",
+    "options": {
+     "colname": "value",
+     "color": "lightgreen",
+     "range": {
+      "max": "100",
+      "min": "0"
+     },
+     "ranges": [],
+     "stepRanges": [
+      {
+       "color": "red",
+       "max": "100",
+       "min": "76"
+      },
+      {
+       "color": "orange",
+       "max": "75",
+       "min": "51"
+      },
+      {
+       "color": "green",
+       "max": "50",
+       "min": 0
+      }
+     ],
+     "title": "Memory Usage",
+     "unit": "%"
+    },
+    "query": {
+     "id": 77,
+     "latest_query_data_id": 48233,
+     "name": "Memory Used",
+     "description": "",
+     "query": "((windows_cs_physical_memory_bytes{instance=\"{{instance}}\"} - windows_os_physical_memory_free_bytes{instance=\"{{instance}}\"}) / (windows_cs_physical_memory_bytes{instance=\"{{instance}}\"} )) * 100",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 81,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 30,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 167,
+    "name": "Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "instance": "unused",
+      "null": "unused",
+      "timestamp": "x",
+      "value": "y",
+      "volume": "series"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "column",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "C:": {
+       "index": 0,
+       "type": "column",
+       "yAxis": 0,
+       "zIndex": 0
+      },
+      "D:": {
+       "index": 0,
+       "type": "column",
+       "yAxis": 0,
+       "zIndex": 1
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "%"
+       },
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "title": {
+        "text": ""
+       },
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 83,
+     "latest_query_data_id": 45818,
+     "name": "Disk Usage",
+     "description": "",
+     "query": "round((windows_logical_disk_free_bytes{volume!~\"HarddiskVolume.*\",instance=\"{{instance}}\"}/windows_logical_disk_size_bytes{volume!~\"HarddiskVolume.*\",instance=\"{{instance}}\"})*100,1)",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryColumn": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 83,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 30,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 171,
+    "name": "Hard Disk Usage",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "unused",
+      "value": "y",
+      "volume": "x"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "column",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "column",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "%"
+       },
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "title": {
+        "text": ""
+       },
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 85,
+     "latest_query_data_id": 46172,
+     "name": "Hard Disk Usage",
+     "description": "",
+     "query": "(windows_logical_disk_free_bytes{instance=\"{{instance}}\"}/windows_logical_disk_size_bytes{instance=\"{{instance}}\"})*100",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryColumn": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 79,
+   "text": "",
+   "width": 1,
+   "options": {
+    "isHidden": false,
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 8,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 159,
+    "name": "Memory Usage",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "Anomaly": "yError",
+      "LCL": "y",
+      "UCL": "y",
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "LCL": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 2
+      },
+      "UCL": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 1
+      },
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 78,
+     "latest_query_data_id": 45136,
+     "name": "Windows Memory Usage",
+     "description": "",
+     "query": "((windows_cs_physical_memory_bytes{instance=\"{{instance}}\"} - windows_os_physical_memory_free_bytes{instance=\"{{instance}}\"}) / (windows_cs_physical_memory_bytes{instance=\"{{instance}}\"} )) * 100\u0026duration=24h\u0026step=1m",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 80,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 4,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 2,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 163,
+    "name": "CPU Usage",
+    "type": "GAUGE",
+    "description": "",
+    "options": {
+     "colname": "value",
+     "color": "lightgreen",
+     "range": {
+      "max": "100",
+      "min": "0"
+     },
+     "ranges": [],
+     "stepRanges": [
+      {
+       "color": "green",
+       "max": "50",
+       "min": 0
+      },
+      {
+       "color": "orange",
+       "max": "75",
+       "min": "51"
+      },
+      {
+       "color": "red",
+       "max": "100",
+       "min": "76"
+      }
+     ],
+     "title": "CPU",
+     "unit": "%"
+    },
+    "query": {
+     "id": 81,
+     "latest_query_data_id": 48352,
+     "name": "CPU Usage",
+     "description": "",
+     "query": "(((count(count(windows_cpu_time_total{job=\"windows-exporter\",instance=\"{{instance}}\"}) by (core))) - avg(sum by (mode)(rate(windows_cpu_time_total{mode='idle',job=\"windows-exporter\",instance=\"{{instance}}\"}[1m])))) * 100) / count(count(windows_cpu_time_total{job=\"windows-exporter\",instance=\"{{instance}}\"}) by (core))",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 84,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 41,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 173,
+    "name": "Rx Bandwidth Area Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "%"
+       },
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "title": {
+        "text": ""
+       },
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 86,
+     "latest_query_data_id": 46454,
+     "name": "Rx Bandwidth",
+     "description": "",
+     "query": "query=(rate(windows_net_bytes_received_total{instance=\"{{instance}}\"}[5m]) \u003e0)/1000\u0026duration=1h\u0026step=60s",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 75,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 19,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 155,
+    "name": "Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "mode": "series",
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "dpc": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      },
+      "interrupt": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 1
+      },
+      "privileged": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 2
+      },
+      "user": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 3
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 76,
+     "latest_query_data_id": 46028,
+     "name": "Windows CPU Time",
+     "description": "",
+     "query": "(sum by (mode)(rate(windows_cpu_time_total{mode!~'idle',instance=\"{{instance}}\"}[5m])) * 100)\u0026duration=1h\u0026step=1m",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryColumn": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 85,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 19,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 175,
+    "name": "Memory Details Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "__name__": "series",
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "windows_cs_physical_memory_bytes": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      },
+      "windows_os_physical_memory_free_bytes": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 1
+      },
+      "windows_os_virtual_memory_bytes": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 2
+      },
+      "windows_os_virtual_memory_free_bytes": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 3
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "%"
+       },
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "title": {
+        "text": ""
+       },
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 87,
+     "latest_query_data_id": 46699,
+     "name": "Memory Details",
+     "description": "",
+     "query": "{__name__=~\"windows_os_virtual_memory_free_bytes|windows_os_physical_memory_free_bytes|windows_os_virtual_memory_bytes|windows_cs_physical_memory_bytes\",instance=\"{{instance}}\"}\u0026duration=1h\u0026step=60s",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 82,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 8,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 169,
+    "name": "CPU Load Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "mode": "series",
+      "timestamp": "x",
+      "value": "y",
+      "volume": "unused"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "dpc": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      },
+      "idle": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 1
+      },
+      "interrupt": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 2
+      },
+      "privileged": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 3
+      },
+      "user": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 4
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "%"
+       },
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "title": {
+        "text": ""
+       },
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 84,
+     "latest_query_data_id": 46038,
+     "name": "CPU Load",
+     "description": "",
+     "query": "query=sum by (mode) (rate(windows_cpu_time_total{instance=\"{{instance}}\"}[5m]))\u0026duration=1h\u0026step=60s",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryColumn": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 86,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "instance": {
+      "mapTo": "instance",
+      "name": "instance",
+      "title": "",
+      "type": "dashboard-level",
+      "value": null
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 41,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 177,
+    "name": "Tx Bandwidth Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "__name__": "unused",
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "percentValues": false,
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "title": {
+        "text": "%"
+       },
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "title": {
+        "text": ""
+       },
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 88,
+     "latest_query_data_id": 46836,
+     "name": "Tx Bandwidth",
+     "description": "",
+     "query": "query=(rate(windows_net_bytes_sent_total{instance=\"{{instance}}\"}[5m]) \u003e0)/1000\u0026duration=6h\u0026step=60s",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": [
+       {
+        "global": false,
+        "locals": [],
+        "name": "instance",
+        "queryId": 80,
+        "title": "instance",
+        "type": "query",
+        "value": "IBSFintech-App-"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  }
+ ]
+}

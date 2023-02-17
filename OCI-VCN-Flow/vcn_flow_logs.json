@@ -1,0 +1,1013 @@
+{
+ "dashboard": {
+  "id": 14,
+  "name": "VCN Flow Dashboard",
+  "tags": [
+   "VCN_Bytes_Transferred__e1063e"
+  ],
+  "slug": "vcn_flow_dashboard"
+ },
+ "datasources": {
+  "1": {
+   "id": 1,
+   "name": "logiq_reports",
+   "type": "reports",
+   "options": {
+    "url": ""
+   }
+  },
+  "2": {
+   "id": 2,
+   "name": "LogiqMonitoring",
+   "type": "logiq_prometheus",
+   "options": {
+    "url": "http://lq7408-thanos-query:9090"
+   }
+  }
+ },
+ "widgets": [
+  {
+   "id": 132,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 2,
+     "minSizeY": 1,
+     "row": 34,
+     "sizeX": 3,
+     "sizeY": 16
+    }
+   },
+   "visualization": {
+    "id": 276,
+    "name": "Data Flow from Source 15m Pivot Table",
+    "type": "PIVOT",
+    "description": "",
+    "options": {
+     "aggregatorName": "Count",
+     "autoSortUnusedAttrs": false,
+     "colOrder": "key_a_to_z",
+     "cols": [],
+     "defaultColumns": 3,
+     "defaultRows": 10,
+     "derivedAttributes": {},
+     "exclusions": {},
+     "hiddenAttributes": [],
+     "hiddenFromAggregators": [],
+     "hiddenFromDragDrop": [],
+     "inclusions": {},
+     "inclusionsInfo": {},
+     "menuLimit": 500,
+     "minColumns": 2,
+     "rendererName": "Heatmap",
+     "rowOrder": "value_a_to_z",
+     "rows": [
+      "groupby_data.sourceaddress",
+      "value"
+     ],
+     "sorters": {},
+     "unusedAttrsVertical": 85,
+     "vals": []
+    },
+    "query": {
+     "id": 145,
+     "latest_query_data_id": 211924,
+     "name": "Data Flow from Source 15m",
+     "description": "reporting query generated on Thu, 16 Feb 2023 11:39:15 GMT",
+     "query": "namespace: vcnflowlog:s3-compat\napplication: s3-compat\naggregate: sum\ngroup_by:\n  - data.sourceaddress\nfield: data.bytesout\nduration:\n  relative: 900\n",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 1,
+     "version": 1,
+     "tags": [
+      "Reports",
+      "logiq_reports"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 900,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 133,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 22,
+     "sizeX": 3,
+     "sizeY": 7
+    }
+   },
+   "visualization": {
+    "id": 278,
+    "name": "Status of VCN Flow Funnel Vis",
+    "type": "FUNNEL",
+    "description": "",
+    "options": {
+     "autoSort": true,
+     "defaultRows": 10,
+     "sortKeyCol": {
+      "colName": "value"
+     },
+     "stepCol": {
+      "colName": "groupby_data.status",
+      "displayAs": "Status"
+     },
+     "valueCol": {
+      "colName": "value",
+      "displayAs": "Counts"
+     }
+    },
+    "query": {
+     "id": 146,
+     "latest_query_data_id": 211917,
+     "name": "VCN Flow Status 15m",
+     "description": "reporting query generated on Thu, 16 Feb 2023 12:35:47 GMT",
+     "query": "namespace: vcnflowlog:s3-compat\napplication: s3-compat\naggregate: count\ngroup_by:\n  - data.status\nduration:\n  relative: 900\n",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 1,
+     "version": 1,
+     "tags": [
+      "Reports",
+      "logiq_reports"
+     ],
+     "options": {
+      "parameters": null
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 135,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 37,
+     "sizeX": 3,
+     "sizeY": 11
+    }
+   },
+   "visualization": {
+    "id": 282,
+    "name": "VCN Flow Action Taken Pie Chart",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "groupby_data.action": "x",
+      "groupby_data.sourceaddress": "unused",
+      "null": "series",
+      "timestamp": "unused",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "pie",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "pie",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": true,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {
+      "ACCEPT": {},
+      "REJECT": {}
+     },
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 148,
+     "latest_query_data_id": 211916,
+     "name": "VCN Flow Action Taken",
+     "description": "reporting query generated on Thu, 16 Feb 2023 13:07:14 GMT",
+     "query": "namespace: vcnflowlog:s3-compat\napplication: s3-compat\naggregate: count\ngroup_by:\n  - data.sourceaddress\n  - data.action\nduration:\n  relative: 900\n",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 1,
+     "version": 1,
+     "tags": [
+      "Reports",
+      "logiq_reports"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 900,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 123,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 2,
+     "minSizeY": 1,
+     "row": 6,
+     "sizeX": 3,
+     "sizeY": 16
+    }
+   },
+   "visualization": {
+    "id": 249,
+    "name": "Data Flow Count [15m]",
+    "type": "PIVOT",
+    "description": "",
+    "options": {
+     "aggregatorName": "Sum",
+     "autoSortUnusedAttrs": false,
+     "colOrder": "key_a_to_z",
+     "cols": [],
+     "defaultColumns": 3,
+     "defaultRows": 10,
+     "derivedAttributes": {},
+     "exclusions": {},
+     "hiddenAttributes": [],
+     "hiddenFromAggregators": [],
+     "hiddenFromDragDrop": [],
+     "inclusions": {},
+     "inclusionsInfo": {},
+     "menuLimit": 500,
+     "minColumns": 2,
+     "rendererName": "Heatmap",
+     "rowOrder": "value_z_to_a",
+     "rows": [
+      "groupby_data.sourceaddress",
+      "groupby_data.destinationaddress",
+      "value"
+     ],
+     "sorters": {},
+     "unusedAttrsVertical": 85,
+     "vals": [
+      "value"
+     ]
+    },
+    "query": {
+     "id": 129,
+     "latest_query_data_id": 211915,
+     "name": "Src Dst IP OCI Flow logs",
+     "description": "reporting query generated on Thu, 16 Feb 2023 05:13:13 GMT",
+     "query": "namespace: vcnflowlog:s3-compat\napplication: s3-compat\naggregate: sum\ngroup_by:\n  - data.destinationaddress\n  - data.sourceaddress\nduration:\n  relative: 900\nstep: ''\nfield: data.bytesout\n",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 1,
+     "version": 1,
+     "tags": [
+      "Reports",
+      "logiq_reports"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 900,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 125,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 50,
+     "sizeX": 3,
+     "sizeY": 12
+    }
+   },
+   "visualization": {
+    "id": 259,
+    "name": "Data Packets Transferred",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 134,
+     "latest_query_data_id": 211951,
+     "name": "Data_Packets__e1062e_data_packets__e1062e-Vis",
+     "description": "",
+     "query": "round(sum(logiq_ae_Data_Packets__e1062e_kiqijc_gauge))\u0026duration=1h\u0026step=60s",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Data_Packets__e1062e_data_packets__e1062e",
+      "e1062e",
+      "log2metric"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 126,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 10,
+     "sizeX": 3,
+     "sizeY": 10
+    }
+   },
+   "visualization": {
+    "id": 261,
+    "name": "Traffic By Protocol 15m",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "groupby_data.protocolname": "x",
+      "timestamp": "unused",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "pie",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "pie",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": true,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {
+      "GRE": {},
+      "ICMP": {},
+      "TCP": {},
+      "UDP": {}
+     },
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 136,
+     "latest_query_data_id": 211914,
+     "name": "Traffic By Protocol",
+     "description": "reporting query generated on Thu, 16 Feb 2023 09:55:03 GMT",
+     "query": "namespace: vcnflowlog:s3-compat\napplication: s3-compat\naggregate: count\ngroup_by:\n  - data.protocolname\nduration:\n  relative: 900\n",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 1,
+     "version": 1,
+     "tags": [
+      "Reports",
+      "logiq_reports"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 127,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 0,
+     "sizeX": 3,
+     "sizeY": 10
+    }
+   },
+   "visualization": {
+    "id": 264,
+    "name": "Flow Count Vis 3h",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 138,
+     "latest_query_data_id": 211960,
+     "name": "New Query...",
+     "description": "",
+     "query": "round(sum(increase(logiq_logflow_forwards_count{exported_namespace='vcnflowlog:s3-compat'}[15m])))\u0026duration=3h\u0026step=1m",
+     "is_archived": false,
+     "is_draft": true,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": []
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 900,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 134,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 2,
+     "minSizeY": 1,
+     "row": 20,
+     "sizeX": 3,
+     "sizeY": 14
+    }
+   },
+   "visualization": {
+    "id": 281,
+    "name": "Pivot Table",
+    "type": "PIVOT",
+    "description": "",
+    "options": {
+     "aggregatorName": "Count",
+     "autoSortUnusedAttrs": false,
+     "colOrder": "value_z_to_a",
+     "cols": [],
+     "defaultColumns": 3,
+     "defaultRows": 10,
+     "derivedAttributes": {},
+     "exclusions": {},
+     "hiddenAttributes": [],
+     "hiddenFromAggregators": [],
+     "hiddenFromDragDrop": [],
+     "inclusions": {},
+     "inclusionsInfo": {},
+     "menuLimit": 500,
+     "minColumns": 2,
+     "rendererName": "Table",
+     "rowOrder": "value_a_to_z",
+     "rows": [
+      "groupby_data.sourceaddress",
+      "groupby_data.action",
+      "value"
+     ],
+     "sorters": {},
+     "unusedAttrsVertical": 85,
+     "vals": []
+    },
+    "query": {
+     "id": 148,
+     "latest_query_data_id": 211916,
+     "name": "VCN Flow Action Taken",
+     "description": "reporting query generated on Thu, 16 Feb 2023 13:07:14 GMT",
+     "query": "namespace: vcnflowlog:s3-compat\napplication: s3-compat\naggregate: count\ngroup_by:\n  - data.sourceaddress\n  - data.action\nduration:\n  relative: 900\n",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 1,
+     "version": 1,
+     "tags": [
+      "Reports",
+      "logiq_reports"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 900,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 128,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 3,
+     "sizeY": 6
+    }
+   },
+   "visualization": {
+    "id": 266,
+    "name": "VCN Flows 15m",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#356AFF",
+     "counterColName": "value",
+     "counterLabel": "VCN Flows [15m]",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetRowNumber": 1,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 139,
+     "latest_query_data_id": 211959,
+     "name": "New Query...",
+     "description": "",
+     "query": "round(sum(increase(logiq_logflow_forwards_count{exported_namespace='vcnflowlog:s3-compat'}[15m])))",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [],
+     "options": {
+      "parameters": []
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 900,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 129,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 29,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 269,
+    "name": "VCN_Bytes_Transferred__e1063e-Vis",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 141,
+     "latest_query_data_id": 211939,
+     "name": "VCN_Bytes_Transferred__e1063e-Vis",
+     "description": "",
+     "query": "sum(increase(logiq_ae_VCN_Bytes_Transferred__e1063e_count[5m]) OR on() vector(0))\u0026duration=1h\u0026step=60s",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "e1063e",
+      "log2metric"
+     ],
+     "options": {
+      "parameters": null
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 130,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {},
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 48,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 272,
+    "name": "VCN_Bytes_Transferred_Vis",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "-"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 142,
+     "latest_query_data_id": 211956,
+     "name": "VCN_Bytes_Transferred__e1063e_data_bytesout__e1063e-Vis",
+     "description": "",
+     "query": "(logiq_ae_VCN_Bytes_Transferred__e1063e_i2i0xt_gauge)\u0026duration=1h\u0026step=60s",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "VCN_Bytes_Transferred__e1063e_data_bytesout__e1063e",
+      "e1063e",
+      "log2metric"
+     ],
+     "options": {
+      "parameters": []
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  }
+ ]
+}

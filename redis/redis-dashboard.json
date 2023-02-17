@@ -1,0 +1,2086 @@
+{
+ "dashboard": {
+  "id": 8,
+  "name": "Redis Dashboard for Prometheus Redis Exporter",
+  "tags": [],
+  "slug": "redis-dashboard-for-prometheus-redis-exporter"
+ },
+ "datasources": {
+  "2": {
+   "id": 2,
+   "name": "LogiqMonitoring",
+   "type": "logiq_prometheus",
+   "options": {
+    "url": "http://lq7408-thanos-query:9090"
+   }
+  }
+ },
+ "widgets": [
+  {
+   "id": 57,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "interval": {
+      "mapTo": "interval",
+      "name": "Interval",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 2,
+     "sizeY": 7
+    }
+   },
+   "visualization": {
+    "id": 139,
+    "name": "Uptime (Min)",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#002FB4",
+     "countRow": false,
+     "counterColName": "value",
+     "counterLabel": "Minutes",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetColName": null,
+     "targetRowNumber": null,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 60,
+     "latest_query_data_id": 47729,
+     "name": "Uptime query",
+     "description": "",
+     "query": "(max(max_over_time(cli_redis_uptime_in_seconds{}[{{interval}}])) / 60)\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "enumOptions": " 5m\n15m\n1h\n6h\n12h\n24h\n2d\n7d\n30d",
+        "locals": [],
+        "name": "interval",
+        "title": "Interval",
+        "type": "enum",
+        "value": "5m"
+       },
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 63,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 34,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 143,
+    "name": "Total Memory Usage - used",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 71,
+     "latest_query_data_id": 39673,
+     "name": "Total Memory Usage - used query",
+     "description": "",
+     "query": "cli_redis_memory_used_bytes{} \u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 62,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 7,
+     "sizeX": 3,
+     "sizeY": 9
+    }
+   },
+   "visualization": {
+    "id": 141,
+    "name": "Hits / Misses per Sec - misses",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 67,
+     "latest_query_data_id": 39672,
+     "name": "Hits / Misses per Sec - misses query",
+     "description": "",
+     "query": "irate(cli_redis_keyspace_misses_total{}[5m])\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 59,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 4,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 2,
+     "sizeY": 7
+    }
+   },
+   "visualization": {
+    "id": 137,
+    "name": "Memory Usage [Bytes]",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#B554FF",
+     "countRow": false,
+     "counterColName": "value",
+     "counterLabel": "Kilobyte",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetColName": null,
+     "targetRowNumber": null,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 65,
+     "latest_query_data_id": 48429,
+     "name": "Memory Usage",
+     "description": "",
+     "query": "(cli_redis_memory_used_bytes{}/1000)\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": {
+      "day_of_week": "",
+      "interval": 300,
+      "time": "",
+      "until": ""
+     }
+    }
+   }
+  },
+  {
+   "id": 64,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 7,
+     "sizeX": 3,
+     "sizeY": 9
+    }
+   },
+   "visualization": {
+    "id": 144,
+    "name": "Total Memory Usage - max",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 68,
+     "latest_query_data_id": 39713,
+     "name": "Total Memory Usage - Peak bytes",
+     "description": "",
+     "query": "cli_redis_memory_used_peak_bytes{} \u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 68,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 25,
+     "sizeX": 3,
+     "sizeY": 9
+    }
+   },
+   "visualization": {
+    "id": 146,
+    "name": "Expiring vs Not-Expiring Keys - not expiring",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 73,
+     "latest_query_data_id": 39681,
+     "name": "Expiring vs Not-Expiring Keys - not expiring query",
+     "description": "",
+     "query": "sum (cli_redis_db_keys{}) - sum (cli_redis_db_keys_expiring{}) \u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 65,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 42,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 149,
+    "name": "Network I/O",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 66,
+     "latest_query_data_id": 39675,
+     "name": "Network I/O query",
+     "description": "",
+     "query": "rate(cli_redis_net_input_bytes_total{}[5m])\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 72,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 42,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 148,
+    "name": "Command Calls / sec",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 58,
+     "latest_query_data_id": 39685,
+     "name": "Command Calls / sec query",
+     "description": "",
+     "query": "topk(5, irate(cli_redis_commands_total{} [1m]))\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 66,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 16,
+     "sizeX": 3,
+     "sizeY": 9
+    }
+   },
+   "visualization": {
+    "id": 150,
+    "name": "Network I/O",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "area",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "area",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 72,
+     "latest_query_data_id": 39737,
+     "name": "Network I/O query",
+     "description": "",
+     "query": "rate(cli_redis_net_output_bytes_total{}[5m])\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "6h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 70,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 34,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 129,
+    "name": "Expired / Evicted - expired",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 62,
+     "latest_query_data_id": 39684,
+     "name": "Expired / Evicted - expired query",
+     "description": "",
+     "query": "sum(rate(cli_redis_expired_keys_total{}[5m])) by (instance)\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 67,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 50,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 147,
+    "name": "Total Items per DB",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 61,
+     "latest_query_data_id": 39678,
+     "name": "Total Items per DB query",
+     "description": "",
+     "query": "sum (cli_redis_db_keys{}) by (db)\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 69,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 58,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 135,
+    "name": "Expiring vs Not-Expiring Keys - expiring",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 59,
+     "latest_query_data_id": 39706,
+     "name": "Expiring vs Not-Expiring Keys - expiring query",
+     "description": "",
+     "query": "sum (cli_redis_db_keys_expiring{}) \u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 71,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 50,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 140,
+    "name": "Expired / Evicted - evicted",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 69,
+     "latest_query_data_id": 39708,
+     "name": "Expired / Evicted - evicted query",
+     "description": "",
+     "query": "sum(rate(cli_redis_evicted_keys_total{}[5m])) by (instance)\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 58,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 2,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 1,
+     "row": 0,
+     "sizeX": 2,
+     "sizeY": 7
+    }
+   },
+   "visualization": {
+    "id": 142,
+    "name": "Clients",
+    "type": "COUNTER",
+    "description": "",
+    "options": {
+     "bgColor": "#0F1C2A",
+     "countRow": false,
+     "counterColName": "value",
+     "counterLabel": "Clients",
+     "defaultColumns": 2,
+     "defaultRows": 5,
+     "rowNumber": 1,
+     "stringDecChar": ".",
+     "stringDecimal": 0,
+     "stringThouSep": ",",
+     "targetColName": null,
+     "targetRowNumber": null,
+     "textColor": "#FFFFFF"
+    },
+    "query": {
+     "id": 70,
+     "latest_query_data_id": 39725,
+     "name": "Clients query",
+     "description": "",
+     "query": "cli_redis_connected_clients{}\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 60,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 16,
+     "sizeX": 3,
+     "sizeY": 9
+    }
+   },
+   "visualization": {
+    "id": 136,
+    "name": "Commands Executed / sec",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "sortX": true,
+     "textFormat": "",
+     "valuesOptions": {},
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 64,
+     "latest_query_data_id": 39670,
+     "name": "Commands Executed / sec query",
+     "description": "",
+     "query": "rate(cli_redis_commands_processed_total{}[1m])\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 61,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 0,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 25,
+     "sizeX": 3,
+     "sizeY": 9
+    }
+   },
+   "visualization": {
+    "id": 138,
+    "name": "Hits / Misses per Sec - hits",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 63,
+     "latest_query_data_id": 39671,
+     "name": "Hits / Misses per Sec - hits query",
+     "description": "",
+     "query": "irate(cli_redis_keyspace_hits_total{}[5m])\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  },
+  {
+   "id": 73,
+   "text": "",
+   "width": 1,
+   "options": {
+    "parameterMappings": {
+     "duration": {
+      "mapTo": "duration",
+      "name": "Duration",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     },
+     "step": {
+      "mapTo": "step",
+      "name": "Step",
+      "title": "",
+      "type": "dashboard-level",
+      "value": ""
+     }
+    },
+    "position": {
+     "autoHeight": false,
+     "col": 3,
+     "maxSizeX": 6,
+     "maxSizeY": 1000,
+     "minSizeX": 1,
+     "minSizeY": 5,
+     "row": 58,
+     "sizeX": 3,
+     "sizeY": 8
+    }
+   },
+   "visualization": {
+    "id": 131,
+    "name": "Redis connected clients",
+    "type": "CHART",
+    "description": "",
+    "options": {
+     "columnMapping": {
+      "timestamp": "x",
+      "value": "y"
+     },
+     "customCode": "// Available variables are x, ys, element, and Plotly\n// Type console.log(x, ys); for more info about x and ys\n// To plot your graph call Plotly.plot(element, ...)\n// Plotly examples and docs: https://plot.ly/javascript/",
+     "dateTimeFormat": "DD/MM/YY HH:mm",
+     "defaultColumns": 3,
+     "defaultRows": 8,
+     "error_y": {
+      "type": "data",
+      "visible": true
+     },
+     "globalSeriesType": "line",
+     "legend": {
+      "enabled": true
+     },
+     "minColumns": 1,
+     "minRows": 5,
+     "numberFormat": "0,0[.]00000",
+     "percentFormat": "0[.]00%",
+     "series": {
+      "error_y": {
+       "type": "data",
+       "visible": true
+      },
+      "stacking": null
+     },
+     "seriesOptions": {
+      "value": {
+       "index": 0,
+       "type": "line",
+       "yAxis": 0,
+       "zIndex": 0
+      }
+     },
+     "showDataLabels": false,
+     "textFormat": "",
+     "xAxis": {
+      "labels": {
+       "enabled": true
+      },
+      "type": "datetime"
+     },
+     "yAxis": [
+      {
+       "type": "linear"
+      },
+      {
+       "opposite": true,
+       "type": "linear"
+      }
+     ]
+    },
+    "query": {
+     "id": 57,
+     "latest_query_data_id": 39704,
+     "name": "Redis connected clients query",
+     "description": "",
+     "query": "cli_redis_connected_clients{}\u0026duration={{duration}}\u0026step={{step}}",
+     "is_archived": false,
+     "is_draft": false,
+     "data_source_id": 2,
+     "version": 1,
+     "tags": [
+      "Redis Dashboard for Prometheus Redis Exporter"
+     ],
+     "options": {
+      "parameters": [
+       {
+        "locals": [],
+        "name": "duration",
+        "title": "Duration",
+        "type": "text",
+        "value": "1h"
+       },
+       {
+        "locals": [],
+        "name": "step",
+        "title": "Step",
+        "type": "text",
+        "value": "1m"
+       }
+      ]
+     },
+     "schedule": null
+    }
+   }
+  }
+ ]
+}
