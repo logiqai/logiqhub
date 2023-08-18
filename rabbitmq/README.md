@@ -1,7 +1,7 @@
 # RabbitMQ monitoring
 
 ## Features
-* Monitor RabbitMQ via LOGIQ prometheus connector
+* Monitor RabbitMQ via Apica Ascent Prometheus connector
 
 ## Configuration
 
@@ -11,11 +11,10 @@
 ## Steps to import
 
 * Download for ex: rabbitmq.json
-* Run logiqctl to import the rabbitmq.json
+* Run apicactl to import the rabbitmq.json
 
 ```
 logiqctl create dashboard -f rabbitmq.json
-
 ```
 
 ## Screenshot

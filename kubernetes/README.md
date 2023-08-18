@@ -1,7 +1,7 @@
 # Kubernetes Level monitoring
 
 ## Features
-* Monitor Container, ApiServer, Kube Pods, Node level statistics via LOGIQ prometheus connector
+* Monitor Container, ApiServer, Kube Pods, Node level statistics via Apica Ascent prometheus connector
 
 ## Configuration
 
@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download filename.json
-* Run logiqctl to import the dashboard json
+* Run apicactl to import the dashboard json
 
 ```
 logiqctl create dashboard -f api-server.json

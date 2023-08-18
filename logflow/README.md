@@ -12,7 +12,7 @@
 ## Steps to import
 
 * Download for ex: logflow-1.json
-* Run logiqctl to import the file logflow-1.json
+* Run apicactl to import the file logflow-1.json
 
 ```
 logiqctl create dashboard -f logflow-1.json

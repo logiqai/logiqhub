@@ -1,10 +1,10 @@
-# logiqhub
+# apicahub
 
-Find, install and publish LOGIQ dashboards for popular applications. 
+Find, install and publish Apica Ascent dashboards for popular applications. 
 
 ## Contribution guidelines
 
-If you have a LOGIQ dashboard to share with the world, we'd love to host it for you! To submit your dashboard, do the following:
+If you have a Apica Ascent dashboard to share with the world, we'd love to host it for you! To submit your dashboard, do the following:
 
 1. Create a new folder at the root level to house your dashboard. 
 2. Name it according to the service, device, or application your dashboard serves. For example, if you're creating a dashboard for Azure Event Hubs, name it `azure-event-hubs`. 
@@ -16,7 +16,7 @@ If you have a LOGIQ dashboard to share with the world, we'd love to host it for 
     - Steps to import
     - Screenshots
 5. Edit the `index.html` file at the root of this repository. 
-6. Look for the section starting with `<!---LIST OF LOGIQHUB DASHBOARDS-->` and edit the HTML to add an entry to your dashboard on the homepage of [LOGIQHub](https://logiqhub.logiq.ai/).
+6. Look for the section starting with `<!---LIST OF APICAHUB DASHBOARDS-->` and edit the HTML to add an entry to your dashboard on the homepage of [ApicaHub](https://logiqhub.logiq.ai/).
 7. Be sure to include the following:
     - A logo for the service, device, or application your dashboard serves. 
     - A title against the HTML element `<h5 class="card-title" style="font-weight: bolder;">TITLE</h5>`

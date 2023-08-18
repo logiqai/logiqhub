@@ -1,4 +1,4 @@
-# Logiq Level monitoring
+# Apica Ascent Level monitoring
 
 ## Features
 * Monitor overview of OSSEC infrastructure security monitor overview
@@ -15,7 +15,7 @@
 ## Steps to import
 
 * Download the example dashboard ossec-security-monitor-overview.json
-* Run logiqctl to import the dashboard ossec-security-monitor-overview.json
+* Run apicactl to import the dashboard ossec-security-monitor-overview.json
 
 ```
 logiqctl create dashboard -f ossec-security-monitor-overview.json

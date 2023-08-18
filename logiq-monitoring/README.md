@@ -1,7 +1,7 @@
-# Logiq Level monitoring
+# Apica Ascent Level monitoring
 
 ## Features
-* Monitor overview of logs mvia LOGIQ prometheus connector
+* Monitor overview of logs via Apica Ascent prometheus connector
 
 ## Configuration
 
@@ -12,7 +12,7 @@
 ## Steps to import
 
 * Download for ex: logiq-monitoring.json
-* Run logiqctl to import the file logiq-monitoring.json
+* Run apicactl to import the file logiq-monitoring.json
 
 ```
 logiqctl create dashboard -f logiq-monitoring.json

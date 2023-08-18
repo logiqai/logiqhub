@@ -1,4 +1,4 @@
-# Logiq cluster monitoring
+# Apica Ascent cluster monitoring
 
 ## Features
 * Monitor the deployed fluentbit cluster
@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download fluentbit.json
-* Run logiqctl to import the dashboard json
+* Run apicactl to import the dashboard json
 
 ```
 logiqctl create dashboard -f fluentbit.json

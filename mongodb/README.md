@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download mongodb.json
-* Run logiqctl to import the mongodb.json
+* Run apicactl to import the mongodb.json
 
 ```
 logiqctl create dashboard -f mongodb.json

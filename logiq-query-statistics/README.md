@@ -1,7 +1,7 @@
 # Logiq Query statistics
 
 ## Features
-* MOonitor the overview of Queries via LOGIQ prometheus connector
+* Monitor the overview of Queries via Apica Ascent prometheus connector
 
 ## Configuration
 
@@ -12,7 +12,7 @@
 ## Steps to import
 
 * Download for ex: Query-statistics.json
-* Run logiqctl to import the file Query-statistics.json
+* Run apicactl to import the file Query-statistics.json
 
 ```
 logiqctl create dashboard -f Query-statistics.json

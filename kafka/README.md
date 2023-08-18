@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download kafka.json
-* Run logiqctl to import the kafka.json
+* Run apicactl to import the kafka.json
 
 ```
 logiqctl create dashboard -f kafka.json

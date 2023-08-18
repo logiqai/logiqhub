@@ -1,7 +1,7 @@
 # Memcached Level monitoring
 
 ## Features
-* Monitor Memcached in-memory data store via LOGIQ prometheus connector
+* Monitor Memcached in-memory data store via Apica Ascent prometheus connector
 
 ## Configuration
 
@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download memcached.json
-* Run logiqctl to import the dashboard json
+* Run apicactl to import the dashboard json
 
 ```
 logiqctl create dashboard -f memcached.json

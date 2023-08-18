@@ -1,4 +1,4 @@
-# Logiq cluster monitoring
+# Apica Ascent cluster monitoring
 
 ## Features
 * Monitor Elastic instance
@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download elastic.json
-* Run logiqctl to import the dashboard
+* Run apicactl to import the dashboard
 
 ```
 logiqctl create dashboard -f elastic.json

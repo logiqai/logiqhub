@@ -16,7 +16,7 @@
 
 * Download cluster-summary.json
 * Download vm-summary.json
-* Run logiqctl to import the cluster and vm summary json's
+* Run apicactl to import the cluster and vm summary json's
 
 ```
 logiqctl create dashboard -f cluster-summary.json

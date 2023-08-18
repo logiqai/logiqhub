@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download aws-cloudtrail.json
-* Run logiqctl to import the dashboard
+* Run apicactl to import the dashboard
 
 ```
 logiqctl create dashboard -f aws-cloudtrail.json

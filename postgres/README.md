@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download postgres.json
-* Run logiqctl to import the dashboard json
+* Run apicactl to import the dashboard json
 
 ```
 logiqctl create dashboard -f postgres.json

@@ -1,7 +1,7 @@
 # Redis cluster monitoring
 
 ## Features
-* Monitor one or more redis clusters via LOGIQ prometheus connector
+* Monitor one or more redis clusters via Apica Ascent prometheus connector
 * Dropdown selector to switch redis running on different namespaces
 
 ## Configuration
@@ -12,7 +12,7 @@
 ## Steps to import
 
 * Download redis-cluster-monitoring.json
-* Run logiqctl to import the dashboard json
+* Run apicactl to import the dashboard json
 
 ```
 logiqctl create dashboard -f redis-cluster-monitoring.json

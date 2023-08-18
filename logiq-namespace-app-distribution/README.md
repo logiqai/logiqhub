@@ -1,7 +1,7 @@
 # Logiq Level monitoring
 
 ## Features
-* Monitor overview of logs mvia LOGIQ prometheus connector
+* Monitor overview of logs via Apica Ascent prometheus connector
 
 ## Configuration
 
@@ -12,7 +12,7 @@
 ## Steps to import
 
 * Download for ex: Namespace,app-distribution.json
-* Run logiqctl to import the file Namespace,app-distribution.json
+* Run apicactl to import the file Namespace, app-distribution.json
 
 ```
 logiqctl create dashboard -f Namespace,app-distribution.json

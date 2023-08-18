@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download ecs-monitoring.json
-* Run logiqctl to import the dashboard
+* Run apicactl to import the dashboard
 
 ```
 logiqctl create dashboard -f ecs-monitoring.json

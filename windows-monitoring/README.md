@@ -1,7 +1,7 @@
 # Windows System monitoring
 
 ## Features
-* Monitor Windows System events via LOGIQ Prometheus connector
+* Monitor Windows System events via Apica Ascent Prometheus connector
 
 ## Configuration
 
@@ -14,7 +14,6 @@
 
 ```
 logiqctl create dashboard -f windows-monitoring.json
-
 ```
 
 ## Screenshot

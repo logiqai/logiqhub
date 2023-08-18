@@ -1,7 +1,7 @@
 # MySql Level monitoring
 
 ## Features
-* Monitor MySql level statistics via LOGIQ prometheus connector
+* Monitor MySql level statistics via Apica Ascent prometheus connector
 
 ## Configuration
 
@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download mysql-settings.json
-* Run logiqctl to import the dashboard json
+* Run apicactl to import the dashboard json
 
 ```
 logiqctl create dashboard -f mysql-settings.json

@@ -1,7 +1,7 @@
 # Prometheus Level monitoring
 
 ## Features
-* Monitor Promethus, AlertManager via LOGIQ prometheus connector
+* Monitor Prometheus, AlertManager via Apica Ascent Prometheus connector
 
 ## Configuration
 
@@ -11,7 +11,7 @@
 ## Steps to import
 
 * Download for ex: alert-manager.json
-* Run logiqctl to import the alert-manager.json
+* Run apicactl to import the alert-manager.json
 
 ```
 logiqctl create dashboard -f alert-manager.json
